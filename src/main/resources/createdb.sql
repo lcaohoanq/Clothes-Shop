@@ -75,13 +75,13 @@ CREATE TABLE OrderItem(
 
 ----------------------------------------------------------------DATA------------------------------------------------------------------
     INSERT INTO Users  VALUES
-(N'Jung', N'Kim', 'user@gmail.com', 'view/assets/home/img/users/user.jpg','user1', '12345', N'Ha Noi', '0981347469', 2, 0),
-(N'admin', N'', 'admin@gmail.com', 'view/assets/home/img/users/user.jpg', 'admin', '12345', N'Quận 9', '0981347469', 1, 1),
-(N'Phùng', N'Thành', 'thanh@gmail.com', 'view/assets/home/img/users/1.jpg','phuuthanh2003', '12345', N'60 Nguyễn Văn Trỗi, Phường 2, TP.Bảo Lộc', '0707064154', 1, 1),
-(N'Bé', N'Moon', 'Moon123@gmail.com', 'view/assets/home/img/users/user1.jpg','user2', '12345', N'13 Hoàng Hữu Nam, Phường 2, TP.Bảo Lộc', '06868686868', 2, 1),
+(N'Jung', N'Kim', 'user@gmail.com', 'view/assets/home/img/users/user.jpg','user1', '12345', N'Ha Noi', '0123456789', 2, 0),
+(N'admin', N'', 'admin@gmail.com', 'view/assets/home/img/users/user.jpg', 'admin', 'admin', N'Quận 9', '0123456789', 1, 1),
+(N'Hoàng', N'Lưu', 'hoangclw@gmail.com', 'view/assets/home/img/users/1.jpg','lcaohoanq', '1', N'250C Võ Văn Hát, Phường Long Trường, Q9, TP.Hồ Chí Minh', '0905123123', 1, 1),
+(N'Bé', N'Moon', 'Moon123@gmail.com', 'view/assets/home/img/users/user1.jpg','user2', '12345', N'VinHomes GrandPark Q9, TP.Hồ Chí Minh', '06868686868', 2, 1),
 (N'User', N'3', 'user3@gmail.com', 'view/assets/home/img/users/user3.jpg','user3', '12345', N'USA', '06868686868', 2, 1),
-(N'Phung', N'Huu Thanh', 'thanhphse170345@fpt.edu.vn', 'https://lh3.googleusercontent.com/a/ACg8ocLr-hUF3FDFfLGwVsXKxgXBIQ1trDWhb0DY2qaJhcJQTLo=s96-c', 'thanhphse170345@fpt.edu.vn', '1234', N'', '', 1, 1),
-(N'Huy', N'Hoang', 'lvhhoangg171@gmail.com', 'https://lh3.googleusercontent.com/a/ACg8ocJTlRpCgDDh0FK2ypPcy9FgD3xUrHXPIeH1zNrtA8X64A=s96-c', 'lvhhoangg171@gmail.com', '12345', N'', '', 2, 1)
+(N'Nhu', N'Ho Thi Minh', 'hothiminhnhu0612@gmail.com', 'https://lh3.googleusercontent.com/a/ACg8ocLr-hUF3FDFfLGwVsXKxgXBIQ1trDWhb0DY2qaJhcJQTLo=s96-c', 'mnhw.0612', '0612', N'Nguyễn Tất Thành, TP.Đà Nẵng', '', 1, 1),
+(N'Duong', N'Nguyen', 'duongnmse181515@fpt.edu.vn', 'https://lh3.googleusercontent.com/a/ACg8ocJTlRpCgDDh0FK2ypPcy9FgD3xUrHXPIeH1zNrtA8X64A=s96-c', 'duongnmse181515@fpt.edu.vn', '1', N'TP.Tam Kỳ', '', 2, 1)
 
 INSERT INTO Types VALUES
 (N'Áo'),
@@ -201,31 +201,31 @@ INSERT INTO Payments VALUES
     (N'Credit Card')
 
 INSERT INTO [Orders] VALUES
-    ('2024-03-10 12:30:00', 2241.00, 1, 'phuuthanh2003', 1),
-    ('2024-04-20 11:19:00', 5422.00, 1, 'lvhhoangg171@gmail.com', 0),
-    ('2018-05-19 11:30:00', 1129.00, 1,  'phuuthanh2003', 1),
+    ('2024-03-10 12:30:00', 2241.00, 1, 'lcaohoanq', 1),
+    ('2024-04-20 11:19:00', 5422.00, 1, 'duongnmse181515@fpt.edu.vn', 0),
+    ('2018-05-19 11:30:00', 1129.00, 1,  'lcaohoanq', 1),
     ('2022-06-10 12:30:00', 1192.00, 1, 'user2', 0),
-    ('2018-07-20 11:19:00', 4396.00, 1, 'phuuthanh2003', 1),
+    ('2018-07-20 11:19:00', 4396.00, 1, 'lcaohoanq', 1),
     ('2019-01-19 11:30:00', 2100.00, 1, 'user2', 1),
     ('2024-01-19 11:30:00', 2200.00, 1, 'user2', 1),
-    ('2020-09-10 12:30:00', 2685.00, 1, 'lvhhoangg171@gmail.com', 0),
-    ('2021-10-20 11:19:00', 3250.00, 1, 'phuuthanh2003', 1),
+    ('2020-09-10 12:30:00', 2685.00, 1, 'duongnmse181515@fpt.edu.vn', 0),
+    ('2021-10-20 11:19:00', 3250.00, 1, 'lcaohoanq', 1),
     ('2021-03-10 12:30:00', 500.00, 1, 'user2', 1),
     ('2024-04-20 11:19:00', 824.00, 1, 'user2', 1),
-    ('2024-05-19 11:30:00', 2200.00, 1, 'phuuthanh2003', 1),
-    ('2023-06-10 12:30:00', 1190.00, 1, 'phuuthanh2003', 1),
+    ('2024-05-19 11:30:00', 2200.00, 1, 'lcaohoanq', 1),
+    ('2023-06-10 12:30:00', 1190.00, 1, 'lcaohoanq', 1),
     ('2022-07-20 11:19:00', 1040.00, 1, 'user2', 1),
-    ('2021-08-19 11:30:00', 3000.00, 1, 'phuuthanh2003', 1),
+    ('2021-08-19 11:30:00', 3000.00, 1, 'lcaohoanq', 1),
     ('2024-09-10 12:30:00', 650.00, 1, 'user2', 1),
-    ('2020-11-20 11:19:00', 425.00, 1, 'phuuthanh2003', 1),
+    ('2020-11-20 11:19:00', 425.00, 1, 'lcaohoanq', 1),
     ('2019-12-19 11:30:00', 1399.00, 1, 'user2', 1),
-    ('2023-02-10 04:30:00', 1290.00, 1, 'phuuthanh2003', 0),
-    ('2023-01-10 01:50:41', 700.00, 1, 'phuuthanh2003', 0),
+    ('2023-02-10 04:30:00', 1290.00, 1, 'lcaohoanq', 0),
+    ('2023-01-10 01:50:41', 700.00, 1, 'lcaohoanq', 0),
     ('2022-11-10 12:10:16', 500.00, 1, 'user2', 1),
-    ('2021-01-10 11:03:50', 699.00, 1, 'phuuthanh2003', 0),
-    ('2024-02-10 10:15:00', 425.00, 1, 'phuuthanh2003', 0),
-    ('2023-02-10 12:30:00', 1053.00, 1, 'phuuthanh2003', 0),
-    ('2020-02-10 12:30:00', 875.0, 1, 'phuuthanh2003', 1),
+    ('2021-01-10 11:03:50', 699.00, 1, 'lcaohoanq', 0),
+    ('2024-02-10 10:15:00', 425.00, 1, 'lcaohoanq', 0),
+    ('2023-02-10 12:30:00', 1053.00, 1, 'lcaohoanq', 0),
+    ('2020-02-10 12:30:00', 875.0, 1, 'lcaohoanq', 1),
     ('2019-02-14 12:30:00', 875.00, 1, 'admin', 1);
 
 INSERT INTO OrderItem VALUES
