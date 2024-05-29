@@ -17,10 +17,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- *
- * @author lvhho
- */
 public class Email {
 
     private final String eFrom = "lvhhoangg1@gmail.com";
