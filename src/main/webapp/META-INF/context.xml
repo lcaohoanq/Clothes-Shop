@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/PRJ301_Sp24_ClothesShop">
-    <Resource
-        name="DBCon" type ="javax.sql.DataSource" auth="Container"
-        driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-        url ="jdbc:sqlserver://localhost:1433;databaseName=ClothesShop"
-        username="sa" password="Luucaohoang1604^^"
-    />
+<Context antiJARLocking="true" path="/clothes">
+  <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="DBCon" password="Luucaohoang1604^^" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;databaseName=ClothesShop" username="sa"/>
 </Context>
