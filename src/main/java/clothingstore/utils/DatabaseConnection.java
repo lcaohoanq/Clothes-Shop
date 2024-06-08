@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
 
     public Connection getConnection() throws Exception {
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = EnvUtil.get("DB_URL");
         String user = EnvUtil.get("DB_USER");
         String password = EnvUtil.get("DB_PASSWORD");
@@ -17,12 +18,12 @@ public class DatabaseConnection {
 
     //Test connection
     public static void main(String[] args) throws Exception {
-        try{
+        try {
             Connection connection = new DatabaseConnection().getConnection();
-            if(connection != null){
+            if (connection != null) {
                 System.out.println("Connect successfully");
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
