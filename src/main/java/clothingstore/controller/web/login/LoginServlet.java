@@ -72,6 +72,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String url = WELCOME;
         try {
+            request.setAttribute("CURRENTSERVLET", "Login");
             if (request.getParameter("btnAction") != null) {
                 Cookie arr[] = request.getCookies();
                 if (arr != null) {

@@ -47,7 +47,9 @@
 
 
 
-
+.non-padding {
+    padding: 0;
+}
 
 /*  2.  header css here*/
 
@@ -58,11 +60,20 @@
     background: #fff;
     margin: 0 -20px;
 }
-.header_area .container-fluid {
+
+.header_area, .container-fluid {
     padding-left: 0;
     padding-right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
+#fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
 /* 2.1 header top css here*/
 .switcher > ul,.header_links > ul {
@@ -73,18 +84,15 @@
 .switcher ul li{
     position: relative;
 }
-.header_top {
-    padding: 0 20px;
-    background: #ECECEC;
-}
+
 .switcher ul li a {
     font-size: 12px;
     height: 35px;
     color: #333333;
     display: block;
     line-height: 35px;
-    font-weight: 400;
-    width: 94px;
+    font-weight: 300;
+    width: fit-content;
     text-align: center;
     cursor: pointer;
 }
@@ -134,18 +142,15 @@
 
 /* 2.2 header middel css here*/
 .logo {
-    padding-left: 30px;
+    width: 100%;
 }
 .header_right_info {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 .header_middel {
-    padding: 15px 20px;
+    padding: 0px;
 }
 .search_bar form {
     position: relative;
@@ -161,7 +166,7 @@
     position: absolute;
     right: 0;
     background: none;
-    border: 0;
+    border: 1px solid #ddd;
     border-left: 1px solid #ddd;
     font-size: 17px;
     color: #333333;
@@ -184,6 +189,7 @@
     line-height: 38px;
     height: 38px;
     margin-left: 25px;
+    margin-right: 25px;
     position: relative;
 }
 .shopping_cart > a {
@@ -298,27 +304,8 @@
 
 /* 2.3 header bottom css here*/
 .header_bottom {
-    background: #00bba6;
     height: 50px;
     position: relative;
-}
-.header_bottom::before {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 64px;
-    background: url(../img/ship/nav-left-teal.png) no-repeat scroll center center;
-    left: -16px;
-    top: -1px;
-}
-.header_bottom::after {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 64px;
-    background: url(../img/ship/nav-right-teal.png) no-repeat scroll center center;
-    right: -16px;
-    top: -1px;
 }
 .main_menu nav > ul {
     display: -webkit-box;
@@ -326,7 +313,7 @@
     display: flex;
 }
 .main_menu_inner {
-    padding: 0 20px;
+    padding: 0px;
 }
 .main_menu ul li{
     position: relative;
@@ -334,18 +321,18 @@
 .main_menu nav > ul > li > a {
     line-height: 50px;
     display: block;
-    padding: 0 20px;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
     line-height: 50px;
-    font-size: 18px;
+    font-size: 10px;
     color: #fff;
-    font-weight: 400;
+    font-weight: 300;
+    text-align: center;
 }
 .main_menu nav > ul > li.active > a,.main_menu nav > ul > li:hover > a{
-    background: #018576;
-} 
+    background: rgba(0,0,0,0.3);
+}
 .mega_menu {
     position: absolute;
     width: 600px;
@@ -468,9 +455,8 @@
     padding-right: 0;
 }
 .pos_home_section {
-    padding-top: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 70px;
+
 }
 
 .banner_img {
@@ -593,7 +579,7 @@
 }
 .sidebar_widget.catrgorie  > ul > li.has-sub.open > a::before{
     display: none;
-} 
+}
 .sidebar_widget.catrgorie  ul li a:hover,.sidebar_widget.catrgorie  > ul > li.has-sub.open > a:hover{
     color:#e84c3d;
 }
@@ -1072,7 +1058,7 @@
     border-radius: 50%;
 }
 .footer_social ul li:first-child a {
-    background: #4267B2;	
+    background: #4267B2;
 }
 .footer_social ul li:last-child a {
     background: #F09836;
@@ -1985,7 +1971,8 @@
     margin-top: 20px;
 }
 .product_review_form button:hover{
-    background: #e84c3d;;
+    background: #e84c3d;
+    ;
 }
 .product_d_info {
     padding-bottom: 35px;
@@ -2597,7 +2584,7 @@
     width: 100%;
     height: 40px;
 }
-.checkout_form .nice-select.open .list {   
+.checkout_form .nice-select.open .list {
     width: 100%;
 }
 
@@ -3863,7 +3850,7 @@
 
     &:focus {
         outline: none;
-        box-shadow: 
+        box-shadow:
             0 -1px 0 rgba(0, 0, 0, .04),
             0 2px 4px rgba(0, 0, 0, .25),
             0 0 0 3px #c8dafc;
