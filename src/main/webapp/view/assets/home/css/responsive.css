@@ -20,18 +20,12 @@
     .pos_page_inner {
         margin: 0;
     }
-    .header_bottom::before,.header_bottom::after {
-        display: none;
-    }
 }
 
 
 /* Normal desktop :992px. */
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .header_bottom::after,.header_bottom::before {
-        display: none;
-    }
     .pos_page_inner {
         margin: 0 -15px;
     }
@@ -126,9 +120,6 @@
 /* Tablet Layout :768px. */
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .header_bottom::after,.header_bottom::before {
-        display: none;
-    }
    .pos_home_section .row.pos_home {
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
@@ -409,9 +400,6 @@
 @media (max-width: 767px) {
      .pos_page_inner {
         margin: 0;
-    }
-    .header_bottom::after,.header_bottom::before {
-        display: none;
     }
     .switcher > ul, .header_links > ul {
         -webkit-box-pack: center;
