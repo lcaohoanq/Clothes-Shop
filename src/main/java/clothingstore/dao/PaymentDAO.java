@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +12,7 @@ import clothingstore.model.PaymentDTO;
 
 public class PaymentDAO extends DatabaseConnection {
 
-    private static final String GET_PAYMENTNAME_BYID = "SELECT * FROM Payments WHERE paymentid = ?";
-    private static final String GET_PAYMENTNAME_DATA = "SELECT * FROM Payments";
+
 
     public PaymentDTO getPaymentById(int id) throws SQLException {
         PaymentDTO result = null;
@@ -22,7 +22,7 @@ public class PaymentDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PAYMENTNAME_BYID);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PAYMENTNAME_BYID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -54,7 +54,7 @@ public class PaymentDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PAYMENTNAME_DATA);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PAYMENTNAME_DATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int id = rs.getInt("paymentid");

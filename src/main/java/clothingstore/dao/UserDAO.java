@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,37 +12,7 @@ import clothingstore.model.UserDTO;
 
 public class UserDAO extends DatabaseConnection {
 
-    private static final String LOGIN = "SELECT * FROM Users WHERE (username=? OR email = ?) AND password=? and status=1";
 
-    private static final String GET_DATA = "SELECT * FROM Users WHERE status = 1 Order by roleid asc";
-
-    private static final String GET_USER_BY_NAME = "SELECT * FROM Users WHERE username = ? AND status = 1";
-
-    private static final String GET_USER_BY_EMAIL = "SELECT * FROM Users WHERE email = ? AND status = 1";
-
-    private static final String GET_TOTAL_USERS = "SELECT COUNT(*) AS Total FROM Users WHERE status = 1 AND roleid=2";
-
-    private static final String UPDATE_USER = "UPDATE Users SET firstName = ?, lastName = ?, email = ?, address = ?, phone = ?, avatar = ?, roleid = ? WHERE username = ?";
-
-    private static final String UPDATE_PASSWORD_FOR_USER = "UPDATE Users SET password = ? WHERE username = ?";
-
-    private static final String CHECK_USERNAME_DUPLICATE = "SELECT * FROM Users WHERE userName = ? or email = ? and [status] = 1";
-
-    private static final String DELETE_USER = "UPDATE Users SET status = 0 WHERE id = ?";
-    
-    private static final String REGISTER_USER = "INSERT INTO [dbo].[Users]\n"
-            + "           ([firstname]\n"
-            + "           ,[lastname]\n"
-            + "           ,[email]\n"
-            + "           ,[avatar]\n"
-            + "           ,[username]\n"
-            + "           ,[password]\n"
-            + "           ,[address]\n"
-            + "           ,[phone]\n"
-            + "           ,[roleid]\n"
-            + "           ,[status])\n"
-            + "     VALUES\n"
-            + "           (?,?,?,?,?,?,?,?,?,?)";
 
     public List<UserDTO> getData() throws SQLException {
         List<UserDTO> users = new ArrayList<>();
@@ -51,7 +22,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_DATA);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_DATA_USER);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int id = rs.getInt("id");
@@ -92,7 +63,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(LOGIN);
+                ptm = conn.prepareStatement(DatabaseQueries.LOGIN);
                 ptm.setString(1, userName);
                 ptm.setString(2, userName);
                 ptm.setString(3, password);
@@ -135,7 +106,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_USERS);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_USERS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getInt("Total");
@@ -165,7 +136,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_USER);
+                ptm = conn.prepareStatement(DatabaseQueries.UPDATE_USER);
                 ptm.setString(1, firstName);
                 ptm.setString(2, lastName);
                 ptm.setString(3, email);
@@ -197,7 +168,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_PASSWORD_FOR_USER);
+                ptm = conn.prepareStatement(DatabaseQueries.UPDATE_PASSWORD_FOR_USER);
                 ptm.setString(1, pass);
                 ptm.setString(2, user.getUserName());
                 ptm.executeUpdate();
@@ -224,7 +195,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_USER_BY_NAME);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_USER_BY_NAME);
                 ptm.setString(1, userName);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -265,7 +236,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_USER_BY_EMAIL);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_USER_BY_EMAIL);
                 ptm.setString(1, email);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -306,7 +277,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(CHECK_USERNAME_DUPLICATE);
+                ptm = conn.prepareStatement(DatabaseQueries.CHECK_USERNAME_DUPLICATE);
                 ptm.setString(1, username);
                 ptm.setString(2, username);
                 rs = ptm.executeQuery();
@@ -337,7 +308,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(REGISTER_USER);
+                ptm = conn.prepareStatement(DatabaseQueries.REGISTER_USER);
                 ptm.setString(1, user.getFirstName());
                 ptm.setString(2, user.getLastName());
                 ptm.setString(3, user.getEmail());
@@ -372,7 +343,7 @@ public class UserDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(DELETE_USER);
+                ptm = conn.prepareStatement(DatabaseQueries.DELETE_USER);
                 ptm.setString(1, uid);
                 ptm.executeUpdate();
             }
