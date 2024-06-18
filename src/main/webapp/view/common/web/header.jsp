@@ -8,7 +8,7 @@
             <!--logo start-->
             <div class="col-lg-2 col-md-2">
                 <div class="logo" style="display: flex; justify-content: center;">
-                    <a href="DispatchServlet"><img src="view\assets\home\img\logo\logo.jpg.png" alt=""></a>
+                    <a href="DispatchServlet"><img src="view\assets\home\img\logo\logo.png" alt=""></a>
                 </div>
             </div>
             <!--logo end-->
