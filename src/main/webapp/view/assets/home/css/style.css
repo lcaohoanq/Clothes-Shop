@@ -70,7 +70,7 @@ html {
 .header_area, .container-fluid {
     padding-left: 0;
     padding-right: 0;
-    background-color: #f98404;
+    background-color: #F98404;
 }
 
 #fixed-header {
@@ -1063,7 +1063,7 @@ html {
 .footer_widget ul li:last-child{
     padding-bottom: 0;
 }
-. footer_widget {
+.footer_widget {
     margin-bottom: 40px;
 }
 .footer_social ul li,.copyright_area ul li {
