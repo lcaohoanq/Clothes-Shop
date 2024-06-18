@@ -79,7 +79,7 @@
                                                             </td>
                                                             <td class="product_total">${c.product.getSalePrice() * c.quantity}đ</td>
                                                             <td class="product_remove">
-                                                                <button style="color: #00bba6;
+                                                                <button style="color: #f98404;
                                                                         display: inline-block;
                                                                         border: none;
                                                                         border-radius: 4px;
@@ -87,7 +87,7 @@
                                                                         margin-right: 10px;
                                                                         font-weight: 600;" onclick="updateProductCart('Update',${c.product.id},${c.product.stock})">Update</button>
                                                                 <!--<a href="CartServlet?action=Delete&product_id=${c.product.id}&curPage=cart.jsp"><i class="fa fa-trash-o"></i></a>-->
-                                                                <button style="color: #00bba6;
+                                                                <button style="color: #f98404;
                                                                          display: inline-block;
                                                                         border: none;
                                                                         border-radius: 4px;

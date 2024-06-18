@@ -67,7 +67,7 @@
                                                 <c:forEach items="${PRODUCT.images}" var="img" varStatus="loop">
                                                     <div class="tab-pane fade show active" id="p_tab1" role="tabpanel">
                                                         <div class="modal_img">
-                                                            <a href="#"><img style="margin-bottom: 10px; border: 1px solid #00BBA6" src="${img}" alt=""></a>
+                                                            <a href="#"><img style="margin-bottom: 10px; border: 1px solid #f98404" src="${img}" alt=""></a>
                                                             <c:if test="${loop.index < 2}">
                                                                 <div class="view_img">
                                                                     <a class="large_view" href="${img}"><i class="fa fa-search-plus"></i></a>
@@ -157,7 +157,7 @@
                                                 <img src="view\assets\home\img\cart\span-new.png" alt="">
                                             </div>
                                             <div class="product_action">
-                                                <button style="color: #00bba6;
+                                                <button style="color: #f98404;
                                                         border: none;
                                                         border-radius: 4px;
                                                         font-size: 13px;

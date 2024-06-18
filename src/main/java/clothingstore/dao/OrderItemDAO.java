@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,13 +17,7 @@ public class OrderItemDAO extends DatabaseConnection {
 
     private ProductDAO pDao = new ProductDAO();
 
-    private static final String GET_ORDER_ITEM_BY_ORDER_ID = "SELECT order_id, product_id, SUM(quantity) AS quantity, price FROM OrderItem WHERE order_id = ? GROUP BY order_id, product_id, price";
-    private static final String CREATE_NEW_ORDER_ITEM = "INSERT INTO [dbo].[OrderItem]\n"
-            + "           ([quantity]\n"
-            + "           ,[price]\n"
-            + "           ,[product_id]\n"
-            + "           ,[order_id])\n"
-            + "     VALUES (?,?,?,?)";
+
 
     public List<OrderItem> getOrderItemByOrderId(int id) {
         List<OrderItem> list = new ArrayList<>();
@@ -32,7 +27,7 @@ public class OrderItemDAO extends DatabaseConnection {
         try {
             con = getConnection();
             if (con != null) {
-                ptm = con.prepareStatement(GET_ORDER_ITEM_BY_ORDER_ID);
+                ptm = con.prepareStatement(DatabaseQueries.GET_ORDER_ITEM_BY_ORDER_ID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -58,7 +53,7 @@ public class OrderItemDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(CREATE_NEW_ORDER_ITEM);
+                ptm = conn.prepareStatement(DatabaseQueries.CREATE_NEW_ORDER_ITEM);
                 ptm.setInt(1,item.getQuantity());
                 ptm.setDouble(2,item.getProduct().getSalePrice());
                 ptm.setInt(3, item.getProduct().getId());
