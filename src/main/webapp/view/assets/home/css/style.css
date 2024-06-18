@@ -45,7 +45,13 @@
     Temaplet Style css here
 -----------*/
 
+body, html {
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
 .non-padding {
     padding: 0;
@@ -140,25 +146,65 @@
 }
 /*header top css end*/
 
+/* Create a bouncing scroll-down arrow on homepage with cover image */
+.scroll-down {
+	display:block;
+	position:absolute;
+	z-index:100;
+	bottom:75px;
+	left:50%;
+	margin-left:-16px;
+	width:34px;
+	height:34px;
+	font-size:34px;
+	text-align:center;
+	text-decoration:none;
+	color:rgba(255,255,255,0.7);
+	-webkit-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	transform:rotate(-90deg);
+	-webkit-animation:bounce 4s 2s infinite;
+	animation: bounce 4s 2s infinite;
+        transition: background-color 0.3s;
+}
+/* Stop it bouncing and increase contrast when hovered */
+.scroll-down:hover {
+	color:#fff;
+	-webkit-animation:bounce 4s 2s infinite;
+	animation: bounce 4s 2s infinite;
+}
+
+.hidden {
+	text-indent:-9999px;
+	visibility:hidden;
+	display: none;
+}
+
 /* 2.2 header middel css here*/
 .logo {
-    width: 100%;
-}
-.header_right_info {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.logo img{
+    height: 60px;
+}
+.header_right_info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .header_middel {
+    height: 65px;
     padding: 0px;
+    align-content: center;
 }
 .search_bar form {
     position: relative;
 }
 .search_bar form input {
-    width: 275px;
     height: 38px;
-    background: none;
+    background: rgba(255, 246, 233, 0.4);
     border: 1px solid #ddd;
     padding: 0 59px 0 15px;
 }
@@ -167,7 +213,6 @@
     right: 0;
     background: none;
     border: 1px solid #ddd;
-    border-left: 1px solid #ddd;
     font-size: 17px;
     color: #333333;
     width: 45px;
@@ -286,7 +331,7 @@
 .cart_button a {
     padding: 5px 10px;
     color: #fff;
-    background: #00bba6;
+    background: #FF7F3E;
     font-size: 13px;
     text-transform: uppercase;
     line-height: 20px;
@@ -297,7 +342,7 @@
     text-align: right;
 }
 .cart_button a:hover{
-    background: #018576;
+    background: #DC5F00;
 }
 /*header middel css end*/
 
@@ -475,13 +520,23 @@
 /*sidebar banner css end*/
 
 /*banner slider css here*/
+.banner .main-header {
+    position:relative;
+    display:table;
+    height:100vh;
+    width: 100%;
+    overflow:hidden;
+}
+
 .single_slider {
-    height: 350px;
+    height: 95vh;
+    width: 100%;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 .single_slider::before{
     position: absolute;
@@ -503,7 +558,7 @@
     border: 3px solid #fff;
 }
 .slider_active.owl-carousel .owl-dots .owl-dot.active{
-    background: #00bba6;
+    background: #FF7F3E;
 }
 .slider_active.owl-carousel .owl-dots {
     position: absolute;
@@ -511,7 +566,7 @@
     left: 100px;
 }
 .banner_slider {
-    margin-bottom: 65px;
+    margin-top: 65px;
 }
 
 .banner_slider.slider_two {
@@ -525,22 +580,23 @@
 /* 2.5 categorie menu css here*/
 .sidebar_widget.catrgorie  {
     padding: 10px;
-    background: #00bba6;
-    border: 5px solid #89e8dd;
+    background: #F6995C;
+    border: 2px solid #373A40;
 }
 .sidebar_widget.catrgorie  h3 {
     padding-right: 10px;
     text-transform: uppercase;
     font-weight: 500;
-    color: #fff;
+    color: rgb(0,0,0);
     border-bottom: 1px solid #009483;
     font-size: 18px;
+    font-weight: bold;
     padding-bottom: 10px;
 }
 .sidebar_widget.catrgorie ul li a {
     display: block;
     padding: 7px 11px 5px 0px;
-    color: #fff;
+    color: rgb(0,0,0);
     text-transform: capitalize;
     border-bottom: 1px solid #01ab98;
     position: relative;
@@ -553,7 +609,7 @@
     transform: rotate(90deg);
 }
 .sidebar_widget.catrgorie  > ul > li.has-sub > a:hover {
-    color: #e84c3d;
+    color: #00215E;
 }
 .sidebar_widget.catrgorie > ul > li:last-child > a {
     border-bottom: 0;
@@ -684,10 +740,12 @@
 .sidebar_widget.newsletter button {
     color: #fff;
     font-size: 13px;
-    text-transform: capitalize;
+    font-weight: bold;
+    text-transform: uppercase;
     margin: 15px 0 0;
     border: none;
-    background: #00bba6;
+    border-radius: 5px;
+    background: #FF7F3E;
     height: 40px;
     display: block;
     cursor: pointer;
@@ -950,7 +1008,7 @@
 /* 2.12 footer area css here*/
 .footer_area {
     color: #fff;
-    background: #00bba6;
+    background: #FF7F3E;
     padding: 38px 70px 0;
     position: relative;
 }
@@ -1127,7 +1185,7 @@
 }
 .slider_content_inner{
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: middle;   
 }
 .slider_content_inner h1 {
     font-size: 65px;
@@ -1154,7 +1212,7 @@
     font-size: 12px;
     display: inline-block;
     padding: 8px 23px;
-    background: #00bba6;
+    background: #FF7F3E;
     border-radius: 5px;
 }
 .slider_content_inner a:hover{

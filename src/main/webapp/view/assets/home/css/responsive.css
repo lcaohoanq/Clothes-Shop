@@ -8,11 +8,11 @@
     .mega_menu {
         width: 592px;
     }
- 
+
     .product_info ul li a {
         padding: 2px 11px;
     }
-    
+
 }
 
 
@@ -46,7 +46,7 @@
     .mega_bottom {
         padding-bottom: 25px;
     }
-    
+
     /*shop page css here*/
     .list_product_content {
         padding-right: 30px;
@@ -81,11 +81,11 @@
     .product_tab_button {
         margin-right: 18px;
     }
-    
+
     .product_gallery_thumb {
         width: 43%;
     }
-    
+
     .product_tab.product_video .product_tab_button ul li {
         width: 28%;
         margin-right: 11px;
@@ -96,7 +96,7 @@
     .about_progressbar {
         padding: 0 20px 45px;
     }
-    
+
     /*blog details css here*/
     .posts_thumb {
         margin-right: 6px;
@@ -108,10 +108,10 @@
     .owl-carousel .owl-item .product_thumb img {
         width: 100%;
     }
-    
-    
-    
-    
+
+
+
+
 }
 
 
@@ -120,7 +120,7 @@
 /* Tablet Layout :768px. */
 
 @media (min-width: 768px) and (max-width: 991px) {
-   .pos_home_section .row.pos_home {
+    .pos_home_section .row.pos_home {
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -144,7 +144,7 @@
         display: -ms-flexbox;
         display: flex;
     }
-  .sidebar_widget.catrgorie.mb-35,.sidebar_widget.wishlist.mb-35 {
+    .sidebar_widget.catrgorie.mb-35,.sidebar_widget.wishlist.mb-35 {
         margin-bottom: 60px;
     }
     .sidebar_widget.banner .banner_img {
@@ -173,7 +173,7 @@
     .footer_widget {
         margin-bottom: 25px;
     }
-  
+
     .footer_top {
         padding-bottom: 8px;
     }
@@ -192,7 +192,7 @@
     .brand_logo.mb-60 {
         margin-bottom: 56px;
     }
-    
+
     /*home page two css here*/
     .banner_area.banner_two .single_banner {
         margin-bottom: 30px;
@@ -206,8 +206,8 @@
     .brand_logo.brand_two {
         padding-bottom: 55px;
     }
-    
-    
+
+
     /*shop page css here*/
     .list_product_content {
         padding-right: 0;
@@ -220,7 +220,7 @@
         padding: 2px 5px;
         font-size: 11px;
     }
-     .pos_home_section.shop_section.shop_fullwidth {
+    .pos_home_section.shop_section.shop_fullwidth {
         padding-bottom: 65px;
     }
     .pagination_style {
@@ -229,7 +229,7 @@
     .product_list_item.mb-35 {
         margin-bottom: 65px;
     }
-    
+
     /*product page css here*/
     .product_tab_button {
         margin-right: 16px;
@@ -242,12 +242,12 @@
         width: 28%;
         margin-right: 12px;
     }
-    
+
     .box_quantity button {
         padding: 0 10px;
         margin-left: 9px;
     }
-    
+
     .product_tab.product_sidebar .product_tab_button {
         margin-left: 15px;
     }
@@ -313,7 +313,7 @@
         padding: 0 23px;
     }
     /*login page css here*/
-      .account_form form {
+    .account_form form {
         padding: 12px;
     }
     .login_submit button {
@@ -334,7 +334,7 @@
     .login_submit a {
         line-height: 31px;
     }
-    
+
     /*about page css here*/
     .about_content p {
         font-size: 13px;
@@ -358,13 +358,13 @@
     .single_counterup {
         margin-bottom: 35px;
     }
-    
-    
+
+
     /*services page css here*/
     .unlimited_services {
         padding: 32px 20px 35px;
     }
-    
+
     /*blog details css here*/
     .product_review_form.blog_form {
         margin-bottom: 25px;
@@ -391,14 +391,14 @@
         width: 100%;
     }
 
-    
+
 
 }
 
 /* small mobile :320px. */
 
 @media (max-width: 767px) {
-     .pos_page_inner {
+    .pos_page_inner {
         margin: 0;
     }
     .switcher > ul, .header_links > ul {
@@ -424,7 +424,7 @@
     .new_product_area.mb-30 {
         margin-bottom: 0;
     }
- 
+
     .search_bar form input {
         width: 100%;
     }
@@ -458,7 +458,7 @@
     .banner_area.mb-30 {
         margin-bottom: 45px;
     }
-     .brand_logo.mb-30 {
+    .brand_logo.mb-30 {
         margin-bottom: 57px;
     }
     .sidebar_widget.banner.mb-35 .banner_img.mb-35 {
@@ -470,13 +470,13 @@
     .sidebar_widget.tags.mb-35 {
         margin-bottom: 55px;
     }
-   .sidebar_widget.newsletter.mb-35 {
+    .sidebar_widget.newsletter.mb-35 {
         margin-bottom: 64px;
     }
     .single_brand img {
         margin: 0 auto;
     }
-   .sidebar_widget.banner.mb-35,.sidebar_widget.bottom {
+    .sidebar_widget.banner.mb-35,.sidebar_widget.bottom {
         margin-bottom: 65px;
     }
     .sidebar_widget.catrgorie {
@@ -514,10 +514,10 @@
     .banner_slider.slider_two .slider_active.owl-carousel .owl-dots {
         bottom: 20px;
     }
-     .banner_area.banner_two {
+    .banner_area.banner_two {
         margin-bottom: 44px;
     }
-    
+
     .banner_area.banner_two.mb-30 {
         margin-bottom: 30px;
     }
@@ -538,7 +538,7 @@
         margin-bottom: 30px;
     }
     .slider_content_inner a {
-	    text-transform: uppercase;
+        text-transform: uppercase;
         font-size: 12px;
         padding: 6px 17px;
     }
@@ -552,12 +552,12 @@
     .brand_logo.brand_two {
         padding-bottom: 55px;
     }
-    
+
     /*shop page css here*/
     .breadcrumbs_area {
         margin-top: 35px;
     }
-     .shop_toolbar {
+    .shop_toolbar {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -575,17 +575,17 @@
         -ms-flex-pack: center;
         justify-content: center;
     }
-     .select_option .nice-select {
+    .select_option .nice-select {
         width: 155px;
         margin-left: 19px;
-    } 
+    }
     .list_button {
         margin-bottom: 11px;
     }
     .page_amount {
         margin-bottom: 14px;
     }
-        .pagination_style {
+    .pagination_style {
         height: 80px;
         line-height: 35px;
         -webkit-box-orient: vertical;
@@ -611,7 +611,7 @@
     .list_product_content {
         padding-right: 0;
     }
-   .item_page label {
+    .item_page label {
         margin-bottom: 0;
     }
     .sidebar_widget.special {
@@ -643,7 +643,7 @@
     .product_details.sidebar {
         padding: 62px 20px 0;
     }
-   
+
     .product_tab_button {
         width: 25%;
         float: left;
@@ -658,7 +658,7 @@
         padding: 5px;
         margin-right: 8px;
     }
-   
+
     .product_d_right h1 {
         font-size: 18px;
         margin-bottom: 21px;
@@ -728,7 +728,7 @@
         padding: 8px 20px;
         font-size: 14px;
     }
-    
+
     .product_info_button ul li a::before {
         height: 40px;
         border: 20px solid transparent;
@@ -764,10 +764,10 @@
     }
     .portfolio_link {
         height: 50px;
-      
+
         width: 50px;
     }
-    
+
     /*cart page css here*/
     .coupon_code h3 {
         line-height: 28px;
@@ -780,7 +780,7 @@
     .account_form h2 {
         font-size: 26px;
     }
-    
+
     /*checkout page css here*/
     .checkout_info {
         padding: 20px 15px;
@@ -834,7 +834,7 @@
     .error_section {
         padding: 40px 0 50px;
     }
-    
+
     /*faq page css here*/
     .faq_content_wrapper h4 {
         font-size: 14px;
@@ -846,7 +846,7 @@
     .card-header.card_accor button i {
         right: 10px;
     }
-    
+
     /*about page css here*/
     .about_thumb {
         margin-bottom: 25px;
@@ -913,7 +913,7 @@
     .advantages_button a {
         padding: 5px 13px;
     }
-    
+
     /*blog details css here*/
     .product_review_form.blog_form input {
         margin-bottom: 20px;
@@ -933,7 +933,7 @@
     .main_content_area {
         padding: 70px 20px 55px;
     }
-       .main_blog_area.blog_details {
+    .main_blog_area.blog_details {
         padding: 31px 20px 10px;
     }
     /*modal css here*/
@@ -962,7 +962,7 @@
     .owl-carousel .owl-item .product_thumb img {
         width: 100%;
     }
-    
+
 
 }
 
@@ -970,7 +970,7 @@
 
 
 @media (max-width: 479px) {
-	  .header_right_info {
+    .header_right_info {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
@@ -988,14 +988,14 @@
     .mini_cart {
         width: 100%;
     }
-     .product_tab {
+    .product_tab {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
         margin-bottom: 30px;
     }
-    
+
     .product_gallery_thumb {
         width: 100%;
         margin: 0;
@@ -1004,13 +1004,13 @@
     .login_submit a {
         display: none;
     }
-    
+
     .modal-dialog.modal-dialog-centered {
         min-width: 93%;
     }
 
-   
-	
+
+
 }
 
 
@@ -1018,11 +1018,11 @@
 /* Large Mobile :480px. */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-      .header_right_info {
+    .header_right_info {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-          
+
     }
     .product_info ul li a {
         padding: 2px 10px;
@@ -1031,14 +1031,14 @@
     .tab-content.produc_tab_c {
         width: 70%;
     }
-   .product_tab_button {
+    .product_tab_button {
         width: 24%;
     }
-    
+
     .product_tab.fix {
         margin-bottom: 30px;
     }
-    
+
     .product_gallery_thumb {
         width: 44%;
     }
@@ -1075,8 +1075,8 @@
     .modal_img img {
         width: 100%;
     }
-    
-    
+
+
 }
 
 

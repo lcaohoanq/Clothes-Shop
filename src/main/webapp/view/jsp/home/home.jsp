@@ -40,26 +40,50 @@
         <div class="pos_page">
             <div class="container-fluid">
                 <!--pos page inner-->
-                <div class="pos_page_inner">  
+                <div class="pos_page_inner">
+                    <div>
                     <!--header area -->
                     <%@include file="../../common/web/header.jsp"%>
                     <!--header end -->
-
+                    <!--banner slider start-->
+                    <div class="main-header banner_slider slider_1">
+                        <div class="slider_active owl-carousel">
+                            <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_1.png)">
+                                <div class="slider_content">
+                                    <div class="slider_content_inner">  
+                                        <h1>Men's Fashion</h1>
+                                        <p>Thời trang, phong cách trẻ trung. </p>
+                                        <a href="ShopServlet">shop now</a>
+                                    </div>     
+                                </div>    
+                            </div>
+                            <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_2.png)">
+                                <div class="slider_content">
+                                    <div class="slider_content_inner">  
+                                        <h1>New Collection</h1>
+                                        <p>Nơi cập nhật những trào lưu bạn cần. </p>
+                                        <a href="ShopServlet">shop now</a>
+                                    </div>         
+                                </div>         
+                            </div>
+                            <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_3.png)">
+                                <div class="slider_content">  
+                                    <div class="slider_content_inner">  
+                                        <h1>Best Collection</h1>
+                                        <p>Bộ sưu tập mùa hè, mùa đông. </p>
+                                        <a href="ShopServlet">shop now</a>
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <a class= "scroll-down fa-solid fa-arrow-down" href="#content"><span class="hidden"></span></a>
+                    </div>
+                    <!--banner slider start-->
                     <!--pos home section-->
-                    <div class=" pos_home_section">
+                    <div id="content" class=" pos_home_section container">
                         <div class="row pos_home">
                             <div class="col-lg-3 col-12">
-                                <!--sidebar banner-->
-                                <div class="sidebar_widget banner mb-35">
-                                    <div class="banner_img mb-35">
-                                        <a href="#"><img src="view\assets\home\img\banner\banner5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="banner_img">
-                                        <a href="#"><img src="view\assets\home\img\banner\banner6.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <!--sidebar banner end-->
-
                                 <!--categorie menu start-->
                                 <div class="sidebar_widget catrgorie mb-35">
                                     <h3>Bạn tìm</h3>
@@ -143,40 +167,6 @@
                                 <!--sidebar banner end-->
                             </div>
                             <div class="col-lg-9 col-md-12">
-                                <!--banner slider start-->
-                                <div class="banner_slider slider_1">
-                                    <div class="slider_active owl-carousel">
-                                        <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_1.png)">
-                                            <div class="slider_content">
-                                                <div class="slider_content_inner">  
-                                                    <h1>Men's Fashion</h1>
-                                                    <p>Thời trang, phong cách trẻ trung. </p>
-                                                    <a href="ShopServlet">shop now</a>
-                                                </div>     
-                                            </div>    
-                                        </div>
-                                        <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_2.png)">
-                                            <div class="slider_content">
-                                                <div class="slider_content_inner">  
-                                                    <h1>New Collection</h1>
-                                                    <p>Nơi cập nhật những trào lưu bạn cần. </p>
-                                                    <a href="ShopServlet">shop now</a>
-                                                </div>         
-                                            </div>         
-                                        </div>
-                                        <div class="single_slider" style="background-image: url(view/assets/home/img/slider/slide_3.png)">
-                                            <div class="slider_content">  
-                                                <div class="slider_content_inner">  
-                                                    <h1>Best Collection</h1>
-                                                    <p>Bộ sưu tập mùa hè, mùa đông. </p>
-                                                    <a href="ShopServlet">shop now</a>
-                                                </div> 
-                                            </div> 
-                                        </div>
-                                    </div>
-                                </div> 
-                                <!--banner slider start-->
-
                                 <!--new product area start-->
                                 <div class="new_product_area">
                                     <div class="block_title">
