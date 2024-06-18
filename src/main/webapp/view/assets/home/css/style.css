@@ -70,7 +70,7 @@ html {
 .header_area, .container-fluid {
     padding-left: 0;
     padding-right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #f98404;
 }
 
 #fixed-header {
