@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +11,7 @@ import java.util.List;
 import clothingstore.model.TypeDTO;
 
 public class TypeDAO extends DatabaseConnection {
-    private static final String GET_TYPE_BY_ID = "SELECT * FROM Types WHERE id = ?";
-    private static final String GET_ALL_TYPE= "SELECT * FROM Types";
+
     
     public TypeDTO getTypeById(int id) throws SQLException {
         TypeDTO type = null;
@@ -21,7 +21,7 @@ public class TypeDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TYPE_BY_ID);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TYPE_BY_ID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
@@ -54,7 +54,7 @@ public class TypeDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_ALL_TYPE);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_ALL_TYPE);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int typeid = rs.getInt("id");

@@ -17,7 +17,7 @@
                 var email = document.getElementById('email-input-at-home').value;
                 var action = action;
                 $.ajax({
-                    url: "/PRJ301_Sp24_ClothesShop/EmailServlet",
+                    url: "/clothes/EmailServlet",
                     type: "get",
                     data: {
                         email: email,
@@ -38,7 +38,7 @@
 
         <!--pos page start-->
         <div class="pos_page">
-            <div class="container">
+            <div class="container-fluid">
                 <!--pos page inner-->
                 <div class="pos_page_inner">  
                     <!--header area -->
@@ -48,7 +48,7 @@
                     <!--pos home section-->
                     <div class=" pos_home_section">
                         <div class="row pos_home">
-                            <div class="col-lg-3 col-md-8 col-12">
+                            <div class="col-lg-3 col-12">
                                 <!--sidebar banner-->
                                 <div class="sidebar_widget banner mb-35">
                                     <div class="banner_img mb-35">
@@ -353,6 +353,15 @@
         <!--footer area end-->
         <!-- all js here -->
         <%@include file="../../common/web/add_js.jsp"%>
+        <script>
+            $(document).ready(function () {
+                $(".slider_active").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true
+                });
+            });
+        </script>
     </body>
 </html>
 

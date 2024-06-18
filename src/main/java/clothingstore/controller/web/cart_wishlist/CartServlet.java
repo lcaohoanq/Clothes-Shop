@@ -37,6 +37,7 @@ public class CartServlet extends HttpServlet {
         List<ProductDTO> wishlists = null;
         HashMap<Integer, ProductDTO> listWishlist = null;
         try {
+            request.setAttribute("CURRENTSERVLET", "Cart");
             HttpSession session = request.getSession();
             String action = request.getParameter("action");
             if (action == null) {

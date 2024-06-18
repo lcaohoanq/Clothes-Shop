@@ -39,7 +39,7 @@
         animateOut: 'fadeOut',
 		loop: true,
         nav: false,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 8000,
         items: 1,
         dots:true,

@@ -76,7 +76,7 @@
                                                                         In Stock
                                                                     </td>
                                                                     <td class="product_total">
-                                                                        <button style="color: #00bba6;
+                                                                        <button style="color: #f98404;
                                                                                 border: none;
                                                                                 border-radius: 4px;
                                                                                 font-size: 13px;

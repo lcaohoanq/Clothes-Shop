@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,14 +13,6 @@ import clothingstore.model.TypeDTO;
 
 public class CategoryDAO extends DatabaseConnection {
 
-    private static final String GETDATA = "SELECT * FROM Categories";
-    private static final String GET_QUANTITY_BY_NAME = "SELECT COUNT(*) AS Total FROM Categories WHERE categoryname = ?";
-    private static final String GET_CATEGORY_BYID = "SELECT * FROM Categories WHERE categoryid = ?";
-    private static final String INSERT_CATEGORY = "INSERT INTO Categories VALUES (?,?)";
-    private static final String DELETE_CATEGORY = "DELETE FROM Categories WHERE categoryid = ?";
-    private static final String GET_CATEGORY_BY_TYPEID = "SELECT * FROM Categories WHERE type_id = ?";
-    private static final String UPDATE_CATEGORY = "UPDATE Categories SET categoryname = ?, Type_id = ? WHERE categoryid = ?";
-
     public List<CategoryDTO> getData() throws SQLException {
         List<CategoryDTO> categories = new ArrayList<>();
         Connection conn = null;
@@ -28,7 +21,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GETDATA);
+                ptm = conn.prepareStatement(DatabaseQueries.GETDATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     TypeDAO dao = new TypeDAO();
@@ -63,7 +56,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_CATEGORY_BY_TYPEID);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_CATEGORY_BY_TYPEID);
                 ptm.setInt(1, typpid);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -99,7 +92,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_CATEGORY_BYID);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_CATEGORY_BYID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -136,7 +129,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_QUANTITY_BY_NAME);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_QUANTITY_BY_NAME);
                 ptm.setString(1, name);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
@@ -165,7 +158,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             con = getConnection();
             if (con != null) {
-                ptm = con.prepareStatement(INSERT_CATEGORY);
+                ptm = con.prepareStatement(DatabaseQueries.INSERT_CATEGORY);
                 ptm.setString(1, categoryName);
                 ptm.setString(2, typeId);
                 ptm.executeUpdate();
@@ -185,7 +178,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(DELETE_CATEGORY);
+                ptm = conn.prepareStatement(DatabaseQueries.DELETE_CATEGORY);
                 ptm.setString(1, cid);
                 ptm.executeUpdate();
             }
@@ -211,7 +204,7 @@ public class CategoryDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_CATEGORY);
+                ptm = conn.prepareStatement(DatabaseQueries.UPDATE_CATEGORY);
                 ptm.setString(1, name);
                 ptm.setString(2, tId);
                 ptm.setString(3, id);

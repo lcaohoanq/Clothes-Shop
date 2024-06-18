@@ -29,6 +29,7 @@ public class WishlistServlet extends HttpServlet {
         List<ProductDTO>  wishlists = null;
         HashMap<Integer, ProductDTO> listItem = null;
         try {
+            request.setAttribute("CURRENTSERVLET", "Wishlist");
             HttpSession session = request.getSession();
             String action = request.getParameter("action");
             if(action == null) {

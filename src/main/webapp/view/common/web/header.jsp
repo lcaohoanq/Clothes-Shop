@@ -1,70 +1,49 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="header_area">
-    <!--header top--> 
-    <div class="header_top">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-                <!--                <div class="switcher">
-                                    <ul>
-                                        <li class="languages"><a href="#"><img src="assets\img\logo\fontlogo.jpg" alt=""> English <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown_languages">
-                                                <li><a href="#"><img src="assets\img\logo\fontlogo.jpg" alt=""> English</a></li>         
-                                            </ul>   
-                                        </li> 
-                
-                                        <li class="currency"><a href="#"> Currency : $ <i class="fa fa-angle-down"></i></a>
-                                            <ul class="dropdown_currency">
-                                                <li><a href="#"> Dollar (USD)</a></li>
-                                                <li><a href="#"> Euro (EUR)  </a></li>
-                                            </ul> 
-                                        </li> 
-                                    </ul>
-                                </div>-->
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="header_links">
-                    <ul>
-                        <li><a href="ContactServlet" title="Contact">Contact</a></li>
-                        <li><a href="WishlistServlet" title="wishlist">My wishlist</a></li>
-                        <li><a href="CartServlet" title="My cart">My cart</a></li>  
-                            <c:if test="${sessionScope.account != null}">
-                            <li><a href="ProfileServlet" title="My account">My account</a></li>
-                            </c:if>
-                            <c:if test="${sessionScope.account == null}">
-                            <li><a href="DispatchServlet?btnAction=Login" title="Login">Login</a></li>  
-                            </c:if>
-                            <c:if test="${sessionScope.account != null}">
-                            <li><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
-                            <li><a href="DispatchServlet?btnAction=Logout">Logout</a></li>
-                            </c:if>
-                    </ul>
-                </div>   
-            </div>
-        </div> 
-    </div> 
-    <!--header top end-->
-
-    <!--header middel--> 
+<div class="header_area" id="fixed-header">
+    <!--header start--> 
     <div class="header_middel">
-        <div class="row align-items-center">
+        <div class="row align-items-center" style="padding: 0">
             <!--logo start-->
-            <div class="col-lg-3 col-md-3">
+            <div class="col-lg-1 col-md-1">
                 <div class="logo">
                     <a href="DispatchServlet"><img src="view\assets\home\img\logo\logo.jpg.png" alt=""></a>
                 </div>
             </div>
             <!--logo end-->
-            <div class="col-lg-9 col-md-9">
+            <div class="header_bottom col-lg-7 col-md-7">
+                <div class="row">
+                    <div class="col-12 non-padding">
+                        <div class="main_menu d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li class="${requestScope.CURRENTSERVLET == "Home" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="DispatchServlet">Home</a></li>
+                                    <li class="${requestScope.CURRENTSERVLET == "Shop" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="ShopServlet">SHOP</a></li>
+                                    <li class="${requestScope.CURRENTSERVLET == "Contact" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="ContactServlet">Contact Us</a></li>
+                                    <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="WishlistServlet">My Wishlist</a></li>
+                                    <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="CartServlet">My Cart</a></li>
+                                        <c:if test="${sessionScope.account == null}">
+                                        <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="DispatchServlet?btnAction=Login" title="Login">Login</a></li>  
+                                        </c:if>
+                                        <c:if test="${sessionScope.account != null}">
+                                        <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-2 col-md-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
+                                        </c:if>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
                 <div class="header_right_info">
-                    <div class="search_bar">
+                    <div class="search_bar col-lg-7 no-padding">
                         <form action="DispatchServlet" method="get" >
                             <input name="txtSearch" value="" placeholder="Search..." type="text">
                             <button name="btnAction" value="Search" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
-                    <div class="shopping_cart" id="cart-icon">
+                    <div class="shopping_cart col-lg-2" id="cart-icon">
                         <c:if test="${sessionScope.CART != null && sessionScope.CART.size() != 0}">
                             <a href="#"><i class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()} Items <i class="fa fa-angle-down"></i></a>
                             </c:if>
@@ -113,26 +92,19 @@
                         <!--mini cart end-->
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </div>     
-    <!--header middel end-->      
-    <div class="header_bottom">
-        <div class="row">
-            <div class="col-12">
-                <div class="main_menu_inner">
                     <div class="main_menu d-none d-lg-block">
-                        <nav>
-                            <ul>
-                                <li class="${requestScope.CURRENTSERVLET == "Home" ? "active" : ""}"><a href="DispatchServlet">Home</a></li>
-                                <li class="${requestScope.CURRENTSERVLET == "Shop" ? "active" : ""}"><a href="ShopServlet">SHOP</a></li>
-                                <li class="${requestScope.CURRENTSERVLET == "Contact" ? "active" : ""}"><a href="ContactServlet">contact us</a></li>
+                        <c:if test="${sessionScope.account != null}">
+                            <nav>
+                                <ul>
+                                    <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""}"><a href="DispatchServlet?btnAction=Logout">Logout</a></li>
+                                    </c:if>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>     
+    <!--header middel end-->      
+
 </div>
