@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.Date;
@@ -17,21 +18,7 @@ import clothingstore.model.TypeDTO;
 
 public class ProductDAO extends DatabaseConnection {
 
-    private static final String GET_DATA = "SELECT * FROM Products WHERE status = 1";
-    private static final String GET_TOTAL_PRODUCTS = "SELECT COUNT(*) AS Total FROM Products WHERE status = 1";
-    private static final String GET_QUANTITY_SOLD = "SELECT SUM(unitSold) AS Total from Products";
-    private static final String GET_STOCK = "SELECT stock AS Total FROM Products WHERE id = ?";
-    private static final String GET_PRODUCTS_LOW_QUANTITY = "SELECT COUNT(*) AS Total from Products WHERE Stock < 10 AND status = 1";
-    private static final String GET_PRODUCTS_BY_ID = "SELECT * FROM Products WHERE id = ? AND status = 1";
-    private static final String GET_PRODUCTS_BY_TYPE_ID = "SELECT * FROM Products WHERE typeid = ? AND status = 1";
-    private static final String GET_PRODUCTS_BY_CATEGORY_ID = "SELECT * FROM Products WHERE categoryid = ? AND status = 1";
-    private static final String GET_PRODUCTS_BY_SUPPLIER_ID = "SELECT * FROM Products WHERE supplierid = ? AND status = 1";
-    private static final String GET_PRODUCTS_NEW_YEAR = "SELECT * from Products WHERE year(releasedate) = 2024 AND status = 1";
-    private static final String GET_PRODUCTS_BEST_SELLER = "SELECT TOP(5) * from Products WHERE status = 1 order by unitSold desc";
-    private static final String GET_PRODUCTS_BY_SEARCH = "SELECT * FROM Products WHERE productname LIKE ? AND status = 1";
-    private static final String DELETE_PRODUCT = "UPDATE Products SET status = 0 WHERE id = ?";
-    private static final String UPDATE_QUANTITY_PRODUCT = "UPDATE Products SET [stock] = ? WHERE id = ?";
-    private static final String INSERT_PRODUCT = "INSERT INTO Products VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
 
     public List<ProductDTO> getData() throws SQLException {
         List<ProductDTO> products = new ArrayList<>();
@@ -41,7 +28,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_DATA);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_DATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
@@ -90,7 +77,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             con = getConnection();
             if (con != null) {
-                ptm = con.prepareStatement(GET_PRODUCTS_BY_ID);
+                ptm = con.prepareStatement(DatabaseQueries.GET_PRODUCTS_BY_ID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
@@ -129,7 +116,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             con = getConnection();
             if (con != null) {
-                ptm = con.prepareStatement(GET_PRODUCTS_BY_TYPE_ID);
+                ptm = con.prepareStatement(DatabaseQueries.GET_PRODUCTS_BY_TYPE_ID);
                 ptm.setInt(1, typeId);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -180,7 +167,7 @@ public class ProductDAO extends DatabaseConnection {
 //        try {
 //            con = getConnection();
 //            if (con != null) {
-//                ptm = con.prepareStatement(GET_PRODUCTS_BY_CATEGORY_ID);
+//                ptm = con.prepareStatement(DatabaseQueries.GET_PRODUCTS_BY_CATEGORY_ID);
 //                ptm.setInt(1, categoryid);
 //                rs = ptm.executeQuery();
 //                while (rs.next()) {
@@ -220,7 +207,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             con = getConnection();
             if (con != null) {
-                ptm = con.prepareStatement(GET_PRODUCTS_BY_SUPPLIER_ID);
+                ptm = con.prepareStatement(DatabaseQueries.GET_PRODUCTS_BY_SUPPLIER_ID);
                 ptm.setInt(1, supplierid);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -261,7 +248,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_PRODUCTS);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_PRODUCTS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getInt("Total");
@@ -291,7 +278,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_QUANTITY_SOLD);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_QUANTITY_SOLD);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getInt("Total");
@@ -321,7 +308,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_STOCK);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_STOCK);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -352,7 +339,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PRODUCTS_LOW_QUANTITY);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PRODUCTS_LOW_QUANTITY);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getInt("Total");
@@ -390,7 +377,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PRODUCTS_NEW_YEAR);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PRODUCTS_NEW_YEAR);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
@@ -439,7 +426,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PRODUCTS_BEST_SELLER);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PRODUCTS_BEST_SELLER);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
@@ -488,7 +475,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_PRODUCTS_BY_SEARCH);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PRODUCTS_BY_SEARCH);
                 ptm.setString(1, "%" + txtSearch + "%");
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -611,7 +598,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(DELETE_PRODUCT);
+                ptm = conn.prepareStatement(DatabaseQueries.DELETE_PRODUCT);
                 ptm.setString(1, pid);
                 ptm.executeUpdate();
             }
@@ -637,7 +624,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_QUANTITY_PRODUCT);
+                ptm = conn.prepareStatement(DatabaseQueries.UPDATE_QUANTITY_PRODUCT);
                 ptm.setInt(1, (item.getProduct().getStock() - item.getQuantity()));
                 ptm.setInt(2, item.getProduct().getId());
                 ptm.executeUpdate();
@@ -665,7 +652,7 @@ public class ProductDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(INSERT_PRODUCT);
+                ptm = conn.prepareStatement(DatabaseQueries.INSERT_PRODUCT);
                 ptm.setString(1, name);
                 ptm.setInt(2, sId);
                 ptm.setInt(3, cId);
@@ -765,7 +752,7 @@ public class ProductDAO extends DatabaseConnection {
 
 //        try {
 //            conn = getConnection();
-//            PreparedStatement st = conn.prepareStatement(sql);
+//            PreparedStatement st = conn.prepareStatement(DatabaseQueries.sql);
 //            rs = st.executeQuery();
 //            while (rs.next()) {
 //                CategoryDAO cDao = new CategoryDAO();

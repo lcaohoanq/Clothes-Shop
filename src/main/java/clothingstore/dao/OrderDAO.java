@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.Date;
@@ -17,26 +18,6 @@ public class OrderDAO extends DatabaseConnection {
     private UserDAO uDao = new UserDAO();
     private PaymentDAO pDao = new PaymentDAO();
 
-    private static final String GET_TOTAL_SALE = "SELECT SUM(totalprice) AS TotalSale from [Orders]";
-    private static final String GET_TOTAL_MONEY_YEAR = "SELECT SUM(totalprice) AS TotalSale from [Orders] where year([orderdate]) = ? AND Status = 1";
-    private static final String GET_TOTAL_MONEY_MONTH = "SELECT SUM(totalprice) AS TotalSale from [Orders] where month([orderdate]) = ? AND Status = 1";
-    private static final String GET_NUMBER_ORDERS = "SELECT COUNT(*) AS Total FROM [Orders]";
-    private static final String GET_TOTAL_ORDERS = "SELECT * FROM [Orders]";
-    private static final String GET_TOTAL_SALE_TODAY = "SELECT sum(totalprice) AS TotalSale FROM [Orders] "
-            + " WHERE cast(orderdate as Date) = cast(getdate() as Date)";
-    private static final String GET_ORDERS_USER = "SELECT * FROM [Orders] WHERE username = ?";
-    private static final String GET_ORDERS_BYID = "SELECT * FROM [Orders] WHERE order_id = ?";
-    private static final String GET_RECENT_ORDERS = "SELECT Top 10 * FROM Orders ORDER BY orderdate DESC";
-    private static final String UPDATE_STATUS = "UPDATE [Orders] SET status = 1 WHERE order_id = ?";
-    private static final String GET_LATEST_ORDER = "SELECT TOP 1 * FROM Orders ORDER BY order_id DESC";
-    private static final String CREATE_ORDER = "INSERT INTO [dbo].[Orders]\n"
-            + "           ([orderdate]\n"
-            + "           ,[totalprice]\n"
-            + "           ,[paymentid]\n"
-            + "           ,[username]\n"
-            + "           ,[status])\n"
-            + "     VALUES(?,?,?,?, 0)";
-
     public double getTotalSale() throws SQLException {
         double result = 0;
         Connection conn = null;
@@ -45,7 +26,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_SALE);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_SALE);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getDouble("TotalSale");
@@ -75,7 +56,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_SALE_TODAY);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_SALE_TODAY);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getDouble("TotalSale");
@@ -105,7 +86,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_MONEY_YEAR);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_MONEY_YEAR);
                 ptm.setInt(1, year);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -136,7 +117,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_MONEY_MONTH);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_MONEY_MONTH);
                 ptm.setInt(1, month);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -167,7 +148,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_RECENT_ORDERS);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_RECENT_ORDERS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int orderId = rs.getInt("order_id");
@@ -206,7 +187,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_LATEST_ORDER);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_LATEST_ORDER);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
                     int orderId = rs.getInt("order_id");
@@ -243,7 +224,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_ORDERS_USER);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_ORDERS_USER);
                 ptm.setString(1, userName);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -282,7 +263,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_ORDERS_BYID);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_ORDERS_BYID);
                 ptm.setString(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
@@ -321,7 +302,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_NUMBER_ORDERS);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_NUMBER_ORDERS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     result = rs.getInt("Total");
@@ -351,7 +332,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GET_TOTAL_ORDERS);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_TOTAL_ORDERS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int orderId = rs.getInt("order_id");
@@ -389,7 +370,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(UPDATE_STATUS);
+                ptm = conn.prepareStatement(DatabaseQueries.UPDATE_STATUS);
                 ptm.setString(1, orderId);
                 ptm.executeUpdate();
             }
@@ -415,7 +396,7 @@ public class OrderDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(CREATE_ORDER);
+                ptm = conn.prepareStatement(DatabaseQueries.CREATE_ORDER);
                 ptm.setString(1, date);
                 ptm.setDouble(2, total);
                 ptm.setInt(3, payment.getPaymentID());

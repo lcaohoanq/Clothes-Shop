@@ -1,5 +1,6 @@
 package clothingstore.dao;
 
+import clothingstore.constant.DatabaseQueries;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +11,7 @@ import java.util.List;
 import clothingstore.model.SupplierDTO;
 
 public class SupplierDAO extends DatabaseConnection {
-    private static final String GETDATA = "SELECT * FROM Suppliers";
-    private static final String GETSUPPLIERBYID = "SELECT * FROM Suppliers WHERE supplierid = ?";
+
     
     public List<SupplierDTO> getData() throws SQLException {
         List<SupplierDTO> suppliers = new ArrayList<>();
@@ -21,7 +21,7 @@ public class SupplierDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GETDATA);
+                ptm = conn.prepareStatement(DatabaseQueries.GETDATASUPPLIER);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int supplierId = rs.getInt("supplierid");
@@ -54,7 +54,7 @@ public class SupplierDAO extends DatabaseConnection {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(GETSUPPLIERBYID);
+                ptm = conn.prepareStatement(DatabaseQueries.GETSUPPLIERBYID);
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
