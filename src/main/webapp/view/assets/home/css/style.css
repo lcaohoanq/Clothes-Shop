@@ -208,6 +208,7 @@ html {
     background: rgba(255, 246, 233, 0.4);
     border: 1px solid #ddd;
     padding: 0 59px 0 15px;
+    width: 100%;
 }
 .search_bar form button {
     position: absolute;
@@ -353,6 +354,7 @@ html {
 .header_bottom {
     height: 50px;
     position: relative;
+    align-content: center;
 }
 .main_menu nav > ul {
     display: -webkit-box;
@@ -1063,7 +1065,7 @@ html {
 .footer_widget ul li:last-child{
     padding-bottom: 0;
 }
-. footer_widget {
+.footer_widget {
     margin-bottom: 40px;
 }
 .footer_social ul li,.copyright_area ul li {

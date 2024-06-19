@@ -12,6 +12,9 @@
     .product_info ul li a {
         padding: 2px 11px;
     }
+    .main_menu nav > ul > li > a {
+        font-size: 0.8rem;
+    }
 
 }
 
@@ -19,6 +22,9 @@
 @media (min-width: 1200px) and (max-width: 1250px) {
     .pos_page_inner {
         margin: 0;
+    }
+    .main_menu nav > ul > li > a {
+        font-size: 0.7rem;
     }
 }
 
@@ -29,6 +35,10 @@
     .pos_page_inner {
         margin: 0 -15px;
     }
+    .main_menu nav > ul > li > a {
+        font-size: 0.6rem;
+    }
+
     .mega_menu {
         width: 565px;
         max-height: 350px;
@@ -134,7 +144,7 @@
         padding: 7px 6px;
     }
     .search_bar form input {
-        width: 250px;
+        width: 100%;
         padding: 0 60px 0 15px;
     }
     .sidebar_widget.banner {
@@ -401,6 +411,19 @@
     .pos_page_inner {
         margin: 0;
     }
+    .non-display{
+        display: none;
+    }
+    .option-text {
+        display: none;
+    } /* Hide text labels on small screens */
+    .option-icon {
+        display: inline-block;
+    } /* Show icons */
+    /* Initially hide icons */
+    .option-icon {
+        display: none;
+    }
     .switcher > ul, .header_links > ul {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -414,7 +437,6 @@
     }
     .logo {
         padding-left: 0;
-        margin-bottom: 22px;
         width: 100%;
         text-align: center;
     }
@@ -449,8 +471,8 @@
         margin-bottom: 65px;
         margin-top: 30px;
     }
-    .single_slider {
-        height: 300px;
+    .pos_home_section {
+        padding-top: 20px;
     }
     .single_banner {
         margin-bottom: 20px;
@@ -982,11 +1004,19 @@
     .shopping_cart {
         margin-left: 0;
     }
+    .header_middel {
+        height: 50px;
+        padding: 0px;
+        align-content: center;
+    }
     .search_bar {
-        margin-bottom: 24px;
+        width: 100%;
+    }
+    .logo img {
+        height: 50px;
     }
     .mini_cart {
-        width: 100%;
+        display: none;
     }
     .product_tab {
         -webkit-box-orient: vertical;
