@@ -31,7 +31,18 @@ public class LoginServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
+        String code = request.getParameter("code");
+        String error = request.getParameter("error");
+        //neu nguoi dung huy uy quyen
+        if(error != null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+        LoginGoogle gg = new LoginGoogle();
+        String accessToken = gg.getToken(code);
+        System.out.println("access_token: " + accessToken);
+        UserGoogleDTO acc = gg.getUserInfo(accessToken);
+        System.out.println("Data user: " + acc);
     }
 
     public static String getToken(String code) throws ClientProtocolException, IOException {
