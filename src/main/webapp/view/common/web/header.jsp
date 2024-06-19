@@ -5,7 +5,6 @@
     .navbar {
         display: flex;
         justify-content: space-around;
-        padding: 10px;
         background-color: #333;
         color: white;
     }
@@ -28,11 +27,11 @@
     <div class="navbar">
         <!-- My Wishlist -->
         <a href="WishlistServlet" class="nav-item" aria-label="My Wishlist">
-            My WishList
+            <i class="fa-solid fa-heart"></i>
         </a>
         <!-- My Cart -->
         <a href="CartServlet" class="nav-item" aria-label="My Cart">
-            My Cart
+            <i class="fa-solid fa-cart-shopping"></i>
         </a>
         <!-- Login/Logout -->
         <!-- This part should be dynamically generated based on user's login status -->
@@ -43,7 +42,12 @@
         </c:if>
         <c:if test="${sessionScope.account != null}">
             <a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">
-                Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!
+                <i class="fa-solid fa-user"></i> ${sessionScope.account.firstName} ${sessionScope.account.lastName}!
+            </a>
+        </c:if>
+        <c:if test="${sessionScope.account != null}">
+            <a href="DispatchServlet?btnAction=Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
             </a>
         </c:if>
 
@@ -73,7 +77,7 @@
             <div class="col-lg-5 col-md-3 col-sm-2 col-2">
                 <div class="header_bottom">
                     <div class="row" style="align-items: center">
-                        <div class="col-lg-7 col-md-7 col-sm-12 non-padding">
+                        <div class="col-lg-7 col-md-0 col-sm-12 non-display non-padding">
                             <div class="main_menu d-none d-lg-block">
                                 <nav>
                                     <ul>
@@ -90,14 +94,14 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-1 col-md-2 col-sm-2 col-3 shopping_cart " id="cart-icon">
+                        <div class="col-lg-2 col-md-4 col-sm-2 col-12 shopping_cart " id="cart-icon">
                             <nav>
                                 <c:if test="${sessionScope.CART != null && sessionScope.CART.size() != 0}">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()} <i class="fa fa-angle-down"></i></a>
+                                    <a href="#"><i class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()}
                                     </c:if>
                                     <c:if test="${sessionScope.CART == null || sessionScope.CART.size() == 0}">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i><i class="fa fa-angle-down"></i></a>
-                                        </c:if>
+                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    </c:if>
                             </nav>
                             <!--mini cart-->
                             <div class="mini_cart" >
@@ -113,7 +117,6 @@
                                                 <span class="quantity">X ${c.quantity}</span>
                                             </div>
                                             <div class="cart_remove">
-                                                <!--<a title="Remove this item" href="CartServlet?action=Delete&product_id=${c.product.id}&curPage=header.jsp"><i class="fa fa-times-circle"></i></a>-->
                                                 <button style="background-color: transparent;
                                                         border: none;
                                                         color: #28a745;" onclick="deleteProducOnICon('Delete',${c.product.id}, 'header.jsp')"><i class="fa fa-times-circle"></i></button>
@@ -139,7 +142,7 @@
                             </div>
                             <!--mini cart end-->
                         </div>
-                        <div class="col-lg-2 col-md non-padding">
+                        <div class="col-lg-1 col-md-2 non-display non-padding">
                             <div class="main_menu d-none d-lg-block ">
                                 <nav>
                                     <c:if test="${sessionScope.account != null}">

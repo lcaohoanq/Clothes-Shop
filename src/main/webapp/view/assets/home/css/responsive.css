@@ -411,6 +411,9 @@
     .pos_page_inner {
         margin: 0;
     }
+    .non-display{
+        display: none;
+    }
     .option-text {
         display: none;
     } /* Hide text labels on small screens */
@@ -468,8 +471,8 @@
         margin-bottom: 65px;
         margin-top: 30px;
     }
-    .single_slider {
-        height: 300px;
+    .pos_home_section {
+        padding-top: 20px;
     }
     .single_banner {
         margin-bottom: 20px;
@@ -1001,11 +1004,19 @@
     .shopping_cart {
         margin-left: 0;
     }
+    .header_middel {
+        height: 50px;
+        padding: 0px;
+        align-content: center;
+    }
     .search_bar {
         width: 100%;
     }
+    .logo img {
+        height: 50px;
+    }
     .mini_cart {
-        width: 100%;
+        display: none;
     }
     .product_tab {
         -webkit-box-orient: vertical;
