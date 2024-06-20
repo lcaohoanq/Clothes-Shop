@@ -17,9 +17,9 @@
         <div class="container">
             <h2>ĐIỀU KIỆN & ĐIỀU KHOẢN</h2>
             <p>
-                Chào mừng khách hàng đến với Modale. Trang web của chúng tôi cung cấp thông tin về sản phẩm và dịch vụ của chúng tôi. Quý khách hàng vui lòng đọc kỹ các Điều khoản và Điều kiện này trước khi sử dụng trang web của chúng tôi. Bằng việc truy cập và sử dụng trang web của chúng tôi, khách hàng đồng ý chịu ràng buộc bởi các Điều khoản và Điều kiện này.
+                Chào mừng khách hàng đến với ClothesShop. Trang web của chúng tôi cung cấp thông tin về sản phẩm và dịch vụ của chúng tôi. Quý khách hàng vui lòng đọc kỹ các Điều khoản và Điều kiện này trước khi sử dụng trang web của chúng tôi. Bằng việc truy cập và sử dụng trang web của chúng tôi, khách hàng đồng ý chịu ràng buộc bởi các Điều khoản và Điều kiện này.
 
-                Sở hữu trí tuệ: Tất cả nội dung trên trang web của chúng tôi, bao gồm nhưng không giới hạn, văn bản, hình ảnh, đồ họa, logo và phần mềm, là tài sản của Modale và các đối tác của chúng tôi hoặc người được cấp phép của Modale, và được bảo vệ bởi luật bản quyền, luật thương hiệu và các luật sở hữu trí tuệ khác. Khách hàng không được sao chép, phân phối hoặc sửa đổi bất kỳ nội dung nào trên trang web của chúng tôi mà chưa được chúng tôi đồng thuận trước bằng văn bản.
+                Sở hữu trí tuệ: Tất cả nội dung trên trang web của chúng tôi, bao gồm nhưng không giới hạn, văn bản, hình ảnh, đồ họa, logo và phần mềm, là tài sản của ClothesShop và các đối tác của chúng tôi hoặc người được cấp phép của Modale, và được bảo vệ bởi luật bản quyền, luật thương hiệu và các luật sở hữu trí tuệ khác. Khách hàng không được sao chép, phân phối hoặc sửa đổi bất kỳ nội dung nào trên trang web của chúng tôi mà chưa được chúng tôi đồng thuận trước bằng văn bản.
 
                 Tuyên bố từ chối trách nhiệm pháp lý: Trang web của chúng tôi chỉ được tạo ra cho mục đích cung cấp thông tin. Chúng tôi không đảm bảo hoặc đại diện về tính chính xác, đầy đủ hoặc độ tin cậy của bất kỳ thông tin nào trên trang web của chúng tôi. Chúng tôi sẽ không chịu trách nhiệm pháp lý về bất kỳ thiệt hại trực tiếp, gián tiếp, đặc biệt hoặc hậu quả phát sinh hoặc liên quan từ việc khách hàng sử dụng trang web của chúng tôi.
 
@@ -35,7 +35,7 @@
 
                 Sửa đổi đối với các điều khoản và điều kiện này: Chúng tôi có thể sửa đổi các điều khoản và điều kiện này theo thời gian bằng cách đăng bản cập nhật trên trang web. việc khách hàng tiếp tục sử dụng trang web của chúng tôi sau những sửa đổi đó sẽ đồng nghĩa với sự chấp thuận của khách hàng với các điều khoản và điều kiện được cập nhật.
 
-                Liên hệ chúng tôi: Nếu khách hàng có bất kỳ câu hỏi hoặc thắc mắc về những điều khoản và điều kiện này hoặc trang web, vui lòng liên hệ với chúng tôi qua email: info@modale.com.
+                Liên hệ chúng tôi: Nếu khách hàng có bất kỳ câu hỏi hoặc thắc mắc về những điều khoản và điều kiện này hoặc trang web, vui lòng liên hệ với chúng tôi qua email: info@ClothesShop.com.
 
                 Bằng việc truy cập và sử dụng trang web của chúng tôi, khách hàng đồng ý chịu ràng buộc bởi các Điều khoản và Điều kiện này (bao gồm cả bất kỳ sửa đổi bổ sung nào sau đó). Nếu khách hàng không đồng ý với bất kỳ nội dung nào của các Điều kiện & Điều khoản này (bao gồm cả bất kỳ sửa đổi bổ sung nào sau đó), khách hàng vui lòng không sử dụng trang web của chúng tôi.
 
