@@ -31,6 +31,11 @@ jobs:
         echo "DB_URL=${{ secrets.DB_URL }}" >> .env
         echo "DB_USER=${{ secrets.DB_USER }}" >> .env
         echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+        echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env
+        echo "GOOGLE_REDIRECT_URI=${{ secrets.GOOGLE_REDIRECT_URI }}" >> .env
+        echo "GOOGLE_LINK_GET_TOKEN=${{ secrets.GOOGLE_LINK_GET_TOKEN }}" >> .env
+        echo "GOOGLE_LINK_GET_USER_INFO=${{ secrets.GOOGLE_LINK_GET_USER_INFO }}" >> .env
+        echo "GOOGLE_GRANT_TYPE=${{ secrets.GOOGLE_GRANT_TYPE }}" >> .env
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
@@ -38,6 +43,11 @@ jobs:
         DB_URL: ${{ secrets.DB_URL }}
         DB_USER: ${{ secrets.DB_USER }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+        GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI }}
+        GOOGLE_LINK_GET_TOKEN: ${{ secrets.GOOGLE_LINK_GET_TOKEN }}
+        GOOGLE_LINK_GET_USER_INFO: ${{ secrets.GOOGLE_LINK_GET_USER_INFO }}
+        GOOGLE_GRANT_TYPE: ${{ secrets.GOOGLE_GRANT_TYPE }}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
