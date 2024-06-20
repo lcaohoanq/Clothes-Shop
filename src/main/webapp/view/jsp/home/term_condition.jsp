@@ -11,36 +11,66 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../../common/web/add_css.jsp"%>
-        <title>Police and Privacy</title>
+        <title>Term and Condition</title>
     </head>
     <body>
         <div class="container">
-            <h2>ĐIỀU KIỆN & ĐIỀU KHOẢN</h2>
-            <p>
-                Chào mừng khách hàng đến với Modale. Trang web của chúng tôi cung cấp thông tin về sản phẩm và dịch vụ của chúng tôi. Quý khách hàng vui lòng đọc kỹ các Điều khoản và Điều kiện này trước khi sử dụng trang web của chúng tôi. Bằng việc truy cập và sử dụng trang web của chúng tôi, khách hàng đồng ý chịu ràng buộc bởi các Điều khoản và Điều kiện này.
-
-                Sở hữu trí tuệ: Tất cả nội dung trên trang web của chúng tôi, bao gồm nhưng không giới hạn, văn bản, hình ảnh, đồ họa, logo và phần mềm, là tài sản của Modale và các đối tác của chúng tôi hoặc người được cấp phép của Modale, và được bảo vệ bởi luật bản quyền, luật thương hiệu và các luật sở hữu trí tuệ khác. Khách hàng không được sao chép, phân phối hoặc sửa đổi bất kỳ nội dung nào trên trang web của chúng tôi mà chưa được chúng tôi đồng thuận trước bằng văn bản.
-
-                Tuyên bố từ chối trách nhiệm pháp lý: Trang web của chúng tôi chỉ được tạo ra cho mục đích cung cấp thông tin. Chúng tôi không đảm bảo hoặc đại diện về tính chính xác, đầy đủ hoặc độ tin cậy của bất kỳ thông tin nào trên trang web của chúng tôi. Chúng tôi sẽ không chịu trách nhiệm pháp lý về bất kỳ thiệt hại trực tiếp, gián tiếp, đặc biệt hoặc hậu quả phát sinh hoặc liên quan từ việc khách hàng sử dụng trang web của chúng tôi.
-
-                Chính sách bảo hành: việc bảo hành cho Hàng Hóa cung cấp qua trang web của chúng tôi sẽ theo chính sách bảo hành được nhà sản xuất công bố và điều chỉnh vào từng thời điểm.
-
-                Chính sách đổi trả hàng hóa: vào thời điểm tiếp nhận Hàng Hoá, Khách hàng sẽ kiểm tra kỹ lưỡng tình trạng Hàng Hóa và ký vào Phiếu Giao Nhận Hàng. Nếu phát hiện Hàng Hoá có bất kỳ hư hỏng rõ rệt nào, thì Khách hàng sẽ ghi rõ các vấn đề này vào Phiếu Giao Nhận Hàng, có đính kèm hình chụp và video của Hàng Hóa bị hư hỏng rõ rang đó. Nếu Khách hàng không thực hiện quy định này vào thời điểm tiếp nhận Hàng Hóa thì Modale sẽ không cung cấp Hàng Hóa thay thế.
-
-                Giá cả hàng hóa & Thuế VAT: giá cả hàng hóa được thể hiện trên trang web của chúng tôi là giá đã bao gồm thuế VAT theo quy định của pháp luật Việt Nam. Giá hàng hóa sẽ thay đổi theo đề xuất của Nhà cung cấp.
-
-                Giao Hàng hóa & Chứng từ: chúng tôi sẽ giao Hàng hóa & Chứng từ cho Khách hàng theo quy định của Hợp Đồng Mua Bán ký giữa Hai Bên.
-
-                Liên kết đến trang web của bên thứ ba: Trang web của chúng tôi có thể chứa các liên kết đến các trang web của bên thứ ba mà không được modale sở hữu hoặc kiểm soát. chúng tôi không xác nhận hoặc chịu trách nhiệm mọi vấn đề về nội dung hoặc thực tiễn của bất kỳ trang web bên thứ ba nào. khách hàng tự chịu trách nhiệm cho mọi truy cập tới các trang web của bên thứ ba.
-
-                Sửa đổi đối với các điều khoản và điều kiện này: Chúng tôi có thể sửa đổi các điều khoản và điều kiện này theo thời gian bằng cách đăng bản cập nhật trên trang web. việc khách hàng tiếp tục sử dụng trang web của chúng tôi sau những sửa đổi đó sẽ đồng nghĩa với sự chấp thuận của khách hàng với các điều khoản và điều kiện được cập nhật.
-
-                Liên hệ chúng tôi: Nếu khách hàng có bất kỳ câu hỏi hoặc thắc mắc về những điều khoản và điều kiện này hoặc trang web, vui lòng liên hệ với chúng tôi qua email: info@modale.com.
-
-                Bằng việc truy cập và sử dụng trang web của chúng tôi, khách hàng đồng ý chịu ràng buộc bởi các Điều khoản và Điều kiện này (bao gồm cả bất kỳ sửa đổi bổ sung nào sau đó). Nếu khách hàng không đồng ý với bất kỳ nội dung nào của các Điều kiện & Điều khoản này (bao gồm cả bất kỳ sửa đổi bổ sung nào sau đó), khách hàng vui lòng không sử dụng trang web của chúng tôi.
-
-            </p>
+            <%@include file="../../common/web/header.jsp"%>
+            <div style="margin-top: 80px;">
+                <h3>ĐIỀU KIỆN &amp; ĐIỀU KHOẢN</h3>
+                <p>Chào mừng quý khách đến với trang web bán quần áo của chúng tôi. Khi sử dụng trang web này, quý khách đồng ý với các điều khoản và điều kiện sau đây. Vui lòng đọc kỹ trước khi tiếp tục.</p>
+                <h4>1. Giới thiệu</h4>
+                <p>Trang web này được vận hành bởi ClothesShop. Bằng cách truy cập và sử dụng trang web này, quý khách đồng ý tuân thủ các điều khoản và điều kiện dưới đây.</p>
+                <h4>2. Quyền sở hữu trí tuệ</h4>
+                <p>Toàn bộ nội dung trên trang web, bao gồm nhưng không giới hạn bởi văn bản, hình ảnh, logo, biểu tượng và phần mềm, là tài sản của ClothesShop và được bảo vệ bởi luật bản quyền và các luật sở hữu trí tuệ khác.</p>
+                <h4>3. Đăng ký tài khoản</h4>
+                <ul>
+                    <li>Quý khách có thể đăng ký tài khoản trên trang web để sử dụng một số tính năng nhất định.</li>
+                    <li>Quý khách phải cung cấp thông tin chính xác và đầy đủ khi đăng ký.</li>
+                    <li>Quý khách chịu trách nhiệm bảo mật thông tin tài khoản của mình và mọi hoạt động xảy ra dưới tài khoản của quý khách.</li>
+                </ul>
+                <h4>4. Sản phẩm và giá cả</h4>
+                <ul>
+                    <li>Chúng tôi cố gắng cung cấp thông tin sản phẩm và giá cả chính xác nhất có thể.</li>
+                    <li>Giá cả có thể thay đổi mà không cần thông báo trước.</li>
+                    <li>Màu sắc và hình ảnh sản phẩm trên trang web có thể khác so với sản phẩm thực tế do các yếu tố kỹ thuật.</li>
+                </ul>
+                <h4>5. Đặt hàng và thanh toán</h4>
+                <ul><li>Đơn hàng của quý khách sẽ được xác nhận qua email sau khi đặt hàng thành công.</li>
+                    <li>Chúng tôi chấp nhận các hình thức thanh toán như thẻ tín dụng, chuyển khoản ngân hàng, và các phương thức khác được liệt kê trên trang web.</li>
+                    <li>Nếu có vấn đề với thanh toán, chúng tôi sẽ liên hệ với quý khách để giải quyết.</li>
+                </ul>
+                <h4>6. Giao hàng và vận chuyển</h4>
+                <ul>
+                    <li>Chúng tôi cung cấp các dịch vụ giao hàng trong và ngoài nước.</li>
+                    <li>Thời gian giao hàng có thể thay đổi tùy thuộc vào vị trí và phương thức vận chuyển.</li>
+                    <li>Phí vận chuyển sẽ được thông báo trước khi quý khách hoàn tất đơn hàng.</li>
+                </ul>
+                <h4>7. Đổi trả và hoàn tiền</h4>
+                <ul>
+                    <li>Quý khách có thể đổi hoặc trả sản phẩm trong vòng 15 ngày kể từ ngày nhận hàng.</li>
+                    <li>Sản phẩm phải còn nguyên tem, nhãn mác, chưa qua sử dụng và trong tình trạng như khi nhận hàng.</li>
+                    <li>Phí vận chuyển đổi trả sẽ do quý khách chịu, trừ khi sản phẩm bị lỗi do nhà sản xuất.</li>
+                </ul>
+                <h4>8. Bảo mật thông tin</h4>
+                <ul><li>Chúng tôi cam kết bảo mật thông tin cá nhân của quý khách.</li>
+                    <li>Thông tin của quý khách sẽ không được tiết lộ cho bên thứ ba trừ khi có sự đồng ý của quý khách hoặc theo yêu cầu của pháp luật.</li>
+                </ul>
+                <h4>9. Giới hạn trách nhiệm</h4>
+                <ul>
+                    <li>Chúng tôi không chịu trách nhiệm về bất kỳ tổn thất hay thiệt hại nào phát sinh từ việc sử dụng trang web này.</li>
+                    <li>Chúng tôi không bảo đảm rằng trang web sẽ không có lỗi, virus hay các thành phần có hại khác.</li>
+                </ul>
+                <h4>10. Điều chỉnh điều khoản</h4>
+                <ul>
+                    <li>Chúng tôi có quyền điều chỉnh các điều khoản và điều kiện này bất cứ lúc nào mà không cần thông báo trước.</li>
+                    <li>Quý khách nên thường xuyên kiểm tra điều khoản và điều kiện để cập nhật các thay đổi mới nhất.</li>
+                </ul>
+                <h4>11. Liên hệ</h4>
+                <p>Nếu có bất kỳ câu hỏi nào về các điều khoản và điều kiện này, vui lòng liên hệ với chúng tôi qua ClothesShop@gmail.com hoặc 0 (1234) 567 789.</p>
+                <hr>
+                <p>Các điều khoản và điều kiện này được cập nhật lần cuối vào 21/6/2024.</p>
+            </div>
         </div>
-
     </body>
 </html>
