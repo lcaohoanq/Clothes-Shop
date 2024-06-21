@@ -12,7 +12,9 @@
                             
                             <p><i class="fa fa-mobile" aria-hidden="true"></i> 0(1234) 567 890</p>
                             <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> clotheshop@gmail.com </a> </br>
-                            <a href="ContactServlet"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                            <a href="ContactServlet"><i class="fa-solid fa-phone"></i> Contact Us</a>  </br>
+                            <a href="TermConditionServlet"><i class="fa-solid fa-circle-info"></i>Term and Condition</a>  </br>
+                            <a href="PrivacyServlet"><i class="fa-solid fa-book"></i>Police Privacy</a>
                         </div>
                     </div>
                 </div>
@@ -24,7 +26,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12">
                     <div class="copyright_area align-items-center">
-                        <p>Copyright &copy; 2018 <a href="#">DuongNManh</a>. All rights reserved. </p>
+                        <p>Copyright &copy; 2024 <a href="#">ClothesShop</a>. All rights reserved. </p>
                     </div>
                 </div>
             </div>
