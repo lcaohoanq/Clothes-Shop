@@ -69,8 +69,7 @@
                                             </label>
                                         </div>
                                         <div style="margin-top: 20px">
-                                            <a class="login-with-google-btn" href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile&redirect_uri=http://localhost:8080/clothes/LoginServlet&response_type=code
-                                               &client_id=40613383185-c4qs0q74c4g95fg8l8lr34q9765bpaet.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
+                                            <a class="login-with-google-btn" href="DispatchServlet?btnAction=Google">Login With Google</a>
                                             <a href="ForgotPasswordServlet?status=forgot" style="margin-left: 20px">Forgot password</a>
                                         </div>
                                     </form>
