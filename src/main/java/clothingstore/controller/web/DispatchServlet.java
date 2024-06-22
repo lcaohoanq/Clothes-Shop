@@ -26,12 +26,14 @@ public class DispatchServlet extends HttpServlet {
     private final String SEARCH = "Search";
     private final String LOGOUT = "Logout";
     private final String REGISTER = "Register";
+    private final String GOOGLE = "Google";
     private final String ADDTOWISHLIST = "AddToWishList";
     private final String WELCOME = "view/jsp/home/home.jsp";
     private final String LOGIN_CONTROLlER = "LoginServlet";
     private final String WISHLIST_CONTROLlER = "WishlistServlet";
     private final String REGISTER_CONTROLLER = "RegisterServlet";
     private final String SEARCH_CONTROLLER = "SearchServlet";
+    private final String GOOGLE_CONTROLLER = "GoogleServlet";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,6 +61,8 @@ public class DispatchServlet extends HttpServlet {
                 url = SEARCH_CONTROLLER;
             } else if (btnValue.equals(ADDTOWISHLIST)) {
                 url = WISHLIST_CONTROLlER;
+            } else if (btnValue.equals(GOOGLE)) {
+                url = GOOGLE_CONTROLLER;
             }
         } catch (Exception ex) {
 
