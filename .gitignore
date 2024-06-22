@@ -89,4 +89,3 @@ manifest.mf
 src/main/ts/.env
 
 .env
-node_modules/
