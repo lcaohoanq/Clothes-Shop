@@ -92,7 +92,7 @@ a,
 button,
 input {
     outline: medium none;
-    color: #686868;
+    color: #FFFFFF;
 }
 input:focus,select:focus,textarea:focus{
 	outline: none;
