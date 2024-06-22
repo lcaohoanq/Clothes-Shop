@@ -1,32 +1,20 @@
-# Required
+## Required
 - Tomcat: 8.5
 - JDK: 1.8
-- SQL Server
-- Maven 3.9.6 (currently using)
-
-# Config
-> I'm using IntelliJ
-## Tomcat
-- Edit configuration:
-  - Add New Configuration (+) -> Tomcat Server -> Tomcat Local
-  - At tab Server
-    - Application server -> Configure... (point to the path where tomcat installed, `C:\Program Files\Apache Software Foundation\Tomcat 8.5`)
-  - Tab Deployment
-    - Add Artifact...
-    - Config Application context (optional)
-## Maven
-```bash
-mvn clean
-mvn install1
-```
+- SQL Server | Azure Data Studio
+- Maven 3.9.6
 
 ## Databases
-
-- port: 1433
-- Create `.env` file at root directory
+- Create file `.env` at root directory with below data
 
 ```text
-DB_URL=jdbc:sqlserver//<your_host>:<port>;DatabaseName=ClothesShop
-DB_USER=<username>
-DB_PASSWORd=<password>
+DB_URL=jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop
+DB_USER=
+DB_PASSWORD=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=
+GOOGLE_LINK_GET_TOKEN=https://accounts.google.com/o/oauth2/token
+GOOGLE_LINK_GET_USER_INFO=https://www.googleapis.com/oauth2/v1/userinfo?access_token=
+GOOGLE_GRANT_TYPE=authorization_code
 ```
