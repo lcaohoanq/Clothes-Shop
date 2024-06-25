@@ -24,7 +24,7 @@ GOOGLE_GRANT_TYPE=authorization_code
 ***
 # Report
 ## [1]. Introduction
-
+[<img src="intro.gif">](https://github.com/lcaohoanq/Clothes-Shop/blob/main/intro.gif)
 
 ## [2]. Feature
 ### Login
