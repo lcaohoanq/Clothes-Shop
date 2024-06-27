@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clothingstore.model;
 
+import clothingstore.constant.Regex;
+import clothingstore.utils.EnvUtil;
 import java.time.LocalDateTime;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
@@ -19,54 +16,41 @@ import javax.mail.internet.MimeMessage;
 
 public class Email {
 
-    private final String eFrom = "lvhhoangg1@gmail.com";
-    private final String ePass = "ojlx ohfr qxwd llxx";
+    private final String eFrom = EnvUtil.get("MAIL_HOST");
+    private final String ePass = EnvUtil.get("MAIL_PASS");
 
-    // 
     // check email
     public boolean isValidEmail(String email) {
-        // Biểu thức chính quy cho định dạng email
-        String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$";
-
-        // Tạo đối tượng Pattern
-        Pattern pattern = Pattern.compile(emailRegex);
-
-        // Tạo đối tượng Matcher
-        Matcher matcher = pattern.matcher(email);
-
-        // Kiểm tra chuỗi với biểu thức chính quy
-        return matcher.matches();
+        return Pattern.compile(Regex.emailRegex, Pattern.CASE_INSENSITIVE).matcher(email).matches();
     }
 
-    public void sendEmail(String subject, String messgage, String to) {
-        try {
-
-        } catch (Exception e) {
-        }
-        // Properties
-        Properties props = new Properties();
-
-        //Su dung server nao de gui mail- smtp host
-        props.put("mail.smtp.host", "smtp.gmail.com");
-
-        // TLS 587 SSL 465
-        props.put("mail.smtp.port", "smtp.gmail.com");
-
-        // dang nhap
-        props.put("mail.smtp.auth", "true");
-
-        props.put("mail.smtp.starttls.enable", "true");
-
-        //dang nhap tai khoan
-        Authenticator au = new Authenticator() {
+    private Authenticator getAuthenticator() {
+        return new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(eFrom, ePass);
             }
-
         };
+    }
+
+    public void sendEmail(String subject, String messgage, String to) {
+        // Properties
+        Properties props = new Properties();
+
+        //Su dung server nao de gui mail- smtp host
+        props.put("mail.smtp.host", EnvUtil.get("SMTP_HOST"));
+
+        // TLS 587 SSL 465
+        props.put("mail.smtp.port", EnvUtil.get("SMTP_PORT"));
+
+        // dang nhap
+        props.put("mail.smtp.auth", EnvUtil.get("SMTP_AUTH"));
+
+        props.put("mail.smtp.starttls.enable", EnvUtil.get("SMTP_STARTTLS_ENABLE"));
+
+        //dang nhap tai khoan
         // phien lam viec
-        Session session = Session.getInstance(props, au);
+        Session session = Session.getInstance(props, getAuthenticator());
 
         try {
             MimeMessage msg = new MimeMessage(session);
@@ -80,8 +64,7 @@ public class Email {
             // Gui email
             Transport.send(msg);
         } catch (Exception e) {
-            System.out.println("Send email failed");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -330,7 +313,7 @@ public class Email {
 
     public static void main(String[] args) {
         Email handleEmail = new Email();
-        String email = "lvhhoangg171@gmail.com";
+        String email = "hoangclw@gmail.com";
         String sub = "Subject";
         String mess = "Check email";
         handleEmail.sendEmail(sub, mess, email);
