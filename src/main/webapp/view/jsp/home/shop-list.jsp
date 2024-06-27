@@ -219,7 +219,7 @@
                                         <div class="search_bar">
                                             <form action="#">
                                                 <input oninput="searchProducts(this,'shop-list.jsp')" value="" placeholder="Search..." type="text">
-                                                <i style="margin-left: -24px" class="fa fa-search"></i>
+                                                <i style="margin-left: -24px"></i>
                                             </form>
                                         </div>
                                     </div>
@@ -258,7 +258,7 @@
                                                                     <button style="display: block;
                                                                             border: none;
                                                                             width: 100%;
-                                                                            background: #018576;
+                                                                            background: #F98404;
                                                                             color: #fff;
                                                                             padding: 7px 0;
                                                                             text-transform: capitalize;

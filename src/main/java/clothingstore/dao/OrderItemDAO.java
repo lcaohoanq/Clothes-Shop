@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.CartItem;
 import clothingstore.model.OrderDTO;
-import clothingstore.model.OrderItem;
+import clothingstore.model.OrderItemDTO;
 import clothingstore.model.ProductDTO;
 
 public class OrderItemDAO extends DatabaseConnection {
@@ -19,8 +19,8 @@ public class OrderItemDAO extends DatabaseConnection {
 
 
 
-    public List<OrderItem> getOrderItemByOrderId(int id) {
-        List<OrderItem> list = new ArrayList<>();
+    public List<OrderItemDTO> getOrderItemByOrderId(int id) {
+        List<OrderItemDTO> list = new ArrayList<>();
         Connection con = null;
         ResultSet rs = null;
         PreparedStatement ptm = null;
@@ -36,7 +36,7 @@ public class OrderItemDAO extends DatabaseConnection {
                     int productID = rs.getInt("product_id");
                     ProductDTO product = pDao.getProductByID(productID);
                     int orderID = rs.getInt("order_id");
-                    OrderItem order = new OrderItem(quantity, price, product, orderID);
+                    OrderItemDTO order = new OrderItemDTO(quantity, price, product, orderID);
                     list.add(order);
                 }
             }
@@ -77,9 +77,9 @@ public class OrderItemDAO extends DatabaseConnection {
 
     public static void main(String[] args) {
         OrderItemDAO dao = new OrderItemDAO();
-        List<OrderItem> list = dao.getOrderItemByOrderId(1);
-        for (OrderItem orderItem : list) {
-            System.out.println(orderItem.getProduct().getName());
+        List<OrderItemDTO> list = dao.getOrderItemByOrderId(1);
+        for (OrderItemDTO orderItemDTO : list) {
+            System.out.println(orderItemDTO.getProduct().getName());
         }
     }
 

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class OrderItem {
+public class OrderItemDTO {
 
     private int quantity;
     private double price;

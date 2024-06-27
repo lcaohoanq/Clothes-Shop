@@ -67,7 +67,7 @@
                                                 <c:forEach items="${PRODUCT.images}" var="img" varStatus="loop">
                                                     <div class="tab-pane fade show active" id="p_tab1" role="tabpanel">
                                                         <div class="modal_img">
-                                                            <a href="#"><img style="margin-bottom: 10px; border: 1px solid #f98404" src="${img}" alt=""></a>
+                                                            <a href="#"><img style="margin-bottom: 10px" src="${img}" alt=""></a>
                                                             <c:if test="${loop.index < 2}">
                                                                 <div class="view_img">
                                                                     <a class="large_view" href="${img}"><i class="fa fa-search-plus"></i></a>
@@ -109,7 +109,7 @@
                                                 <div class="widget_color">
                                                     <ul>
                                                         <c:forEach items="${PRODUCT.size}" var="s" varStatus="loop">
-                                                            <li><button type="button">${s}</button></li>
+                                                            <li><button type="button" class="button_orange">${s}</button></li>
                                                             </c:forEach>
                                                     </ul>
                                                 </div>
@@ -120,7 +120,7 @@
                                                 <div class="widget_color">
                                                     <ul>
                                                         <c:forEach items="${PRODUCT.colors}" var="s" varStatus="loop">
-                                                            <li><button type="button">${s}</button></li>
+                                                            <li><button type="button" class="button_orange">${s}</button></li>
                                                             </c:forEach>
                                                     </ul>
                                                 </div>

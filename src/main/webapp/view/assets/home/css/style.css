@@ -58,10 +58,6 @@ html {
 }
 
 /*  2.  header css here*/
-
-.pos_page {
-    background: url(../img/banner/background.png);
-}
 .pos_page_inner {
     background: #fff;
     margin: 0 -20px;
@@ -881,16 +877,16 @@ html {
     visibility: visible;
 }
 .product_info ul li a:hover{
-    background: #009483;
+    background: #f98404;
     color: #fff;
-    border-color: #009483;
+    border-color: #f98404;
 }
 .single_product {
     border: 1px solid transparent;
     padding: 8px;
 }
 .single_product:hover{
-    border: 1px solid #009483;
+    border: 1px solid #f98404;
 }
 .product_active.owl-carousel .owl-nav div, .brand_active.owl-carousel .owl-nav div, .single_p_active.owl-carousel .owl-nav div {
     font-size: 20px;
@@ -1326,9 +1322,15 @@ html {
 }
 .widget_color ul li a {
     text-transform: capitalize;
-    color: #333;
+    color: red;
     position: relative;
     margin-left: 26px;
+}
+
+.button_orange {
+    background: #f98404;
+    color: white;
+    font-weight: bold;
 }
 
 .widget_color ul li a::before {
@@ -1505,7 +1507,7 @@ html {
     color: #999;
 }
 .list_button ul li a.active {
-    color: #018576;
+    color: #F98404;
 }
 .list_product_content p input {
     width: 15px;
@@ -2692,12 +2694,15 @@ html {
 }
 .order_table table thead tr th,.order_table table tbody tr td,.order_table table tfoot tr th,.order_table table tfoot tr td {
     min-width: 50%;
-    text-align: center;
+    text-align: left;
     padding: 15px 0;
     border-bottom: 1px solid #ddd;
 }
 .order_table table{
     width: 100%;
+}
+.order_total{
+    color: red;
 }
 .panel-default input[type="radio"] {
     width: 15px;
