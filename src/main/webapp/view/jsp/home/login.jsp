@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Clothes_Login</title>
+        <title>Clothes Login</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -114,7 +114,7 @@
                                                    style="${requestScope.emailGG != null ? "background-color: #e9ecef;" : ""}"
                                                    value="${requestScope.emailGG != null ? requestScope.emailGG : ""}" required>
                                         </p>
-                                        <div class="login_submit">
+                                        <div class="">
                                             <button name="btnAction" value="Register" type="submit" onclick="checkForm()">Register</button>
                                         </div>
                                     </form>

@@ -26,7 +26,7 @@
     General
 *************************/
 @font-face {
-    font-family: 'Myriad Pro';
+    font-family: 'Helvetica Neue,Helvetica,Arial,文泉驛正黑,WenQuanYi Zen Hei,Hiragino Sans GB,儷黑 Pro,LiHei Pro,Heiti TC,微軟正黑體,Microsoft JhengHei UI,Microsoft JhengHei,sans-serif', serif;
     src: url('../fonts/MyriadPro-Bold.bin');
     src: url('../fonts/MyriadPro-Bold-1.bin') format('embedded-opentype'),
         url('../fonts/MyriadPro-Bold-2.bin') format('woff2'),
@@ -37,7 +37,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Myriad Pro';
+    font-family: 'Helvetica Neue,Helvetica,Arial,文泉驛正黑,WenQuanYi Zen Hei,Hiragino Sans GB,儷黑 Pro,LiHei Pro,Heiti TC,微軟正黑體,Microsoft JhengHei UI,Microsoft JhengHei,sans-serif', serif;
     src: url('../fonts/MyriadPro-Regular.bin');
     src: url('../fonts/MyriadPro-Regular-1.bin') format('embedded-opentype'),
         url('../fonts/MyriadPro-Regular-2.bin') format('woff2'),
@@ -51,7 +51,7 @@
 
 
 body {
-    font-family: 'Myriad Pro';
+    font-family: 'Helvetica Neue,Helvetica,Arial,文泉驛正黑,WenQuanYi Zen Hei,Hiragino Sans GB,儷黑 Pro,LiHei Pro,Heiti TC,微軟正黑體,Microsoft JhengHei UI,Microsoft JhengHei,sans-serif', serif;
     line-height: 24px;
     font-weight: 400;
     font-style: normal;
@@ -92,7 +92,6 @@ a,
 button,
 input {
     outline: medium none;
-    color: #FFFFFF;
 }
 input:focus,select:focus,textarea:focus{
 	outline: none;
@@ -183,22 +182,22 @@ label {
     color: #626262;
 }
 *::-moz-selection {
-    background: #4fc1f0;
+    background: #f98404;
     color: #fff;
     text-shadow: none;
 }
 ::-moz-selection {
-    background: #4fc1f0;
+    background: #f98404;
     color: #fff;
     text-shadow: none;
 }
 ::selection {
-    background: #4fc1f0;
+    background: #f98404;
     color: #fff;
     text-shadow: none;
 }
 .mark, mark {
-    background: #4fc1f0 none repeat scroll 0 0;
+    background: #f98404 none repeat scroll 0 0;
     color: #ffffff;
 }
 span.tooltip-content {
@@ -273,7 +272,7 @@ textarea {
 /*************************
         Text color
 *************************/
-.text-blue { color: #4FC1F0; }
+.text-blue { color: #f98404; }
 .text-white { color: #fff ;}
 .text-black { color: #363636; }
 .text-theme { color: #f10; }
@@ -314,7 +313,7 @@ option {
     font-size: 14px;
 }
 input:focus {
-    border: 1px solid #4FC1F0;
+    border: 1px solid #f98404;
 }
 textarea {
     resize: vertical;
@@ -326,7 +325,7 @@ textarea {
 }
 textarea:focus {
     background: transparent;
-    border: 2px solid #4FC1F0;
+    border: 2px solid #f98404;
     outline: none;
 }
 ::-moz-placeholder {
@@ -338,7 +337,7 @@ textarea:focus {
 *************************/
 #scrollUp {
 	background: #ea3a3c none repeat scroll 0 0;
-	bottom: 85px;
+	bottom: 50px;
 	color: #ffffff;
 	cursor: pointer;
 	display: none;
@@ -703,7 +702,7 @@ textarea:focus {
  .black-bg { background: #252525 }
  .theme-bg { background: #f4ecea }
  .gray-bg { background: #f0f1f5; }
- .blue-bg { background: #4FC1F0; }
+ .blue-bg { background: #f98404; }
  .default-bg { background: #50C1F0; }
  .transparent-bg { background: transparent; }
 

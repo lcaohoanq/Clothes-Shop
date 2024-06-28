@@ -56,51 +56,53 @@
           <i class="fas fa-sign-out-alt"></i>
         </a> -->
     </div>
-    <div class="header_middel">
+    <div class="header_middle">
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-7 col-md-0 col-sm-12 non-display non-padding">
+                <div class="main_menu d-none d-lg-block">
+                    <nav>
+                        <ul>
+                            <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="WishlistServlet">My Wishlist</a></li>
+                            <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="CartServlet">My Cart</a></li>
+                            <c:if test="${sessionScope.account == null}">
+                                <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="DispatchServlet?btnAction=Login" title="Login">Login</a></li>
+                            </c:if>
+                            <c:if test="${sessionScope.account != null}">
+                                <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-6 col-md-4 col-sm-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
+                            </c:if>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
         <div class="row align-items-center" style="padding: 0; margin: 0px">
             <!--logo start-->
             <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                 <div class="logo" style="display: flex; justify-content: center;">
-                    <a href="DispatchServlet"><img src="view\assets\home\img\logo\logo.png" alt=""></a>
+                    <a href="DispatchServlet"><img style="height:5rem" src="view\assets\home\img\logo\logo.png" alt=""></a>
                 </div>
             </div>
             <!--logo end-->
-            <div class="header_right_info col-lg-5 col-md-7 col-sm-8 col-7">
+            <div class="header_right_info col-lg-8 col-md-7 col-sm-8 col-7">
                 <div class="search_bar col-lg-12 no-padding">
                     <form action="DispatchServlet" method="get" >
-                        <input name="txtSearch" value="" placeholder="Search..." type="text">
+                        <input name="txtSearch" value="" placeholder="Bao ship 0đ! Đăng kí ngay để nhận ưu đãi" type="text">
                         <button name="btnAction" value="Search" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
 
             </div>  
-            <div class="col-lg-5 col-md-3 col-sm-2 col-2">
+            <div class="col-lg-2 col-md-3 col-sm-2 col-2">
                 <div class="header_bottom">
                     <div class="row" style="align-items: center">
-                        <div class="col-lg-7 col-md-0 col-sm-12 non-display non-padding">
-                            <div class="main_menu d-none d-lg-block">
-                                <nav>
-                                    <ul>
-                                        <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="WishlistServlet">My Wishlist</a></li>
-                                        <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="CartServlet">My Cart</a></li>
-                                            <c:if test="${sessionScope.account == null}">
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="DispatchServlet?btnAction=Login" title="Login">Login</a></li>  
-                                            </c:if>
-                                            <c:if test="${sessionScope.account != null}">
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-6 col-md-4 col-sm-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
-                                            </c:if>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-
                         <div class="col-lg-2 col-md-4 col-sm-2 col-12 shopping_cart " id="cart-icon">
                             <nav>
                                 <c:if test="${sessionScope.CART != null && sessionScope.CART.size() != 0}">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()}
+                                    <a href="#"><i style="font-size: 30px" class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()}
                                     </c:if>
                                     <c:if test="${sessionScope.CART == null || sessionScope.CART.size() == 0}">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                    <a href="#"><i style="font-size: 30px" class="fa fa-shopping-cart"></i></a>
                                     </c:if>
                             </nav>
                             <!--mini cart-->
@@ -127,7 +129,7 @@
                                 </div>
                                 <div class="total_price">
                                     <span> Total </span>
-                                    <span class="prices">  
+                                    <span class="prices">
                                         <c:set var="totalPrice" value="0" />
                                         <c:forEach items="${sessionScope.CART}" var="c">
                                             <c:set var="productTotal" value="${c.product.getSalePrice() * c.quantity}" />
@@ -152,7 +154,7 @@
                                     </ul>
                                 </nav>
                             </div>
-                        </div>            
+                        </div>
                     </div>
                 </div>
             </div>

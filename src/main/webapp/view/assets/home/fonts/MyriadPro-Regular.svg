@@ -9,7 +9,7 @@ Copyright (c) 2000 Adobe Systems Incorporated. All Rights Reserved. U.S. Patent 
 <defs>
 <font id="MyriadPro-Regular" horiz-adv-x="300" >
   <font-face 
-    font-family="Myriad Pro"
+    font-family="Helvetica Neue,Helvetica,Arial,文泉驛正黑,WenQuanYi Zen Hei,Hiragino Sans GB,儷黑 Pro,LiHei Pro,Heiti TC,微軟正黑體,Microsoft JhengHei UI,Microsoft JhengHei,sans-serif";
     font-weight="400"
     font-stretch="normal"
     units-per-em="1000"

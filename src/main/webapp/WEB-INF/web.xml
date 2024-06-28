@@ -36,7 +36,7 @@
     </filter-mapping>
     <servlet>
         <servlet-name>DispatchServlet</servlet-name>
-        <servlet-class>clothingstore.controller.web.DispatchServlet</servlet-class>
+        <servlet-class>clothingstore.controller.web.MainController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AdminServlet</servlet-name>

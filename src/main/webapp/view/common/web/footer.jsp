@@ -8,13 +8,13 @@
                         <h3>Clothes Shop</h3>
                         <p>Điểm đến hàng đầu cho những bộ trang phục nam đa dạng và phong cách. Khám phá ngay để tìm kiếm sự hoàn hảo cho phong cách của bạn!</p>
                         <div class="footer_widget_contect">
-                            <p><i class="fa fa-map-marker" aria-hidden="true"></i>  Lô E2a-7, Đường D1, Khu Công nghệ cao, P.Long Thạnh Mỹ, Tp. Thủ Đức, TP.HCM.</p>
+                            <p>Lô E2a-7, Đường D1, Khu Công nghệ cao, P.Long Thạnh Mỹ, Tp. Thủ Đức, TP.HCM.</p>
                             
-                            <p><i class="fa fa-mobile" aria-hidden="true"></i> 0(1234) 567 890</p>
-                            <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> clotheshop@gmail.com </a> </br>
-                            <a href="ContactServlet"><i class="fa-solid fa-phone"></i> Contact Us</a>  </br>
-                            <a href="TermConditionServlet"><i class="fa-solid fa-circle-info"></i>Term and Condition</a>  </br>
-                            <a href="PrivacyServlet"><i class="fa-solid fa-book"></i>Police Privacy</a>
+                            <p>0(1234) 567 890</p>
+                            <a href="#">clotheshop@gmail.com</a> <br>
+                            <a href="ContactServlet">Contact Us</a><br>
+                            <a href="TermConditionServlet">Term and Condition</a><br>
+                            <a href="PrivacyServlet">Police Privacy</a>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12 col-md-12">
                     <div class="copyright_area align-items-center">
-                        <p>Copyright &copy; 2024 <a href="#">ClothesShop</a>. All rights reserved. </p>
+                        <p style="text-align: center">Copyright &copy; 2024 <a href="#">ClothesShop</a>. All rights reserved. </p>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
 
-public class DispatchServlet extends HttpServlet {
+public class MainController extends HttpServlet {
 
     private final String LOGIN = "Login";
     private final String SEARCH = "Search";

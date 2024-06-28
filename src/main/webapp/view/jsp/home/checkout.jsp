@@ -190,7 +190,7 @@
                                             </div>
                                             <div class="order_button">
                                                 <form action="DispatchServlet" method="GET">
-                                                    <button type="submit" >Shop Now</button> 
+                                                    <button type="submit" >MUA NGAY</button>
                                                 </form>
                                             </div>   
                                         </c:if>
