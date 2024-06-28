@@ -1,32 +1,104 @@
-# Required
+# Setup
+
+## Required
 - Tomcat: 8.5
 - JDK: 1.8
-- SQL Server
-- Maven 3.9.6 (currently using)
-
-# Config
-> I'm using IntelliJ
-## Tomcat
-- Edit configuration:
-  - Add New Configuration (+) -> Tomcat Server -> Tomcat Local
-  - At tab Server
-    - Application server -> Configure... (point to the path where tomcat installed, `C:\Program Files\Apache Software Foundation\Tomcat 8.5`)
-  - Tab Deployment
-    - Add Artifact...
-    - Config Application context (optional)
-## Maven
-```bash
-mvn clean
-mvn install1
-```
+- SQL Server | Azure Data Studio
+- Maven 3.9.6
 
 ## Databases
-
-- port: 1433
-- Create `.env` file at root directory
+- Create file `.env` at root directory with below data
 
 ```text
-DB_URL=jdbc:sqlserver//<your_host>:<port>;DatabaseName=ClothesShop
-DB_USER=<username>
-DB_PASSWORd=<password>
+DB_URL=jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop
+DB_USER=sa
+DB_PASSWORD=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=
+GOOGLE_LINK_GET_TOKEN=https://accounts.google.com/o/oauth2/token
+GOOGLE_LINK_GET_USER_INFO=https://www.googleapis.com/oauth2/v1/userinfo?access_token=
+GOOGLE_GRANT_TYPE=authorization_code
 ```
+
+- Execute the demo data at `src/resource/createdb.sql`
+
+***
+# Report
+## [1]. Introduction
+[<img src="intro.gif">](https://github.com/lcaohoanq/Clothes-Shop/blob/main/intro.gif)
+
+## [2]. Feature
+### Login
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/47c7b065-0a27-4fc7-810b-ba849f5a756d)
+
+- [Advanced] Login with Google
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/57869e8c-2679-44ca-9c48-f3b36ef0fd25)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/c7475b69-11c7-4a63-b34a-6bd949bab872)
+
+- Privacy & Terms Of Service
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/230528e6-a2f7-4608-8ec6-778bfda0f5d4)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/d8a8ce32-e3e7-4db3-b781-cb58e83832a8)
+
+- See user profile
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/4f0e1149-9f7f-4323-a432-aed53813aef9)
+
+### Wishlist
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/17208a4a-1b7b-4b2c-959f-d2eb02091a3a)
+
+### Cart
+- View Cart
+  
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/9876d72c-2a3f-41e3-8662-b99935bbe3cc)
+
+- Update Cart
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/5b255980-e4c2-4a2a-9e5a-143c9241bf60)
+
+- Delete Cart
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/c44e7933-6d8d-43a7-ac1d-ae2dd043ad5c)
+
+
+### Checkout
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/a6589914-9788-4409-b343-573eae961717)
+
+- Normal user do checkout
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/13d4e82f-8979-4772-943e-ce7a2b883256)
+
+- Admin cannot perform the checkout feature
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/4e584574-14ed-4738-8ea6-732f0dc32158)
+
+
+- Require Login for checkout
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/540478af-b088-4b7c-8970-4d487035daaf)
+
+### Admin Page
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/b0e5253d-3222-411b-a847-aec4d1b6fd06)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/12e99a64-af28-46d8-b783-24c37f7b8b30)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/8f7bcca6-1fb0-4bbc-b44e-14461765333b)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/d84687da-9586-44be-b503-e19ac4599bd8)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/ed03463a-8756-477e-b246-45b0c0cb3cf5)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/d39cd73c-5dd8-401f-ab05-ef8805c1a023)
+
+![image](https://github.com/lcaohoanq/Clothes-Shop/assets/136492579/7bd07f3e-e270-4764-bc12-dea3a147597a)
+
+
+
+
+
+
+

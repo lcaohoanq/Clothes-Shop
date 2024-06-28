@@ -22,7 +22,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Form;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name = "LoginServlet", urlPatterns = { "/LoginServlet" })
 public class LoginServlet extends HttpServlet {
 
     private final String WELCOME = "MainController";
@@ -31,11 +31,11 @@ public class LoginServlet extends HttpServlet {
     private final String REGISTER_CONTROLLER = "RegisterServlet";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String code = request.getParameter("code");
         String error = request.getParameter("error");
-        //neu nguoi dung huy uy quyen
+        // neu nguoi dung huy uy quyen
         if (error != null) {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
@@ -49,11 +49,11 @@ public class LoginServlet extends HttpServlet {
     public static String getToken(String code) throws ClientProtocolException, IOException {
         // call api to get token
         String response = Request.Post(GoogleAuthentication.GOOGLE_LINK_GET_TOKEN)
-            .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
-                .add("client_secret", GoogleAuthentication.GOOGLE_CLIENT_SECRET)
-                .add("redirect_uri", GoogleAuthentication.GOOGLE_REDIRECT_URI).add("code", code)
-                .add("grant_type", GoogleAuthentication.GOOGLE_GRANT_TYPE).build())
-            .execute().returnContent().asString();
+                .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
+                        .add("client_secret", GoogleAuthentication.GOOGLE_CLIENT_SECRET)
+                        .add("redirect_uri", GoogleAuthentication.GOOGLE_REDIRECT_URI).add("code", code)
+                        .add("grant_type", GoogleAuthentication.GOOGLE_GRANT_TYPE).build())
+                .execute().returnContent().asString();
 
         JsonObject jobj = new Gson().fromJson(response, JsonObject.class);
         String accessToken = jobj.get("access_token").toString().replaceAll("\"", "");
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     public static UserGoogleDTO getUserInfo(final String accessToken)
-        throws ClientProtocolException, IOException {
+            throws ClientProtocolException, IOException {
         String link = GoogleAuthentication.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
 
@@ -70,7 +70,8 @@ public class LoginServlet extends HttpServlet {
         return googlePojo;
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the +
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
+    // +
     // sign on the left to edit the code.">
 
     /**
@@ -83,7 +84,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         String url = WELCOME;
         try {
             request.setAttribute("CURRENTSERVLET", "Login");
@@ -146,7 +147,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String url = WELCOME;
@@ -157,16 +158,16 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("txtPassword");
             String remember = request.getParameter("remember");
             UserDAO udao = new UserDAO();
-            String hashedPassword =  new UserDAO().getPassword(username);
+            String hashedPassword = new UserDAO().getPassword(username);
             if (new PasswordHandler().authenticate(password.toCharArray(), hashedPassword)) {
-                UserDTO user = udao.checkLogin(username,  hashedPassword);
+                UserDTO user = udao.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);
                 Cookie u = new Cookie("cUName", username);
                 Cookie p = new Cookie("cUPass", hashedPassword);
                 Cookie r = new Cookie("reMem", remember);
 
-                u.setMaxAge(60 * 60 * 24 * 30 * 3); //3months
+                u.setMaxAge(60 * 60 * 24 * 30 * 3); // 3months
                 if (remember != null) {
                     p.setMaxAge(60 * 60 * 24 * 30 * 3);
                     r.setMaxAge(60 * 60 * 24 * 30 * 3);

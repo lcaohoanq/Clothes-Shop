@@ -23,7 +23,7 @@
     }
 </style>
 <div class="header_area" id="fixed-header">
-    <!--header start--> 
+    <!--header start-->
     <div class="navbar">
         <!-- My Wishlist -->
         <a href="WishlistServlet" class="nav-item" aria-label="My Wishlist">
@@ -73,7 +73,7 @@
                     </form>
                 </div>
 
-            </div>  
+            </div>
             <div class="col-lg-5 col-md-3 col-sm-2 col-2">
                 <div class="header_bottom">
                     <div class="row" style="align-items: center">
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="total_price">
                                     <span> Total </span>
-                                    <span class="prices">  
+                                    <span class="prices">
                                         <c:set var="totalPrice" value="0" />
                                         <c:forEach items="${sessionScope.CART}" var="c">
                                             <c:set var="productTotal" value="${c.product.getSalePrice() * c.quantity}" />
@@ -152,12 +152,12 @@
                                     </ul>
                                 </nav>
                             </div>
-                        </div>            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>     
-    <!--header middel end-->      
+    </div>
+    <!--header middel end-->
 
 </div>
