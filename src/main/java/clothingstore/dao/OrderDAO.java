@@ -1,6 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
+import clothingstore.model.OrderItemDTO;
 import clothingstore.utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.Date;
@@ -420,6 +421,8 @@ public class OrderDAO extends DatabaseConnection {
         }
         return false;
     }
+
+
 
 //    public static void main(String[] args) throws SQLException {
 //        OrderDAO dao = new OrderDAO();
