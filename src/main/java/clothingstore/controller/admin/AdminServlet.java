@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import clothingstore.model.OrderDTO;
-import clothingstore.model.OrderItem;
+import clothingstore.model.OrderItemDTO;
 
 public class AdminServlet extends HttpServlet {
 
@@ -77,7 +77,7 @@ public class AdminServlet extends HttpServlet {
                 String bill_id = request.getParameter("bill_id");
                 OrderDTO order = oDao.getOrdersByID(bill_id);
                 int id = order.getOrderID();
-                List<OrderItem> list = oIDao.getOrderItemByOrderId(id);
+                List<OrderItemDTO> list = oIDao.getOrderItemByOrderId(id);
                 request.setAttribute("LIST_PRODUCTS_IN_ORDER", list);
 
             }

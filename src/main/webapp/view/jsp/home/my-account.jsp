@@ -67,28 +67,33 @@
                                         <div class="tab-pane fade" id="orders">
                                             <h3>Orders</h3>
                                             <div class="coron_table table-responsive">
-                                                <table class="table">
-                                                    <thead>
+                                                <form action="OrderedDetailsServlet" method="GET">
+                                                    <table class="table">
+                                                        <thead>
                                                         <tr>
                                                             <th>Order ID</th>
                                                             <th>Date</th>
                                                             <th>Status</th>
                                                             <th>Total</th>
-                                                            <th>Actions</th>	 	 	 	
+                                                            <th>Actions</th>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                        </thead>
+                                                        <tbody>
                                                         <c:forEach items="${requestScope.LISTORDERS}" var="o">
                                                             <tr>
                                                                 <td>${o.orderID}</td>
                                                                 <td>${o.orderDate}</td>
                                                                 <td><span class="success">${o.status == true ? "Đã giao" : "Chưa giao"}</span></td>
                                                                 <td>${o.totalPrice}</td>
-                                                                <td><a href="cart.html" class="view">view</a></td>
+                                                                <td>
+                                                                    <input type="hidden" name="orderID" value="${o.orderID}"/>
+                                                                    <button>View</button>
+                                                                </td>
                                                             </tr>
                                                         </c:forEach>
-                                                    </tbody>
-                                                </table>
+                                                        </tbody>
+                                                    </table>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade show active" id="account-details">

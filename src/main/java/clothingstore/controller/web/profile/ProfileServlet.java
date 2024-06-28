@@ -1,6 +1,7 @@
 package clothingstore.controller.web.profile;
 
 import clothingstore.dao.OrderDAO;
+import clothingstore.model.OrderItemDTO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;

@@ -13,6 +13,8 @@
 
         <!-- all css here -->
         <%@include file="../../common/web/add_css.jsp"%>
+
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdbIgMqAAAAANeTLIl-I_S_jFCCwdTYMwIuAfRn"></script>
     </head>
     <body>
         <!-- Add your site or application content here -->
