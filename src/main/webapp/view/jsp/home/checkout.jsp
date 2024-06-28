@@ -31,7 +31,7 @@
                             <div class="col-12">
                                 <div class="breadcrumb_content">
                                     <ul>
-                                        <li><a href="DispatchServlet">home</a></li>
+                                        <li><a href="MainController">home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>checkout</li>
                                     </ul>
@@ -52,7 +52,7 @@
                                         <h3> 
                                             <i class="fa fa-file-o" aria-hidden="true"></i>
                                             To pay for your order, you need to log in >>
-                                            <a class="Returning" href="DispatchServlet?btnAction=Login">Click here to login</a>     
+                                            <a class="Returning" href="MainController?btnAction=Login">Click here to login</a>
                                         </h3>
 
                                     </c:if>
@@ -92,11 +92,11 @@
                                                 </div>
                                                 <div class="col-12 mb-30">
                                                     <label>Address  <span>*</span></label>
-                                                    <input placeholder="House number and street name" type="text" value="${sessionScope.account != null ? sessionScope.account.address: ''}" readonly>     
+                                                    <input placeholder="House number and street name" type="text" value="${sessionScope.account != null ? sessionScope.account.address: ''}" required>
                                                 </div>
-                                                <div class="col-lg-6 mb-30">
+                                                <div class="col-lg-6 mb-30">p
                                                     <label>Phone<span>*</span></label>
-                                                    <input type="number" value="${sessionScope.account != null ? sessionScope.account.phone: ''}" readonly> 
+                                                    <input type="number" value="${sessionScope.account != null ? sessionScope.account.phone: ''}" required type="number">
 
                                                 </div> 
                                                 <div class="col-lg-6 mb-30">
@@ -189,7 +189,7 @@
                                                 <img  src="view/assets/home/img/cart/emptycart1.png" alt="Empty cart">
                                             </div>
                                             <div class="order_button">
-                                                <form action="DispatchServlet" method="GET">
+                                                <form action="MainController" method="GET">
                                                     <button type="submit" >Shop Now</button> 
                                                 </form>
                                             </div>   

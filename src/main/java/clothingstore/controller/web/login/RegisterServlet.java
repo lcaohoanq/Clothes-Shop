@@ -1,6 +1,7 @@
 package clothingstore.controller.web.login;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.utils.PasswordHandler;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -96,7 +97,7 @@ public class RegisterServlet extends HttpServlet {
                 request.setAttribute("ERROR", message);
                 request.getRequestDispatcher("view/jsp/home/login.jsp").forward(request, response);
             } else {
-                UserDTO user = new UserDTO(0, fName, lName, email, (avatar == null ? "assets/img/users/user.jpg" : avatar), uName, uPass, "", "", 2, true);
+                UserDTO user = new UserDTO(0, fName, lName, email, (avatar == null ? "assets/img/users/user.jpg" : avatar), uName, new PasswordHandler().hash(uPass.toCharArray()), "", "", 2, true);
                 ud.registerUser(user);
                 message = "Register successfully. Please Login!";
 

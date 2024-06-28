@@ -31,7 +31,7 @@
                             <div class="col-12">
                                 <div class="breadcrumb_content">
                                     <ul>
-                                        <li><a href="DispatchServlet">home</a></li>
+                                        <li><a href="MainController">home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>Forgot password</li>
                                     </ul>
