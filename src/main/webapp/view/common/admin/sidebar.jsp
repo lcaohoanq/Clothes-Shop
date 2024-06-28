@@ -8,7 +8,7 @@
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
         <!-- User Menu-->
-        <li><a class="app-nav__item" href="DispatchServlet"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+        <li><a class="app-nav__item" href="MainController"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
         </li>
     </ul>
@@ -25,7 +25,7 @@
     </div>
     <hr>
     <ul class="app-menu">
-        <li><a class="app-menu__item ${requestScope.CURRENTSERVLET == "Home" ? "active" : ""}" href="DispatchServlet"><i class='app-menu__icon bx bx-home'></i><span
+        <li><a class="app-menu__item ${requestScope.CURRENTSERVLET == "Home" ? "active" : ""}" href="MainController"><i class='app-menu__icon bx bx-home'></i><span
                     class="app-menu__label">Trang chủ</span></a></li>
         <li><a class="app-menu__item ${requestScope.CURRENTSERVLET == "Dashboard" ? "active" : ""}" href="AdminServlet"><i class='app-menu__icon bx bx-tachometer'></i><span
                     class="app-menu__label">Thống kê</span></a></li>

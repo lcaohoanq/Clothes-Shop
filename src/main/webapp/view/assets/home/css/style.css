@@ -58,10 +58,6 @@ html {
 }
 
 /*  2.  header css here*/
-
-.pos_page {
-    background: url(../img/banner/background.png);
-}
 .pos_page_inner {
     background: #fff;
     margin: 0 -20px;

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.UserDTO;
+import javax.xml.crypto.Data;
 
 public class UserDAO extends DatabaseConnection {
 
@@ -362,13 +363,44 @@ public class UserDAO extends DatabaseConnection {
         }
     }
 
-//    public static void main(String[] args) throws SQLException {
-//        UserDAO dao = new UserDAO();
+    public String getPassword(String userId) throws SQLException {
+        String password = "";
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(DatabaseQueries.GET_PASSWORD);
+                ptm.setString(1, userId);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    password = rs.getString("password");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return password;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        UserDAO dao = new UserDAO();
 //        UserDTO user = dao.checkLogin("phuuthanh2003", "1231231231");
-////        List<UserDTO> list = dao.getData();
-////        for (int i = 0; i < list.size(); i++) {
-////            System.out.println(list.get(i).getAvatar());
-////        }
-//        System.out.println(user.getFirstName());
-//    }
+//        List<UserDTO> list = dao.getData();
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.println(list.get(i).getAvatar());
+//        }
+//        System.out.println(new UserDAO().getPassword("hoang"));
+    }
 }
