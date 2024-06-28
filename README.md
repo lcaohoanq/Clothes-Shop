@@ -6,6 +6,8 @@
 - SQL Server | Azure Data Studio
 - Maven 3.9.6
 
+> Optional: Google Auth App, Gmail SMTP, Re-captcha
+
 ## Databases
 - Create file `.env` at root directory with below data
 
