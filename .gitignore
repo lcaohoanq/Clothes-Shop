@@ -90,3 +90,7 @@ src/main/ts/.env
 
 .env
 node_modules/
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
