@@ -1,0 +1,17 @@
+# Use the official Tomcat image from the Docker Hub
+FROM tomcat:8.5-jdk8
+
+LABEL maintainer="hoangclw@gmail.com"
+
+WORKDIR /usr/local/tomcat/webapps/
+                  
+# Copy the war file to the webapps directory of Tomcat
+COPY ./target/Clothes-Shop-Web.war .
+
+# Expose port 8080
+EXPOSE 8080
+
+# Start Tomcat server
+CMD ["catalina.sh", "run"]
+
+# Build command: docker build -t clothes-shop-web -f Dockerfile-tomcat .
