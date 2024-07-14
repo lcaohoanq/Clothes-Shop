@@ -9,7 +9,7 @@ import clothingstore.model.UserDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import javafx.print.Printer;
+//import javafx.print.Printer;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,13 +1,12 @@
 package clothingstore.controller.web.email;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.Email;
+import clothingstore.services.Email;
 
 @WebServlet(name = "EmailServlet", urlPatterns = {"/EmailServlet"})
 public class EmailServlet extends HttpServlet {
