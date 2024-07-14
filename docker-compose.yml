@@ -1,0 +1,14 @@
+services:
+  mssql:
+    extends:
+      file: mssql-docker-compose.yml
+      service: mssql
+
+  tomcat:
+    extends:
+      file: tomcat-docker-compose.yml
+      service: tomcat
+
+volumes:
+  my-volume:
+      external: true

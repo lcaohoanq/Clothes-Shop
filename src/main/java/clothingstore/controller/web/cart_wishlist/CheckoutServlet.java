@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import clothingstore.model.CartItem;
-import clothingstore.model.Email;
+import clothingstore.services.Email;
 import clothingstore.model.OrderDTO;
 import clothingstore.model.PaymentDTO;
 import clothingstore.model.UserDTO;

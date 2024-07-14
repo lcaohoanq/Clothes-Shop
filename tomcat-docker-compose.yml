@@ -1,0 +1,16 @@
+services:
+  tomcat:
+    image: lcaohoanq/clothes-shop-server:1.0
+    container_name: clothes-shop-tomcat-server
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+      - ./logs/:/usr/local/tomcat/logs/
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx1024m
+
+networks:
+  default:
+    name: 'tomcat_network'
+    external: true

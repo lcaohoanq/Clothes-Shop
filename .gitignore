@@ -90,3 +90,5 @@ src/main/ts/.env
 
 .env
 node_modules/
+
+logs/app.log

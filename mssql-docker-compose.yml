@@ -1,0 +1,16 @@
+services:
+  mssql:
+    image: lcaohoanq/clothes-shop-database:1.0
+    container_name: clothes-shop-database
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "1435:1433"
+    volumes:
+      - my-volume:/var/opt/mssql/data
+      - ./bk:/var/opt/mssql/backup
+
+volumes:
+  my-volume:
+    external: true
