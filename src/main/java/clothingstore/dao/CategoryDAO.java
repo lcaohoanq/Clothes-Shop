@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseConnection;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.util.List;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.TypeDTO;
 
-public class CategoryDAO extends DatabaseConnection {
+public class CategoryDAO extends DatabaseService {
 
     public List<CategoryDTO> getData() throws SQLException {
         List<CategoryDTO> categories = new ArrayList<>();

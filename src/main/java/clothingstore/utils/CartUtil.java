@@ -144,6 +144,6 @@ public class CartUtil {
         List<CartItem> list = new ArrayList<>(carts.values());
 //        String string = cartUtil.convertToString();
 //        System.out.println(string);
-        System.out.println(list.toString());
+        System.out.println(list);
     }
 }

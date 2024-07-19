@@ -45,9 +45,7 @@ public class WishlistUtil {
     }
 
     public HashMap<Integer, ProductDTO> removeItem(ProductDTO product) {
-        if (listItemsInWishlist.containsKey(product.getId())) {
-            listItemsInWishlist.remove(product.getId());
-        }
+        listItemsInWishlist.remove(product.getId());
         return listItemsInWishlist;
     }
 

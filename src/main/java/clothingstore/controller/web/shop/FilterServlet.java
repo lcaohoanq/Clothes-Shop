@@ -144,11 +144,7 @@ public class FilterServlet extends HttpServlet {
             if ((cid_filter_raw != null) && (cid_filter[0] != 0)) {
                 chid[0] = false;
                 for (int i = 1; i < chid.length; i++) {
-                    if (isCheck(listCategories.get(i - 1).getId(), cid_filter)) {
-                        chid[i] = true;
-                    } else {
-                        chid[i] = false;
-                    }
+                    chid[i] = isCheck(listCategories.get(i - 1).getId(), cid_filter);
                 }
             }
 

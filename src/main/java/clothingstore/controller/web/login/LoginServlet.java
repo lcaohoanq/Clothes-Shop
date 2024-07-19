@@ -2,7 +2,7 @@ package clothingstore.controller.web.login;
 
 import clothingstore.model.UserGoogleDTO;
 import clothingstore.constant.GoogleAuthentication;
-import clothingstore.utils.PasswordHandler;
+import clothingstore.utils.PBKDF2;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import clothingstore.dao.UserDAO;
@@ -40,13 +40,13 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
         LoginGoogle gg = new LoginGoogle();
-        String accessToken = gg.getToken(code);
+        String accessToken = LoginGoogle.getToken(code);
         System.out.println("access_token: " + accessToken);
-        UserGoogleDTO acc = gg.getUserInfo(accessToken);
+        UserGoogleDTO acc = LoginGoogle.getUserInfo(accessToken);
         System.out.println("Data user: " + acc);
     }
 
-    public static String getToken(String code) throws ClientProtocolException, IOException {
+    public static String getToken(String code) throws IOException {
         // call api to get token
         String response = Request.Post(GoogleAuthentication.GOOGLE_LINK_GET_TOKEN)
                 .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     public static UserGoogleDTO getUserInfo(final String accessToken)
-            throws ClientProtocolException, IOException {
+            throws IOException {
         String link = GoogleAuthentication.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
 
@@ -89,7 +89,7 @@ public class LoginServlet extends HttpServlet {
         try {
             request.setAttribute("CURRENTSERVLET", "Login");
             if (request.getParameter("btnAction") != null) {
-                Cookie arr[] = request.getCookies();
+                Cookie[] arr = request.getCookies();
                 if (arr != null) {
                     for (int i = 0; i < arr.length; i++) {
                         if (arr[i].getName().equals("cUName")) {
@@ -159,7 +159,7 @@ public class LoginServlet extends HttpServlet {
             String remember = request.getParameter("remember");
             UserDAO udao = new UserDAO();
             String hashedPassword = new UserDAO().getPassword(username);
-            if (new PasswordHandler().authenticate(password.toCharArray(), hashedPassword)) {
+            if (new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
                 UserDTO user = udao.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);

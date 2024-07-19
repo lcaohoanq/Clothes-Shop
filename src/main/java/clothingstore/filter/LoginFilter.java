@@ -171,10 +171,9 @@ public class LoginFilter implements Filter {
         if (filterConfig == null) {
             return ("LoginFilter()");
         }
-        StringBuffer sb = new StringBuffer("LoginFilter(");
-        sb.append(filterConfig);
-        sb.append(")");
-        return (sb.toString());
+        String sb = "LoginFilter(" + filterConfig
+            + ")";
+        return (sb);
     }
 
     private void sendProcessingError(Throwable t, ServletResponse response) {

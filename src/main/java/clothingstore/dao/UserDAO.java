@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseConnection;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,9 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.UserDTO;
-import javax.xml.crypto.Data;
 
-public class UserDAO extends DatabaseConnection {
+public class UserDAO extends DatabaseService {
 
 
 

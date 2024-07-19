@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseConnection;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.SupplierDTO;
 
-public class SupplierDAO extends DatabaseConnection {
+public class SupplierDAO extends DatabaseService {
 
     
     public List<SupplierDTO> getData() throws SQLException {

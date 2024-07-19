@@ -71,11 +71,7 @@
                                             </label>
                                         </div>
                                         <div style="margin-top: 20px">
-<<<<<<< HEAD
                                             <a class="login-with-google-btn" href="MainController?btnAction=Google">Login With Google</a>
-=======
-                                            <a class="login-with-google-btn" href="DispatchServlet?btnAction=Google">Login With Google</a>
->>>>>>> main
                                             <a href="ForgotPasswordServlet?status=forgot" style="margin-left: 20px">Forgot password</a>
                                         </div>
                                     </form>

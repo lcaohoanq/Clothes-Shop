@@ -1,12 +1,10 @@
-package clothingstore.model;
+package clothingstore.module.email;
 
 import clothingstore.constant.Regex;
 import clothingstore.utils.EnvUtil;
-import java.time.LocalDateTime;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import java.util.Properties;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -136,8 +134,7 @@ public class Email {
                 + "            </tr>\n"
                 + "        </table>\n"
                 + "    </body>\n"
-                + "</html>\n"
-                + "";
+                + "</html>\n";
     }
     
     public String messageNewOrder(String name, int sl, double total) {
@@ -195,8 +192,7 @@ public class Email {
                 + "            </tr>\n"
                 + "        </table>\n"
                 + "    </body>\n"
-                + "</html>\n"
-                + "";
+                + "</html>\n";
     }
 
     public String messageFogot(String name, int code) {
@@ -250,8 +246,7 @@ public class Email {
                 + "            </tr>\n"
                 + "        </table>\n"
                 + "    </body>\n"
-                + "</html>\n"
-                + "";
+                + "</html>\n";
     }
 
     public String messageSubscribe() {
@@ -307,8 +302,7 @@ public class Email {
                 + "            </tr>\n"
                 + "        </table>\n"
                 + "    </body>\n"
-                + "</html>\n"
-                + "";
+                + "</html>\n";
     }
 
     public static void main(String[] args) {

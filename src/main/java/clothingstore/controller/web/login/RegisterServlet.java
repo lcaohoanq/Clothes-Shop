@@ -1,12 +1,9 @@
 package clothingstore.controller.web.login;
 
 import clothingstore.dao.UserDAO;
-import clothingstore.utils.PasswordHandler;
+import clothingstore.utils.PBKDF2;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -92,12 +89,12 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
             boolean isDup = ud.checkUserNameDuplicate(uName);
-            if (isDup == true) {
+            if (isDup) {
                 message = "Username already exist!";
                 request.setAttribute("ERROR", message);
                 request.getRequestDispatcher("view/jsp/home/login.jsp").forward(request, response);
             } else {
-                UserDTO user = new UserDTO(0, fName, lName, email, (avatar == null ? "assets/img/users/user.jpg" : avatar), uName, new PasswordHandler().hash(uPass.toCharArray()), "", "", 2, true);
+                UserDTO user = new UserDTO(0, fName, lName, email, (avatar == null ? "assets/img/users/user.jpg" : avatar), uName, new PBKDF2().hash(uPass.toCharArray()), "", "", 2, true);
                 ud.registerUser(user);
                 message = "Register successfully. Please Login!";
 

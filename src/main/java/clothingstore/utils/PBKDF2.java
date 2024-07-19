@@ -1,6 +1,5 @@
 package clothingstore.utils;
 
-import clothingstore.constant.Regex;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -12,45 +11,26 @@ import java.util.regex.Pattern;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
-/**
- * Hash passwords for storage, and test passwords against password tokens.
- * <p>
- * Instances of this class can be used concurrently by multiple threads.
- *
- * @author erickson
- * @see <a href="http://stackoverflow.com/a/2861125/3474">StackOverflow</a>
- */
-public class PasswordHandler {
-  /**
-   * Each token produced by this class uses this identifier as a prefix.
-   */
+public class PBKDF2 {
   public static final String ID = "$31$";
 
-  /**
-   * The minimum recommended cost, used by default
-   */
   public static final int DEFAULT_COST = 16;
 
   private static final String ALGORITHM = "PBKDF2WithHmacSHA1";
 
   private static final int SIZE = 128;
 
-  private static final Pattern layout = Pattern.compile(Regex.HASHED_PASSWORD);
+  private static final Pattern layout = Pattern.compile("\\$31\\$(\\d\\d?)\\$(.{43})");
 
   private final SecureRandom random;
 
   private final int cost;
 
-  public PasswordHandler() {
+  public PBKDF2() {
     this(DEFAULT_COST);
   }
 
-  /**
-   * Create a password manager with a specified cost
-   *
-   * @param cost the exponential computational cost of hashing a password, 0 to 30
-   */
-  public PasswordHandler(int cost) {
+  public PBKDF2(int cost) {
     iterations(cost);
     /* Validate cost */
     this.cost = cost;
@@ -76,11 +56,6 @@ public class PasswordHandler {
     }
   }
 
-  /**
-   * Hash a password for storage.
-   *
-   * @return a secure authentication token to be stored for later authentication
-   */
   public String hash(char[] password) {
     byte[] salt = new byte[SIZE / 8];
     random.nextBytes(salt);
@@ -92,11 +67,6 @@ public class PasswordHandler {
     return ID + cost + '$' + enc.encodeToString(hash);
   }
 
-  /**
-   * Authenticate with a password and a stored password token.
-   *
-   * @return true if the password and token match
-   */
   public boolean authenticate(char[] password, String token) {
     Matcher m = layout.matcher(token);
     if (!m.matches()) {
@@ -113,41 +83,13 @@ public class PasswordHandler {
     return zero == 0;
   }
 
-  /**
-   * Hash a password in an immutable {@code String}.
-   *
-   * <p>
-   * Passwords should be stored in a {@code char[]} so that it can be filled with
-   * zeros after use instead of lingering on the heap and elsewhere.
-   *
-   * @param password
-   * @return
-   * @deprecated Use {@link #hash(char[])} instead
-   */
-  @Deprecated
-  public String hash(String password) {
-    return hash(password.toCharArray());
-  }
-
-  /**
-   * Authenticate with a password in an immutable {@code String} and a stored
-   * password token.
-   *
-   * @see #hash(String)
-   * @deprecated Use {@link #authenticate(char[], String)} instead.
-   */
-  @Deprecated
-  public boolean authenticate(String password, String token) {
-    return authenticate(password.toCharArray(), token);
-  }
-
   public static void main(String[] args) {
-    PasswordHandler pwdHandler = new PasswordHandler();
+    PBKDF2 pwdHandler = new PBKDF2();
 
 //    String password = "123456";
 //
 //    String hashedPassword = new PasswordHandler().hash(password.toCharArray());
-//   
+//
 //    System.out.println("Data: " + hashedPassword);
 
     System.out.println("Authenticated: " + pwdHandler.authenticate("1604".toCharArray(), "$31$16$i_HsO9-pocKvfnUYjVDGfz1k7DlIKKpQ90N8JBaBEvM"));
