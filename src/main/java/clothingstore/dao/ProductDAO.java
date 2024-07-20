@@ -2,6 +2,7 @@ package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
 import clothingstore.service.DatabaseService;
+import clothingstore.service.TypeService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -33,12 +34,12 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -83,11 +84,11 @@ public class ProductDAO extends DatabaseService {
                 if (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -122,11 +123,11 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(typeId);
+                    TypeDTO type = typeService.getTypeById(typeId);
                     int id = rs.getInt("id");
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
@@ -173,12 +174,12 @@ public class ProductDAO extends DatabaseService {
 //                while (rs.next()) {
 //                    CategoryDAO cDao = new CategoryDAO();
 //                    SupplierDAO sDao = new SupplierDAO();
-//                    TypeDAO tDao = new TypeDAO();
+//                    TypeService typeService = new TypeService();
 //                    String productname = rs.getString("productname");
 //                    SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
 //                    CategoryDTO category = cDao.getCategoryById(categoryid);
 //                    int id = rs.getInt("id");
-//                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+//                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
 //                    int stock = rs.getInt("stock");
 //                    String description = rs.getString("description");
 //                    Date date = rs.getDate("releasedate");
@@ -213,12 +214,12 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = sDao.getSupplierById(supplierid);
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
                     int id = rs.getInt("id");
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -382,12 +383,12 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -431,12 +432,12 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -481,12 +482,12 @@ public class ProductDAO extends DatabaseService {
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
                     SupplierDAO sDao = new SupplierDAO();
-                    TypeDAO tDao = new TypeDAO();
+                    TypeService typeService = new TypeService();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
                     SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
                     CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-                    TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+                    TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
                     int stock = rs.getInt("stock");
                     String description = rs.getString("description");
                     Date date = rs.getDate("releasedate");
@@ -756,12 +757,12 @@ public class ProductDAO extends DatabaseService {
 //            while (rs.next()) {
 //                CategoryDAO cDao = new CategoryDAO();
 //                SupplierDAO sDao = new SupplierDAO();
-//                TypeDAO tDao = new TypeDAO();
+//                TypeService typeService = new TypeService();
 //                String productname = rs.getString("productname");
 //                int id = rs.getInt("id");
 //                SupplierDTO supplier = sDao.getSupplierById(rs.getInt("supplierid"));
 //                CategoryDTO category = cDao.getCategoryById(rs.getInt("categoryid"));
-//                TypeDTO type = tDao.getTypeById(rs.getInt("typeid"));
+//                TypeDTO type = typeService.getTypeById(rs.getInt("typeid"));
 //                int stock = rs.getInt("stock");
 //                String description = rs.getString("description");
 //                Date date = rs.getDate("releasedate");

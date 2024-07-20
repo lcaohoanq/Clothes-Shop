@@ -21,7 +21,7 @@ GOOGLE_LINK_GET_USER_INFO=https://www.googleapis.com/oauth2/v1/userinfo?access_t
 GOOGLE_GRANT_TYPE=authorization_code
 ```
 
-- Execute the demo data at `src/resource/createdb.sql`
+- Execute the demo data at `src/resource/init.sql`
 
 ***
 # Report

@@ -1,11 +1,12 @@
 package clothingstore.controller.web;
 
+import clothingstore.constant.Direction;
+import clothingstore.service.TypeService;
 import clothingstore.utils.WishlistUtil;
 import clothingstore.utils.CartUtil;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.SupplierDAO;
-import clothingstore.dao.TypeDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -19,7 +20,9 @@ import clothingstore.model.CategoryDTO;
 import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class MainController extends HttpServlet {
 
     private final String LOGIN = "Login";
@@ -65,7 +68,7 @@ public class MainController extends HttpServlet {
                 url = GOOGLE_CONTROLLER;
             }
         } catch (Exception ex) {
-
+            log.error("Error at MainController: " + ex.getMessage());
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }
@@ -76,7 +79,7 @@ public class MainController extends HttpServlet {
             ProductDAO pDao = new ProductDAO();
             CategoryDAO cDao = new CategoryDAO();
             SupplierDAO sDao = new SupplierDAO();
-            TypeDAO tDao = new TypeDAO();
+            TypeService typeService = new TypeService();
             CategoryDAO caDao = new CategoryDAO();
 
             List<ProductDTO> listProducts = pDao.getData();
@@ -84,7 +87,7 @@ public class MainController extends HttpServlet {
             List<SupplierDTO> listSuppliers = sDao.getData();
             List<ProductDTO> listProductsNew = pDao.getProductNew();
             List<ProductDTO> listProductsBestSeller = pDao.getProductsBestSeller();
-            List<TypeDTO> listTypes = tDao.getAllType();
+            List<TypeDTO> listTypes = typeService.getAllType();
 
             request.setAttribute("LIST_PRODUCTS", listProducts);
             request.setAttribute("LIST_TYPES", listTypes);

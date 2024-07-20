@@ -2,6 +2,7 @@ package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
 import clothingstore.service.DatabaseService;
+import clothingstore.service.UserService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,7 +16,8 @@ import clothingstore.model.UserDTO;
 
 public class OrderDAO extends DatabaseService {
 
-    private final UserDAO uDao = new UserDAO();
+//    private final UserDAO uDao = new UserDAO();
+    private final UserService userService = new UserService();
     private final PaymentDAO pDao = new PaymentDAO();
 
     public double getTotalSale() throws SQLException {
@@ -157,7 +159,7 @@ public class OrderDAO extends DatabaseService {
                     int paymentId = rs.getInt("paymentid");
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     String userName = rs.getString("username");
-                    UserDTO user = uDao.getUserByName(userName);
+                    UserDTO user = userService.getUserByUsername(userName);
                     boolean status = rs.getBoolean("status");
                     OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                     orders.add(order);
@@ -196,7 +198,7 @@ public class OrderDAO extends DatabaseService {
                     int paymentId = rs.getInt("paymentid");
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     String userName = rs.getString("username");
-                    UserDTO user = uDao.getUserByName(userName);
+                    UserDTO user = userService.getUserByUsername(userName);
                     boolean status = rs.getBoolean("status");
                     order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                 }
@@ -234,7 +236,7 @@ public class OrderDAO extends DatabaseService {
                     int paymentId = rs.getInt("paymentid");
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     boolean status = rs.getBoolean("status");
-                    UserDTO user = uDao.getUserByName(userName);
+                    UserDTO user = userService.getUserByUsername(userName);
                     OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                     orders.add(order);
                 }
@@ -274,7 +276,7 @@ public class OrderDAO extends DatabaseService {
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     boolean status = rs.getBoolean("status");
                     String userName = rs.getString("username");
-                    UserDTO user = uDao.getUserByName(userName);
+                    UserDTO user = userService.getUserByUsername(userName);
                     order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                 }
             }
@@ -341,7 +343,7 @@ public class OrderDAO extends DatabaseService {
                     int paymentId = rs.getInt("paymentid");
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     String userName = rs.getString("username");
-                    UserDTO user = uDao.getUserByName(userName);
+                    UserDTO user = userService.getUserByUsername(userName);
                     boolean status = rs.getBoolean("status");
                     OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment , user, status);
                     orders.add(order);

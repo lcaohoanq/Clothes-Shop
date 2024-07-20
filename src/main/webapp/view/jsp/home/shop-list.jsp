@@ -258,7 +258,7 @@
                                                                     <button style="display: block;
                                                                             border: none;
                                                                             width: 100%;
-                                                                            background: #018576;
+                                                                            background: #f98404;
                                                                             color: #fff;
                                                                             padding: 7px 0;
                                                                             text-transform: capitalize;

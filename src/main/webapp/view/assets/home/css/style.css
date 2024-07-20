@@ -426,7 +426,7 @@ html {
     margin-bottom: 11px;
 }
 .mega_items h3 a:hover,.mega_items ul li a:hover{
-    color: #018576;
+    color: #f98404;
 }
 .mega_items ul li a {
     font-size: 14px;
@@ -752,7 +752,7 @@ html {
     padding: 0 17px;
 }
 .sidebar_widget.newsletter form button:hover {
-    background: #018576;
+    background: #f98404;
 }
 /*newsletter block css end*/
 
@@ -781,7 +781,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background: #009483;
+    background: #f98404;
     opacity: 0;
     cursor: pointer;
     -webkit-transition: .3s;
@@ -816,14 +816,14 @@ html {
 }
 .product_action a {
     display: block;
-    background: #018576;
+    background: #f98404;
     color: #fff;
     padding: 7px 0;
     text-transform: capitalize;
     font-size: 13px;
 }
 .product_action a:hover{
-    background: #009483;
+    background: #f98404;
 }
 .single_product:hover .product_action{
     bottom: 0;
@@ -877,16 +877,16 @@ html {
     visibility: visible;
 }
 .product_info ul li a:hover{
-    background: #009483;
+    background: #f98404;
     color: #fff;
-    border-color: #009483;
+    border-color: #f98404;
 }
 .single_product {
     border: 1px solid transparent;
     padding: 8px;
 }
 .single_product:hover{
-    border: 1px solid #009483;
+    border: 1px solid #f98404;
 }
 .product_active.owl-carousel .owl-nav div, .brand_active.owl-carousel .owl-nav div, .single_p_active.owl-carousel .owl-nav div {
     font-size: 20px;
@@ -1475,7 +1475,7 @@ html {
     font-size: 16px;
 }
 .product_compare button:hover{
-    background: #018576;
+    background: #f98404;
 }
 .banner_slider:hover img {
     opacity: 0.8;
@@ -1501,7 +1501,7 @@ html {
     color: #999;
 }
 .list_button ul li a.active {
-    color: #018576;
+    color: #f98404;
 }
 .list_product_content p input {
     width: 15px;
@@ -1948,14 +1948,14 @@ html {
     transition: .3s;
 }
 .product_info_button ul li a.active::before,.product_info_button ul li a:hover::before{
-    border-left: 20px solid #009483;
+    border-left: 20px solid #f98404;
 }
 .product_info_button ul li a.active,.product_info_button ul li a:hover {
-    background: #009483;
+    background: #f98404;
     color: #fff;
 }
 .product_info_button {
-    border-bottom: 3px solid #009483;
+    border-bottom: 3px solid #f98404;
 }
 .product_d_inner .tab-content {
     padding: 20px 30px 25px;
@@ -2014,7 +2014,7 @@ html {
 }
 .product_review_form button {
     border: none;
-    background: #009483;
+    background: #f98404;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
@@ -3353,7 +3353,7 @@ html {
     transition: .3s;
 }
 .blog_active.owl-carousel .owl-nav div:hover{
-    background: #009483;
+    background: #f98404;
     color: #fff;
 }
 .blog_active.owl-carousel .owl-nav div.owl-next {
@@ -3422,7 +3422,7 @@ html {
 }
 .blog_widget.search_widget button {
     border: none;
-    background: #009483;
+    background: #f98404;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
@@ -3460,7 +3460,7 @@ html {
     color: #222222;
 }
 .post_button a {
-    background: #009483;
+    background: #f98404;
     color: #fff;
     font-size: 12px;
     padding: 2px 5px;
@@ -3502,7 +3502,7 @@ html {
     display: block;
     left: 0;
     top: 0;
-    color: #009483;
+    color: #f98404;
     opacity: 0;
 }
 .blog_widget.widget_categoie  ul li a:hover::after {

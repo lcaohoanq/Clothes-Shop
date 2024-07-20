@@ -68,7 +68,7 @@
             <div class="header_right_info col-lg-5 col-md-7 col-sm-8 col-7">
                 <div class="search_bar col-lg-12 no-padding">
                     <form action="MainController" method="get" >
-                        <input name="txtSearch" value="" placeholder="Search..." type="text">
+                        <input name="txtSearch" value="" placeholder="Bao ship 0đ - Đăng ký ngay!" type="text">
                         <button name="btnAction" value="Search" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

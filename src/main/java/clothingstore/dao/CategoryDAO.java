@@ -2,6 +2,7 @@ package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
 import clothingstore.service.DatabaseService;
+import clothingstore.service.TypeService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,8 +25,8 @@ public class CategoryDAO extends DatabaseService {
                 ptm = conn.prepareStatement(DatabaseQueries.GETDATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeDAO dao = new TypeDAO();
-                    TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
+                    TypeService typeService = new TypeService();
+                    TypeDTO type = typeService.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
                     int typeid = rs.getInt("type_id");
@@ -60,8 +61,8 @@ public class CategoryDAO extends DatabaseService {
                 ptm.setInt(1, typpid);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeDAO dao = new TypeDAO();
-                    TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
+                    TypeService typeService = new TypeService();
+                    TypeDTO type = typeService.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
                     int typeid = rs.getInt("type_id");
@@ -96,8 +97,8 @@ public class CategoryDAO extends DatabaseService {
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeDAO dao = new TypeDAO();
-                    TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
+                    TypeService typeService = new TypeService();
+                    TypeDTO type = typeService.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
                     int typeid = rs.getInt("type_id");

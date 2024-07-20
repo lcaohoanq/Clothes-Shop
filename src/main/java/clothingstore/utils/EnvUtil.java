@@ -1,7 +1,9 @@
 package clothingstore.utils;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class EnvUtil {
     private static Dotenv dotenv;
 
@@ -9,8 +11,8 @@ public class EnvUtil {
         try {
             dotenv = Dotenv.configure().load();
         } catch (Exception e) {
-            System.err.println("Error initializing EnvUtils: " + e.getMessage());
-            e.printStackTrace();
+            log.error("Read environment variables failed");
+            throw new Error("Error initializing EnvUtils: " + e.getMessage());
         }
     }
 
@@ -18,8 +20,7 @@ public class EnvUtil {
         try {
             return dotenv.get(key);
         } catch (Exception e) {
-            System.err.println("Error retrieving environment variable: " + e.getMessage());
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return null; // Return null or a default value in case of error
         }
     }

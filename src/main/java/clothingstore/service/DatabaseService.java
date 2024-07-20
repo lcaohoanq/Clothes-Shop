@@ -8,21 +8,12 @@ import org.slf4j.LoggerFactory;
 
 public class DatabaseService {
 
-    private static final Logger log = LoggerFactory.getLogger(DatabaseService.class);
-
     public Connection getConnection() throws Exception {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = EnvUtil.get("DB_URL");
         String user = EnvUtil.get("DB_USER");
         String password = EnvUtil.get("DB_PASSWORD");
         Connection con = DriverManager.getConnection(url, user, password);
-
-        if (con != null) {
-            log.info("Database connect successfully");
-        } else {
-            log.error("Database connect failed");
-        }
-
         return con;
     }
 

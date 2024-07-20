@@ -83,90 +83,7 @@
                     <!--pos home section-->
                     <div id="content" class=" pos_home_section container">
                         <div class="row pos_home">
-                            <div class="col-lg-3 col-12">
-                                <!--categorie menu start-->
-                                <div class="sidebar_widget catrgorie mb-35">
-                                    <h3>Bạn tìm</h3>
-                                    <ul>
-                                        <c:if test="${requestScope.LIST_TYPES!= null && !requestScope.LIST_TYPES.isEmpty()}">
-                                            <c:forEach items="${requestScope.LIST_TYPES}" var="t">
-                                                <li class="has-sub">
-                                                    <a href="#"><i class="fa fa-caret-right"></i>${t.name}</a>
-                                                        <c:forEach items="${requestScope.LIST_CATEGORIESS}" var="c">
-                                                            <c:if test="${t.id == c.type.id}" >
-                                                            <ul class="categorie_sub">
-                                                                <li><a href="FilterServlet?btnAction=filterByCategory&id_filter=${c.id}"><i class="fa fa-caret-right"></i> ${c.name}</a>
-                                                                </li>
-                                                            </ul>    
-                                                        </c:if>
-                                                    </c:forEach>
-                                                </li>
-                                            </c:forEach>
-                                        </c:if>
-                                    </ul>
-                                </div>
-                                <!--categorie menu end-->
-                                <c:if test="${sessionScope.WISHLIST != null}">
-                                    <!--wishlist block start-->
-                                    <div class="sidebar_widget wishlist mb-35" id="wishlist-small">
-                                        <div class="block_title">
-                                            <h3><a href="WishlistServlet">Wishlist</a></h3>
-                                        </div>
-                                        <c:forEach items="${sessionScope.WISHLIST}" var="p" varStatus="loop">
-                                            <c:if test="${loop.index <= 2}">
-                                                <div class="cart_item">
-                                                    <div class="cart_img">
-                                                        <a href="SingleProductServlet?product_id=${p.id}"><img src="${p.images[0]}" alt=""></a>
-                                                    </div>
-                                                    <div class="cart_info">
-                                                        <a href="SingleProductServlet?product_id=${p.id}">${p.name}</a>
-                                                        <span class="cart_price">$${p.salePrice}</span>
-                                                    </div>
-                                                    <!--                                                    <div class="cart_remove">
-                                                                                                            <a title="Remove this item" href="#"><i class="fa fa-times-circle"></i></a>
-                                                                                                        </div>-->
-                                                </div>
-                                            </c:if>
-                                        </c:forEach>
-                                        <div class="block_content">
-                                            <p>${sessionScope.WISHLIST.size()}  products</p>
-                                            <a href="WishlistServlet">» My wishlists</a>
-                                        </div>
-                                    </div>
-                                    <!--wishlist block end-->
-                                </c:if>
-                                <c:if test="${sessionScope.account == null}">
-                                    <!--newsletter block start-->
-                                    <div class="sidebar_widget newsletter mb-35" id="newsletter-div">
-                                        <div class="block_title">
-                                            <h3>newsletter</h3>
-                                        </div> 
-                                        <p>Sign up for your newsletter</p>
-                                        <input id="email-input-at-home" placeholder="Your email address" type="text" value="<c:if test="${requestScope.EMAIL_CUSTOMER != null}">${requestScope.EMAIL_CUSTOMER}</c:if>">
-                                            <button  onclick="subscribeEmailAtHome('subscribe')">Subscribe</button>
-                                        <c:if test="${requestScope.CHECK == 'success'}">
-                                            <div class="col-12">
-                                                <span class="form-messege" style='color: green;'>${requestScope.MESSAGE}</span>
-                                            </div>
-                                        </c:if>
-                                        <c:if test="${requestScope.CHECK == 'fail'}">
-                                            <div class="col-12">
-                                                <span class="form-messege" style='color: red;'>${requestScope.MESSAGE}</span>
-                                            </div>
-                                        </c:if>
-                                    </div>
-                                    <!--newsletter block end--> 
-                                </c:if>
-
-                                <!--sidebar banner-->
-                                <div class="sidebar_widget bottom ">
-                                    <div class="banner_img">
-                                        <a href="#"><img src="view\assets\home\img\banner\banner9.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <!--sidebar banner end-->
-                            </div>
-                            <div class="col-lg-9 col-md-12">
+                            <div class="col-lg-12 col-md-12">
                                 <!--new product area start-->
                                 <div class="new_product_area">
                                     <div class="block_title">
@@ -191,7 +108,7 @@
                                                                     <button style="display: block;
                                                                             border: none;
                                                                             width: 100%;
-                                                                            background: #018576;
+                                                                            background: #f98404;
                                                                             color: #fff;
                                                                             padding: 7px 0;
                                                                             text-transform: capitalize;
@@ -249,7 +166,7 @@
                                                                 <button style="display: block;
                                                                         border: none;
                                                                         width: 100%;
-                                                                        background: #018576;
+                                                                        background: #f98404;
                                                                         color: #fff;
                                                                         padding: 7px 0;
                                                                         text-transform: capitalize;
@@ -286,29 +203,6 @@
                                     </div> 
                                 </div>     
                                 <!--featured product end--> 
-
-                                <!--banner area start-->
-                                <div class="banner_area mb-60">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single_banner">
-                                                <a href="FilterServlet?discount=dis40"><img src="view\assets\home\img\banner\banner7.jpg" alt=""></a>
-                                                <div class="banner_title">
-                                                    <p>Up to <span> 40%</span> off</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="single_banner">
-                                                <a href="FilterServlet?discount=dis25"><img src="view\assets\home\img\banner\banner8.jpg" alt=""></a>
-                                                <div class="banner_title title_2">
-                                                    <p>sale off <span> 25%</span></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>     
-                                <!--banner area end--> 
 
                                 <!--brand logo strat--> 
                                 <div class="brand_logo mb-60">
