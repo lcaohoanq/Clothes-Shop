@@ -56,6 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <jsp:useBean id="LIST_CATEGORIES" scope="request" type="java.util.List"/>
                                     <c:forEach items="${LIST_CATEGORIES}" var="c">
                                         <tr>
                                             <td>${c.id}</td>

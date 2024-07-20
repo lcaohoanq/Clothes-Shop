@@ -2,12 +2,6 @@
 /* Medium desktop :1366px. */
 
 @media (min-width: 1200px) and (max-width: 1680px) {
-    .mega_menu {
-        width: 774px;
-    }
-    .mega_menu {
-        width: 592px;
-    }
 
     .product_info ul li a {
         padding: 2px 11px;
@@ -39,38 +33,14 @@
         font-size: 0.6rem;
     }
 
-    .mega_menu {
-        width: 565px;
-        max-height: 350px;
-        overflow: auto;
-    }
-    .mega_items {
-        width: 30%;
-    }
-    .mega_thumb {
-        width: 48%;
-    }
-    .mega_menu.custom {
-        width: 240px;
-    }
-    .mega_bottom {
-        padding-bottom: 25px;
-    }
-
     /*shop page css here*/
-    .list_product_content {
-        padding-right: 30px;
-    }
     .product_ratting ul {
         line-height: 15px;
     }
     .product_ratting {
         margin-bottom: 5px;
     }
-    .list_product_content p.design {
-        padding: 5px 0;
-        line-height: 20px;
-    }
+
     .list_product_content p {
         padding: 5px 0;
     }
@@ -92,25 +62,12 @@
         margin-right: 18px;
     }
 
-    .product_gallery_thumb {
-        width: 43%;
-    }
-
     .product_tab.product_video .product_tab_button ul li {
         width: 28%;
         margin-right: 11px;
     }
-    .about_section {
-        padding: 28px 20px 35px;
-    }
-    .about_progressbar {
-        padding: 0 20px 45px;
-    }
 
     /*blog details css here*/
-    .posts_thumb {
-        margin-right: 6px;
-    }
     .post_content a {
         font-size: 13px;
         line-height: 20px;
@@ -147,39 +104,11 @@
         width: 100%;
         padding: 0 60px 0 15px;
     }
-    .sidebar_widget.banner {
-        overflow: hidden;
-        margin-bottom: 30px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    .sidebar_widget.catrgorie.mb-35,.sidebar_widget.wishlist.mb-35 {
-        margin-bottom: 60px;
-    }
-    .sidebar_widget.banner .banner_img {
-        width: 47%;
-        margin-right: 30px;
-    }
-    .banner_img:last-child {
-        margin-right: 0;
-    }
+
     .sidebar_widget.tags.mb-35 {
         margin-bottom: 57px;
     }
-    .sidebar_widget.newsletter.mb-35 {
-        margin-bottom: 63px;
-    }
-    .sidebar_widget.bottom .banner_img {
-        width: 100%;
-        margin-bottom: 65px;
-    }
-    .banner_area.mb-30 {
-        margin-bottom: 65px;
-    }
-    .brand_logo.mb-30 {
-        margin-bottom: 55px;
-    }
+
     .footer_widget {
         margin-bottom: 25px;
     }
@@ -190,9 +119,7 @@
     .copyright_area ul li a {
         font-size: 12px;
     }
-    .new_product_area.mb-30 {
-        margin-bottom: 0;
-    }
+
     .featured_product.mb-35 {
         margin-bottom: 0;
     }
@@ -1028,8 +955,7 @@
 
     .product_gallery_thumb {
         width: 100%;
-        margin: 0;
-        margin-bottom: 34px;
+        margin: 0 0 34px;
     }
     .login_submit a {
         display: none;

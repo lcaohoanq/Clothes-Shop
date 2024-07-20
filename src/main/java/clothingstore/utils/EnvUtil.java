@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class EnvUtil {
-    private static Dotenv dotenv;
+    private static final Dotenv dotenv;
 
     static {
         try {

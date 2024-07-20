@@ -123,14 +123,7 @@ html {
     color: #f98404;
     text-decoration: underline;
 }
-.dropdown_languages, .dropdown_currency {
-    position: absolute;
-    z-index: 9;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-}
+
 .switcher ul li ul li a {
     background: #ECECEC;
 }
@@ -191,10 +184,9 @@ html {
     align-items: center;
 }
 .header_middel {
-    height: 65px;
+    height: 5rem;
     padding: 0px;
     align-content: center;
-
 }
 .search_bar form {
     position: relative;
@@ -228,10 +220,9 @@ html {
     padding-right: 0;
 }
 .shopping_cart {
-    line-height: 38px;
-    height: 38px;
+    line-height: 50px;
+    height: 50px;
     margin-left: 25px;
-    margin-right: 25px;
     position: relative;
 }
 .shopping_cart > a {
@@ -366,7 +357,6 @@ html {
     line-height: 50px;
     display: block;
     text-decoration: none;
-    text-transform: uppercase;
     display: block;
     line-height: 50px;
     font-size: 1rem;
@@ -974,9 +964,6 @@ html {
     width: 40px;
     height: 41px;
     border: 20px solid transparent;
-    border-left-color: transparent;
-    border-left-style: solid;
-    border-left-width: 20px;
     border-left: 20px solid #ce6666;
     top: 0;
     right: -40px;
@@ -1640,8 +1627,7 @@ html {
 .item_page .nice-select {
     height: 30px;
     line-height: 30px;
-    margin: 0 10px;
-    margin-top: 9px;
+    margin: 9px 10px 0;
 }
 .item_page .nice-select::after {
     top: 57%;
@@ -2031,7 +2017,6 @@ html {
     ;
 }
 .product_d_info {
-    padding-bottom: 35px;
     padding: 0 20px 61px;
 }
 .product_d_info.sidebar {
@@ -2252,7 +2237,6 @@ html {
 
 /* 7. cart page css here */
 .shopping_cart_area {
-    padding-top: 35px;
     padding: 35px 20px 0;
 }
 .table_desc {
@@ -2756,10 +2740,7 @@ html {
     margin-bottom: 35px;
 }
 .contact_area {
-    padding-top: 50px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 50px 20px 10px;
 }
 .contact_message.contact_info p {
     font-size: 16px;
@@ -3366,29 +3347,14 @@ html {
     line-height: 22px;
     margin-bottom: 15px;
 }
-.blog_entry_content p.blockquote {
-    color: #555;
-    font-size: 18px;
-    font-style: italic;
-    padding: 0 0 0 10px;
-    border-left: 5px solid #f98404;
-    line-height: 26px;
-}
-.blog_entry_meta {
-    padding: 15px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 33px;
-}
+
 .blog_entry_meta ul li {
     display: inline-block;
     text-transform: uppercase;
     font-size: 13px;
     color: #9999;
 }
-.blog__page_content {
-    margin-bottom: 20px;
-}
+
 .comments__title h3 {
     font-size: 18px;
     text-transform: capitalize;
@@ -3437,28 +3403,14 @@ html {
 .blog_widget.search_widget button:hover{
     background: #e84c3d;
 }
-.single_posts,.post_content span {
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-}
-.posts_thumb {
-    margin-right: 11px;
-}
+
 .post_content a {
     color: #555;
     font-size: 15px;
     text-transform: capitalize;
     line-height: 27px;
 }
-.post_content a:hover,.post_content a.tweet_name:hover{
-    color: #e84c3d;
-}
-.post_content a.tweet_name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #222222;
-}
+
 .post_button a {
     background: #f98404;
     color: #fff;
@@ -3508,33 +3460,14 @@ html {
 .blog_widget.widget_categoie  ul li a:hover::after {
     opacity: 1;
 }
-.widget_recent_inner {
-    border: 1px solid #e5e5e5;
-    padding: 18px 15px;
-}
+
 .blog_widget.widget_recent .posts_thumb img {
     width: 70px;
 }
-.single_posts {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.blog_widget.widget_recent .single_posts {
-    margin-bottom: 20px;
-}
-.blog_widget.widget_recent .single_posts:last-child{
-    margin-bottom: 0;
-}
-.main_blog_area.blog_details {
-    padding: 35px 20px 35px;
-}
+
 /*blog details css end*/
 
 /* 16. blog fullwidth css here */
-.blog_fullwidth_desc {
-    text-align: center;
-}
 .blog_fullwidth_desc p {
     font-size: 16px;
 }
@@ -3558,16 +3491,11 @@ html {
     width: 100%;
     border-radius: 5px;
 }
-.blog_pagination.fullwidth {
-    padding: 0;
-}
+
 /*blog fullwidth css end*/
 
 
 /* 17. services page css here*/
-.srrvices_gallery {
-    padding: 35px 20px 0;
-}
 .services_content h3 {
     font-size: 15px;
     color: #333;
@@ -3576,9 +3504,7 @@ html {
     margin-bottom: 11px;
     line-height: 14px;
 }
-.services_thumb {
-    margin-bottom: 20px;
-}
+
 .services_thumb img {
     width: 100%;
 }
@@ -3589,23 +3515,7 @@ html {
     line-height: 24px;
     margin-bottom: 0;
 }
-.single_services {
-    margin-bottom: 30px;
-}
-.our_services {
-    padding: 60px 20px 27px;
-    background: #ECECEC;
-}
-.services_item {
-    margin-bottom: 35px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-.services_title {
-    text-align: center;
-    margin-bottom: 35px;
-}
+
 .services_title h2 {
     font-size: 30px;
     text-transform: uppercase;
@@ -3613,9 +3523,7 @@ html {
     margin-bottom: 11px;
     color: #333;
 }
-.services_icone {
-    margin-right: 15px;
-}
+
 .services_icone i {
     font-size: 35px;
     line-height: 46px;
@@ -3633,22 +3541,7 @@ html {
     line-height: 24px;
     margin-bottom: 0;
 }
-.priceing_table {
-    background: #ECECEC;
-    padding: 70px 20px 36px;
-}
-.single_priceing {
-    background: #fff;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34,25,25,0.4);
-    box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34,25,25,0.4);
-    text-align: center;
-    margin-bottom: 35px;
-}
-.priceing_title {
-    padding: 20px;
-    background: #f98404;
-}
+
 .priceing_title h1 {
     color: #fff;
     font-size: 14px;
@@ -3673,9 +3566,7 @@ html {
     border-bottom: 1px solid #f1f0f0;
     line-height: 24px;
 }
-.priceing_list {
-    padding: 0 20px 40px;
-}
+
 .priceing_list ul li:first-child {
     border-top: 1px solid #f1f0f0;
 }
@@ -3690,15 +3581,7 @@ html {
     font-weight: 700;
     text-transform: uppercase;
 }
-.priceing_list a.list_button,.priceing_list a:hover {
-    background: #f98404;
-    border-color:#f98404;
-    color: #fff;
-}
-.advantages_wordpress {
-    background: #f98404;
-    padding: 60px 20px;
-}
+
 .advantages_content h3 {
     font-size: 30px;
     color: #ffffff;
@@ -3711,9 +3594,7 @@ html {
     font-style: italic;
     font-weight: 400;
 }
-.advantages_button {
-    text-align: center;
-}
+
 .advantages_button a {
     font-size: 14px;
     color: #fff;
@@ -3726,9 +3607,7 @@ html {
     color: #fff;
     border-color: #e84c3d;
 }
-.unlimited_services {
-    padding: 0 20px;
-}
+
 /*services page css end*/
 
 
@@ -3736,12 +3615,6 @@ html {
 /* 18. modal css here */
 .modal-dialog.modal-dialog-centered {
     min-width: 870px;
-}
-.modal_tab_img {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
 }
 
 .modal_tab_button ul li {
@@ -3843,9 +3716,7 @@ html {
     color: #fff;
     border-color: #f98404;
 }
-.modal_body {
-    padding: 0 6px 30px;
-}
+
 .modal-content button.close {
     position: relative;
     left: 94%;
@@ -3868,14 +3739,6 @@ html {
 
 .input_read {
     background-color: #e9ecef;
-}
-
-.default_input {
-    background-color: white;
-}
-
-.current_number {
-    color: #e84c3d;
 }
 
 .login-with-google-btn {

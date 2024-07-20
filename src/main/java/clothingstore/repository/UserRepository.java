@@ -33,7 +33,6 @@ public class UserRepository {
         }
     }
 
-    //SELECT COUNT(*) AS Total FROM Users WHERE status = 1 AND roleid=2
     public int getTotalUser(){
         try{
             return emf.createEntityManager().createQuery("SELECT COUNT(u) FROM UserDTO u WHERE u.status = true AND u.roleID = 2", Long.class).getSingleResult().intValue();

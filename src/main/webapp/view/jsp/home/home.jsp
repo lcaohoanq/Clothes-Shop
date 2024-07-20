@@ -84,6 +84,25 @@
                     <div id="content" class=" pos_home_section container">
                         <div class="row pos_home">
                             <div class="col-lg-12 col-md-12">
+                                <!--brand logo strat-->
+                                <div class="brand_logo mb-60">
+                                    <div class="block_title">
+                                        <h3>Thương hiệu</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="brand_active owl-carousel">
+                                            <c:forEach items="${requestScope.LIST_SUPPLIERS}" var="s">
+                                                <div class="col-lg-2">
+                                                    <div class="single_brand">
+                                                        <a href="FilterServlet?btnAction=filterBySupplier&id_filter=${s.id}"><img src="${s.image}" alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--brand logo end-->
+
                                 <!--new product area start-->
                                 <div class="new_product_area">
                                     <div class="block_title">
@@ -204,24 +223,6 @@
                                 </div>     
                                 <!--featured product end--> 
 
-                                <!--brand logo strat--> 
-                                <div class="brand_logo mb-60">
-                                    <div class="block_title">
-                                        <h3>Thương hiệu</h3>
-                                    </div>
-                                    <div class="row">
-                                        <div class="brand_active owl-carousel">
-                                            <c:forEach items="${requestScope.LIST_SUPPLIERS}" var="s">
-                                                <div class="col-lg-2">
-                                                    <div class="single_brand">
-                                                        <a href="FilterServlet?btnAction=filterBySupplier&id_filter=${s.id}"><img src="${s.image}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </c:forEach>
-                                        </div>
-                                    </div>
-                                </div>       
-                                <!--brand logo end-->        
                             </div>
                         </div>  
                     </div>

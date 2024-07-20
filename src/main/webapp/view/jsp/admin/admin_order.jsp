@@ -37,7 +37,7 @@
                 <div class="col-md-12">
                     <div class="tile">
                         <div class="tile-body">
-                            <div class="row element-button"
+                            <div class="row element-button">
                                  <div class="col-sm-2">
                                     <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
                                             class="fas fa-print"></i> In dữ liệu</a>

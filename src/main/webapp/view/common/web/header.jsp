@@ -26,17 +26,17 @@
     <!--header start-->
     <div class="navbar">
         <!-- My Wishlist -->
-        <a href="WishlistServlet" class="nav-item" aria-label="My Wishlist">
+        <a href="WishlistServlet" class="nav-item" aria-label="Yêu thích">
             <i class="fa-solid fa-heart"></i>
         </a>
         <!-- My Cart -->
-        <a href="CartServlet" class="nav-item" aria-label="My Cart">
+        <a href="CartServlet" class="nav-item" aria-label="Giỏ hàng">
             <i class="fa-solid fa-cart-shopping"></i>
         </a>
         <!-- Login/Logout -->
         <!-- This part should be dynamically generated based on user's login status -->
         <c:if test="${sessionScope.account == null}">
-            <a class="nav-item" aria-label="Login" href="MainController?btnAction=Login" title="Login">
+            <a class="nav-item" aria-label="Đăng nhập" href="MainController?btnAction=Login" title="Login">
                 Login
             </a>
         </c:if>
@@ -59,12 +59,14 @@
     <div class="header_middel">
         <div class="row align-items-center" style="padding: 0; margin: 0px">
             <!--logo start-->
-            <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+            <div class="col-lg-3 col-md-2 col-sm-2 col-3">
                 <div class="logo" style="display: flex; justify-content: center;">
                     <a href="MainController"><img src="view\assets\home\img\logo\logo.png" alt=""></a>
                 </div>
             </div>
             <!--logo end-->
+
+            <!--search bar-->
             <div class="header_right_info col-lg-5 col-md-7 col-sm-8 col-7">
                 <div class="search_bar col-lg-12 no-padding">
                     <form action="MainController" method="get" >
@@ -72,29 +74,15 @@
                         <button name="btnAction" value="Search" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-
             </div>
-            <div class="col-lg-5 col-md-3 col-sm-2 col-2">
+            <!--search bar end-->
+
+            <!--cart-->
+            <div class="col-lg-4 col-md-3 col-sm-2 col-2">
                 <div class="header_bottom">
                     <div class="row" style="align-items: center">
-                        <div class="col-lg-7 col-md-0 col-sm-12 non-display non-padding">
-                            <div class="main_menu d-none d-lg-block">
-                                <nav>
-                                    <ul>
-                                        <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="WishlistServlet">My Wishlist</a></li>
-                                        <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="CartServlet">My Cart</a></li>
-                                            <c:if test="${sessionScope.account == null}">
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="MainController?btnAction=Login" title="Login">Login</a></li>
-                                            </c:if>
-                                            <c:if test="${sessionScope.account != null}">
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-6 col-md-4 col-sm-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
-                                            </c:if>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-2 col-md-4 col-sm-2 col-12 shopping_cart " id="cart-icon">
+                        <div class="col-lg-3 col-md-4 col-sm-2 col-12 shopping_cart" id="cart-icon">
                             <nav>
                                 <c:if test="${sessionScope.CART != null && sessionScope.CART.size() != 0}">
                                     <a href="#"><i class="fa fa-shopping-cart"></i> ${sessionScope.CART.size()}
@@ -142,12 +130,30 @@
                             </div>
                             <!--mini cart end-->
                         </div>
-                        <div class="col-lg-1 col-md-2 non-display non-padding">
+
+                        <div class="col-lg-7 col-md-0 col-sm-12 non-display non-padding">
+                            <div class="main_menu d-none d-lg-block">
+                                <nav>
+                                    <ul>
+                                        <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="WishlistServlet">Yêu thích</a></li>
+                                        <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-4 col-md-2 col-sm-2 non-padding"><a href="CartServlet">Giỏ hàng</a></li>
+                                        <c:if test="${sessionScope.account == null}">
+                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-5 col-md-2 col-sm-2 non-padding"><a href="MainController?btnAction=Login" title="Login">Đăng nhập</a></li>
+                                        </c:if>
+                                        <c:if test="${sessionScope.account != null}">
+                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-5 col-md-4 col-sm-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">${sessionScope.account.firstName}</a></li>
+                                        </c:if>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 non-display non-padding">
                             <div class="main_menu d-none d-lg-block ">
                                 <nav>
                                     <c:if test="${sessionScope.account != null}">
                                         <ul>
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-12 col-md-12 non-padding"><a href="MainController?btnAction=Logout">Logout</a></li>
+                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-12 col-md-12 non-padding"><a href="MainController?btnAction=Logout">Đăng xuất</a></li>
                                             </c:if>
                                     </ul>
                                 </nav>
@@ -156,6 +162,7 @@
                     </div>
                 </div>
             </div>
+            <!--cart end-->
         </div>
     </div>
     <!--header middel end-->

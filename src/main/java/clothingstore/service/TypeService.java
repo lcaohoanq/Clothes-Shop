@@ -5,7 +5,7 @@ import clothingstore.repository.TypeRepository;
 import java.util.List;
 
 public class TypeService {
-    private TypeRepository tr = new TypeRepository();
+    private final TypeRepository tr = new TypeRepository();
 
     public List<TypeDTO> getAllType(){
         return tr.getAllType();
