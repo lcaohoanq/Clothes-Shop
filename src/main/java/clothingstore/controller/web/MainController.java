@@ -1,11 +1,11 @@
 package clothingstore.controller.web;
 
+import clothingstore.service.TypeService;
 import clothingstore.utils.WishlistUtil;
 import clothingstore.utils.CartUtil;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.SupplierDAO;
-import clothingstore.dao.TypeDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -77,7 +77,7 @@ public class MainController extends HttpServlet {
             ProductDAO pDao = new ProductDAO();
             CategoryDAO cDao = new CategoryDAO();
             SupplierDAO sDao = new SupplierDAO();
-            TypeDAO tDao = new TypeDAO();
+            TypeService tDao = new TypeService();
             CategoryDAO caDao = new CategoryDAO();
 
             List<ProductDTO> listProducts = pDao.getData();

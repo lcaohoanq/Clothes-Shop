@@ -187,7 +187,7 @@
                 <directory>src/main/resources/</directory>
                 <filtering>false</filtering>
                 <includes>
-                    <include>logback.xml</include>
+                    <include>**/*.xml</include>
                 </includes>
                 <targetPath>${project.build.outputDirectory}</targetPath>
             </resource>

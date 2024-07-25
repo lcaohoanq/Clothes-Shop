@@ -12,7 +12,7 @@ import clothingstore.model.TypeDTO;
 
 public class TypeDAO extends DatabaseService {
 
-    
+    @Deprecated
     public TypeDTO getTypeById(int id) throws SQLException {
         TypeDTO type = null;
         Connection conn = null;
@@ -45,7 +45,8 @@ public class TypeDAO extends DatabaseService {
         }
         return type;
     }
-    
+
+    @Deprecated
     public List<TypeDTO> getAllType() throws SQLException {
         List<TypeDTO> list = new ArrayList<>();
         Connection conn = null;
