@@ -42,6 +42,7 @@ public class MainController extends HttpServlet {
         String url = WELCOME;
         try {
             String btnValue = request.getParameter("btnAction");
+            System.out.println("MainController do action: " + btnValue);
             HttpSession session = request.getSession();
             if (btnValue == null) {
                 getDataHomeLSP(request, response);

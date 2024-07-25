@@ -26,7 +26,7 @@ public class Email {
 
     public Email() {
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
-        templateResolver.setTemplateMode("HTML5");
+        templateResolver.setTemplateMode("HTML");
         templateResolver.setPrefix("templates/emails/");
         templateResolver.setSuffix(".html");
         templateEngine = new TemplateEngine();

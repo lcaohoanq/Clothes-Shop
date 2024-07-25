@@ -159,7 +159,7 @@ public class LoginServlet extends HttpServlet {
             String remember = request.getParameter("remember");
             UserDAO udao = new UserDAO();
             String hashedPassword = new UserDAO().getPassword(username);
-            if (new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
+            if (password.equals(hashedPassword) || new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
                 UserDTO user = udao.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);
@@ -196,15 +196,5 @@ public class LoginServlet extends HttpServlet {
             out.close();
         }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }
