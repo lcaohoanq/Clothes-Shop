@@ -1,0 +1,10 @@
+2024-07-25 11:03:03 WARN  o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-07-25 11:03:08 INFO  clothingstore.module.email.Email - Email sent successfully to hoangclw@gmail.com
+2024-07-25 11:10:33 WARN  o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-07-25 11:10:38 INFO  clothingstore.module.email.Email - Email sent successfully to hoangclw@gmail.com
+2024-07-25 11:11:06 WARN  o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-07-25 11:11:11 INFO  clothingstore.module.email.Email - Email sent successfully to hoangclw@gmail.com
+2024-07-25 11:11:44 WARN  o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-07-25 11:11:48 INFO  clothingstore.module.email.Email - Email sent successfully to hoangclw@gmail.com
+2024-07-25 11:12:13 WARN  o.t.templatemode.TemplateMode - [THYMELEAF][main] Unknown Template Mode 'HTML5'. Must be one of: 'HTML', 'XML', 'TEXT', 'JAVASCRIPT', 'CSS', 'RAW'. Using default Template Mode 'HTML'.
+2024-07-25 11:12:17 INFO  clothingstore.module.email.Email - Email sent successfully to hoangclw@gmail.com

@@ -71,7 +71,7 @@ public class CheckoutServlet extends HttpServlet {
                     orderLatest = oDAO.getTheLatestOrder();
                     // Send email to user
                     String subEmail = emailHandle.subjectNewOrder();
-                    String messageEmail = emailHandle.messageNewOrder(user.getFirstName(), totalQuantity, orderLatest.getTotalPrice());
+                    String messageEmail = emailHandle.emailNewOrder(user.getFirstName(), totalQuantity, orderLatest.getTotalPrice());
                     emailHandle.sendEmail(subEmail, messageEmail, user.getEmail());
                     for (CartItem cart : carts) {
                         oiDAO.createNewOrderDetail(cart, orderLatest);

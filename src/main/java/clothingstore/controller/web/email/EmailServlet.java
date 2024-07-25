@@ -31,7 +31,7 @@ public class EmailServlet extends HttpServlet {
                     message = "Cảm ơn bạn đã liên hệ với chúng tôi, chúng tôi sẽ kết nối với bạn trong thời gian sớm nhất";
                     check = "success";
                     String sub = handleEmail.subjectContact(name);
-                    String msg = handleEmail.messageContact(name);
+                    String msg = handleEmail.emailContact(name);
                     handleEmail.sendEmail(sub, msg, email);
                 }
             } else if (action.equals("subscribe")) {
@@ -40,7 +40,7 @@ public class EmailServlet extends HttpServlet {
                     message = "Cảm ơn bạn đã liên hệ với chúng tôi";
                     check = "success";
                     String sub = handleEmail.subjectSubsribe();
-                    String msg = handleEmail.messageSubscribe();
+                    String msg = handleEmail.emailSubscribe();
                     handleEmail.sendEmail(sub, msg, email);
                 }
             }

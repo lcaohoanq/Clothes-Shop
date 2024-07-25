@@ -49,7 +49,7 @@ public class ForgotPasswordServlet extends HttpServlet {
                     Integer code = 100000 + random.nextInt(900000);
                     code_str = code.toString();
                     String subject = handleEmail.subjectForgotPass();
-                    String msgEmail = handleEmail.messageFogot(user.getUserName(), code);
+                    String msgEmail = handleEmail.emailForgotPassword(user.getUserName(), code);
                     handleEmail.sendEmail(subject, msgEmail, emailInput);
                 } else {
                     message = "NOT EXIST - Invalid email";
