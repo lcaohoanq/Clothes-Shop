@@ -3,11 +3,11 @@ package clothingstore.controller.admin.management.product;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.SupplierDAO;
-import clothingstore.dao.TypeDAO;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
+import clothingstore.service.TypeService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -60,7 +60,7 @@ public class EditProductServlet extends HttpServlet {
                 ProductDAO pDao = new ProductDAO();
                 CategoryDAO cDao = new CategoryDAO();
                 SupplierDAO sDao = new SupplierDAO();
-                TypeDAO tDao = new TypeDAO();
+                TypeService tDao = new TypeService();
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = sDao.getData();

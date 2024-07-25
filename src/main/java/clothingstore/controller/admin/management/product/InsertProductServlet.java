@@ -3,7 +3,7 @@ package clothingstore.controller.admin.management.product;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.SupplierDAO;
-import clothingstore.dao.TypeDAO;
+import clothingstore.service.TypeService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -46,7 +46,7 @@ public class InsertProductServlet extends HttpServlet {
             if (action != null) {
                 CategoryDAO cDao = new CategoryDAO();
                 SupplierDAO sDao = new SupplierDAO();
-                TypeDAO tDao = new TypeDAO();
+                TypeService tDao = new TypeService();
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = sDao.getData();
