@@ -101,7 +101,7 @@ public class LoginFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession();
         if (session.getAttribute("account") == null) {
-            res.sendRedirect("DispatchServlet?btnAction=Login");
+            res.sendRedirect("MainController?btnAction=Login");
         }
 
         Throwable problem = null;
@@ -171,10 +171,9 @@ public class LoginFilter implements Filter {
         if (filterConfig == null) {
             return ("LoginFilter()");
         }
-        StringBuffer sb = new StringBuffer("LoginFilter(");
-        sb.append(filterConfig);
-        sb.append(")");
-        return (sb.toString());
+        String sb = "LoginFilter(" + filterConfig
+            + ")";
+        return (sb);
     }
 
     private void sendProcessingError(Throwable t, ServletResponse response) {

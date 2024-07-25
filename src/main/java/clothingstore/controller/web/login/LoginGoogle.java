@@ -11,7 +11,7 @@ import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;
 
 public class LoginGoogle {
-    public static String getToken(String code) throws ClientProtocolException, IOException {
+    public static String getToken(String code) throws IOException {
         String response = Request.Post(GoogleAuthentication.GOOGLE_LINK_GET_TOKEN)
             .bodyForm(
                 Form.form()
@@ -30,7 +30,7 @@ public class LoginGoogle {
     }
 
     // receive the information of account when pass the accessToken
-    public static UserGoogleDTO getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
+    public static UserGoogleDTO getUserInfo(final String accessToken) throws IOException {
         String link = GoogleAuthentication.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
         UserGoogleDTO googlePojo = new Gson().fromJson(response, UserGoogleDTO.class);

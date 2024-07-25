@@ -23,7 +23,7 @@
     }
 </style>
 <div class="header_area" id="fixed-header">
-    <!--header start--> 
+    <!--header start-->
     <div class="navbar">
         <!-- My Wishlist -->
         <a href="WishlistServlet" class="nav-item" aria-label="My Wishlist">
@@ -36,7 +36,7 @@
         <!-- Login/Logout -->
         <!-- This part should be dynamically generated based on user's login status -->
         <c:if test="${sessionScope.account == null}">
-            <a class="nav-item" aria-label="Login" href="DispatchServlet?btnAction=Login" title="Login">
+            <a class="nav-item" aria-label="Login" href="MainController?btnAction=Login" title="Login">
                 Login
             </a>
         </c:if>
@@ -46,7 +46,7 @@
             </a>
         </c:if>
         <c:if test="${sessionScope.account != null}">
-            <a href="DispatchServlet?btnAction=Logout">
+            <a href="MainController?btnAction=Logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </a>
         </c:if>
@@ -61,19 +61,19 @@
             <!--logo start-->
             <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                 <div class="logo" style="display: flex; justify-content: center;">
-                    <a href="DispatchServlet"><img src="view\assets\home\img\logo\logo.png" alt=""></a>
+                    <a href="MainController"><img src="view\assets\home\img\logo\logo.png" alt=""></a>
                 </div>
             </div>
             <!--logo end-->
             <div class="header_right_info col-lg-5 col-md-7 col-sm-8 col-7">
                 <div class="search_bar col-lg-12 no-padding">
-                    <form action="DispatchServlet" method="get" >
+                    <form action="MainController" method="get" >
                         <input name="txtSearch" value="" placeholder="Search..." type="text">
                         <button name="btnAction" value="Search" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
 
-            </div>  
+            </div>
             <div class="col-lg-5 col-md-3 col-sm-2 col-2">
                 <div class="header_bottom">
                     <div class="row" style="align-items: center">
@@ -84,7 +84,7 @@
                                         <li class="${requestScope.CURRENTSERVLET == "Wishlist" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="WishlistServlet">My Wishlist</a></li>
                                         <li class="${requestScope.CURRENTSERVLET == "Cart" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="CartServlet">My Cart</a></li>
                                             <c:if test="${sessionScope.account == null}">
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="DispatchServlet?btnAction=Login" title="Login">Login</a></li>  
+                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-3 col-md-2 col-sm-2 non-padding"><a href="MainController?btnAction=Login" title="Login">Login</a></li>
                                             </c:if>
                                             <c:if test="${sessionScope.account != null}">
                                             <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-6 col-md-4 col-sm-2 non-padding"><a href="${sessionScope.account.roleID == 1 ? 'AdminServlet' : 'ProfileServlet'} ">Hello, ${sessionScope.account.firstName} ${sessionScope.account.lastName}!</a></li>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="total_price">
                                     <span> Total </span>
-                                    <span class="prices">  
+                                    <span class="prices">
                                         <c:set var="totalPrice" value="0" />
                                         <c:forEach items="${sessionScope.CART}" var="c">
                                             <c:set var="productTotal" value="${c.product.getSalePrice() * c.quantity}" />
@@ -147,17 +147,17 @@
                                 <nav>
                                     <c:if test="${sessionScope.account != null}">
                                         <ul>
-                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-12 col-md-12 non-padding"><a href="DispatchServlet?btnAction=Logout">Logout</a></li>
+                                            <li class="${requestScope.CURRENTSERVLET == "Login" ? "active" : ""} col-lg-12 col-md-12 non-padding"><a href="MainController?btnAction=Logout">Logout</a></li>
                                             </c:if>
                                     </ul>
                                 </nav>
                             </div>
-                        </div>            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>     
-    <!--header middel end-->      
+    </div>
+    <!--header middel end-->
 
 </div>

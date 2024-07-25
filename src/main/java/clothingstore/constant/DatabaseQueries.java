@@ -72,6 +72,8 @@ public class DatabaseQueries {
     
     // User
     public static final String LOGIN = "SELECT * FROM Users WHERE (username=? OR email = ?) AND password=? and status=1";
+    public static final String GET_PASSWORD = "SELECT password FROM Users WHERE username = ?";
+
 
     public static final String GET_DATA_USER = "SELECT * FROM Users WHERE status = 1 Order by roleid asc";
 

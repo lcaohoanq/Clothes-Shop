@@ -101,7 +101,7 @@ public class AdminFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession();
         if (session.getAttribute("account") == null) {
-            res.sendRedirect("DispatchServlet?btnAction=Login");
+            res.sendRedirect("MainController?btnAction=Login");
         } else {
             UserDTO a = (UserDTO) session.getAttribute("account");
             if (a.getRoleID() != 1) {
@@ -177,10 +177,9 @@ public class AdminFilter implements Filter {
         if (filterConfig == null) {
             return ("AdminFilter()");
         }
-        StringBuffer sb = new StringBuffer("AdminFilter(");
-        sb.append(filterConfig);
-        sb.append(")");
-        return (sb.toString());
+        String sb = "AdminFilter(" + filterConfig
+            + ")";
+        return (sb);
     }
 
     private void sendProcessingError(Throwable t, ServletResponse response) {

@@ -19,7 +19,7 @@ import clothingstore.model.ProductDTO;
 @WebServlet(name = "CartServlet", urlPatterns = {"/CartServlet"})
 public class CartServlet extends HttpServlet {
 
-    private static final String DISPATCHSERVLET = "DispatchServlet";
+    private static final String MainController = "MainController";
     private static final String CART_PAGE = "view/jsp/home/cart.jsp";
     private static final String CART_AJAX = "view/jsp/ajax/cart_ajax.jsp";
     private static final String CART_PAGE_AJAX = "view/jsp/ajax/cart_page_ajax.jsp";

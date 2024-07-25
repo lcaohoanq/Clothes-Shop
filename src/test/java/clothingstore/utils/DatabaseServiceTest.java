@@ -2,15 +2,16 @@ package clothingstore.utils;
 
 import static org.junit.Assert.*;
 
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DatabaseConnectionTest {
+public class DatabaseServiceTest {
 
-    private DatabaseConnection db = new DatabaseConnection();
+    private final DatabaseService db = new DatabaseService();
     private Connection connection;
 
     @Before

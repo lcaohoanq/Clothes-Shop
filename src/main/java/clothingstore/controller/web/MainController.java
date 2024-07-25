@@ -20,7 +20,7 @@ import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
 
-public class DispatchServlet extends HttpServlet {
+public class MainController extends HttpServlet {
 
     private final String LOGIN = "Login";
     private final String SEARCH = "Search";
@@ -93,7 +93,7 @@ public class DispatchServlet extends HttpServlet {
             request.setAttribute("LIST_PRODUCTS_NEW", listProductsNew);
             request.setAttribute("LIST_PRODUCTS_SELLER", listProductsBestSeller);
         } catch (Exception ex) {
-            log("DispatchServlet error:" + ex.getMessage());
+            log("MainController error:" + ex.getMessage());
         }
 
     }
@@ -138,7 +138,7 @@ public class DispatchServlet extends HttpServlet {
             session.setAttribute("WISHLIST", wishlists);
 
         } catch (Exception e) {
-            log("Error in doGet DispatchServlet: " + e.getMessage());
+            log("Error in doGet MainController: " + e.getMessage());
         }
         processRequest(request, response);
     }

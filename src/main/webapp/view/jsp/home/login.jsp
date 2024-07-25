@@ -13,6 +13,8 @@
 
         <!-- all css here -->
         <%@include file="../../common/web/add_css.jsp"%>
+
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdbIgMqAAAAANeTLIl-I_S_jFCCwdTYMwIuAfRn"></script>
     </head>
     <body>
         <!-- Add your site or application content here -->
@@ -31,7 +33,7 @@
                             <div class="col-12">
                                 <div class="breadcrumb_content">
                                     <ul>
-                                        <li><a href="DispatchServlet">home</a></li>
+                                        <li><a href="MainController">home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>login</li>
                                     </ul>
@@ -69,7 +71,7 @@
                                             </label>
                                         </div>
                                         <div style="margin-top: 20px">
-                                            <a class="login-with-google-btn" href="DispatchServlet?btnAction=Google">Login With Google</a>
+                                            <a class="login-with-google-btn" href="MainController?btnAction=Google">Login With Google</a>
                                             <a href="ForgotPasswordServlet?status=forgot" style="margin-left: 20px">Forgot password</a>
                                         </div>
                                     </form>

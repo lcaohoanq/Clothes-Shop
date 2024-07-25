@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseConnection;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -16,7 +16,7 @@ import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
 
-public class ProductDAO extends DatabaseConnection {
+public class ProductDAO extends DatabaseService {
 
 
 
@@ -46,9 +46,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -95,9 +95,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                 }
             }
@@ -135,9 +135,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -226,9 +226,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     boolean status = rs.getBoolean("status");
                     double price = rs.getDouble("price");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -395,9 +395,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -444,9 +444,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -494,9 +494,9 @@ public class ProductDAO extends DatabaseConnection {
                     int unitSold = rs.getInt("unitSold");
                     double price = rs.getDouble("price");
                     boolean status = rs.getBoolean("status");
-                    String colors[] = rs.getString("colors").split(",");
-                    String images[] = rs.getString("images").split(" ");
-                    String sizes[] = rs.getString("size").split(",");
+                    String[] colors = rs.getString("colors").split(",");
+                    String[] images = rs.getString("images").split(" ");
+                    String[] sizes = rs.getString("size").split(",");
                     ProductDTO product = new ProductDTO(id, productname, description, stock, unitSold, images, colors, sizes, date, discount, price, status, category, supplier, type);
                     products.add(product);
                 }
@@ -575,7 +575,6 @@ public class ProductDAO extends DatabaseConnection {
                     ptm.setInt(12, typeId);
                     ptm.setInt(13, id);
                     ptm.executeUpdate();
-                    return;
                 } else {
                     ptm.setString(7, color);
                     ptm.setString(8, releasedate);

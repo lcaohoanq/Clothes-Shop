@@ -2,6 +2,7 @@ package clothingstore.controller.web.login;
 
 import clothingstore.model.UserGoogleDTO;
 import clothingstore.constant.GoogleAuthentication;
+import clothingstore.utils.PBKDF2;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import clothingstore.dao.UserDAO;
@@ -21,10 +22,10 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Form;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name = "LoginServlet", urlPatterns = { "/LoginServlet" })
 public class LoginServlet extends HttpServlet {
 
-    private final String WELCOME = "DispatchServlet";
+    private final String WELCOME = "MainController";
     private final String LOGIN = "view/jsp/home/login.jsp";
     private final String ADMIN_DASHBOARD = "AdminServlet";
     private final String REGISTER_CONTROLLER = "RegisterServlet";
@@ -34,18 +35,18 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String code = request.getParameter("code");
         String error = request.getParameter("error");
-        //neu nguoi dung huy uy quyen
-        if(error != null) {
+        // neu nguoi dung huy uy quyen
+        if (error != null) {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
         LoginGoogle gg = new LoginGoogle();
-        String accessToken = gg.getToken(code);
+        String accessToken = LoginGoogle.getToken(code);
         System.out.println("access_token: " + accessToken);
-        UserGoogleDTO acc = gg.getUserInfo(accessToken);
+        UserGoogleDTO acc = LoginGoogle.getUserInfo(accessToken);
         System.out.println("Data user: " + acc);
     }
 
-    public static String getToken(String code) throws ClientProtocolException, IOException {
+    public static String getToken(String code) throws IOException {
         // call api to get token
         String response = Request.Post(GoogleAuthentication.GOOGLE_LINK_GET_TOKEN)
                 .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
@@ -59,7 +60,8 @@ public class LoginServlet extends HttpServlet {
         return accessToken;
     }
 
-    public static UserGoogleDTO getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
+    public static UserGoogleDTO getUserInfo(final String accessToken)
+            throws IOException {
         String link = GoogleAuthentication.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
 
@@ -68,15 +70,17 @@ public class LoginServlet extends HttpServlet {
         return googlePojo;
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the +
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
+    // +
     // sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -85,7 +89,7 @@ public class LoginServlet extends HttpServlet {
         try {
             request.setAttribute("CURRENTSERVLET", "Login");
             if (request.getParameter("btnAction") != null) {
-                Cookie arr[] = request.getCookies();
+                Cookie[] arr = request.getCookies();
                 if (arr != null) {
                     for (int i = 0; i < arr.length; i++) {
                         if (arr[i].getName().equals("cUName")) {
@@ -136,10 +140,10 @@ public class LoginServlet extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -154,15 +158,16 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("txtPassword");
             String remember = request.getParameter("remember");
             UserDAO udao = new UserDAO();
-            UserDTO user = udao.checkLogin(username, password);
-            if (user != null) {
+            String hashedPassword = new UserDAO().getPassword(username);
+            if (new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
+                UserDTO user = udao.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);
                 Cookie u = new Cookie("cUName", username);
-                Cookie p = new Cookie("cUPass", password);
+                Cookie p = new Cookie("cUPass", hashedPassword);
                 Cookie r = new Cookie("reMem", remember);
 
-                u.setMaxAge(60 * 60 * 24 * 30 * 3); //3months
+                u.setMaxAge(60 * 60 * 24 * 30 * 3); // 3months
                 if (remember != null) {
                     p.setMaxAge(60 * 60 * 24 * 30 * 3);
                     r.setMaxAge(60 * 60 * 24 * 30 * 3);

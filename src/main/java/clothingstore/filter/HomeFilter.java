@@ -173,10 +173,9 @@ public class HomeFilter implements Filter {
         if (filterConfig == null) {
             return ("HomeFilter()");
         }
-        StringBuffer sb = new StringBuffer("HomeFilter(");
-        sb.append(filterConfig);
-        sb.append(")");
-        return (sb.toString());
+        String sb = "HomeFilter(" + filterConfig
+            + ")";
+        return (sb);
     }
     
     private void sendProcessingError(Throwable t, ServletResponse response) {
