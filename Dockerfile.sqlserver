@@ -1,0 +1,28 @@
+# Use the official SQL Server 2019 image from Microsoft
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+# Set environment variables for SQL Server
+ENV ACCEPT_EULA=Y
+ENV MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+
+# Install sqlcmd and bcp tools
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && \
+    ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev && \
+    apt-get clean
+
+# Copy the SQL initialization script and the init.sh script into the container
+COPY init.sql /usr/src/app/init.sql
+COPY init.sh /usr/src/app/init.sh
+
+# Make the init.sh script executable
+RUN chmod +x /usr/src/app/init.sh
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Run the initialization script on container startup
+ENTRYPOINT ["/usr/src/app/db.sh"]

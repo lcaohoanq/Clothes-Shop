@@ -1,0 +1,31 @@
+services:
+  sqlserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.sqlserver
+    container_name: cls-sqlserver
+    ports:
+      - "1434:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - app_net
+
+  tomcat:
+    build:
+      context: .
+      dockerfile: Dockerfile.tomcat
+    container_name: cls-tomcat
+    ports:
+      - "8080:8080"
+    networks:
+      - app_net
+
+volumes:
+  sql_data:
+
+networks:
+  app_net:
