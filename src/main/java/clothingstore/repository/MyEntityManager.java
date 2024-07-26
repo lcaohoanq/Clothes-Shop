@@ -5,14 +5,14 @@ import jakarta.persistence.Persistence;
 
 public class MyEntityManager {
 
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ClothesShop");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory(
+        "ClothesShop");
 
     public static EntityManagerFactory getEntityManagerFactory() {
-        if(emf.isOpen()){
+        if (emf.isOpen()) {
             return emf;
         } else {
             return Persistence.createEntityManagerFactory("ClothesShop");
         }
     }
-
 }
