@@ -17,6 +17,10 @@ public class TypeService {
         return typeRepository.getAllType();
     }
 
+    public void saveType(TypeDTO type) {
+        typeRepository.saveType(type);
+    }
+
     public static void main(String[] args) {
         TypeService service = new TypeService();
 //        TypeDTO type = service.getTypeById(1);
@@ -27,6 +31,12 @@ public class TypeService {
         for (TypeDTO typeDTO : list) {
             System.out.println(typeDTO);
         }
+
+        TypeDTO newType = new TypeDTO();
+        newType.setName("Test Type");
+        service.saveType(newType);
+
+        System.out.println("Saved new type: " + newType);
     }
 
 }
