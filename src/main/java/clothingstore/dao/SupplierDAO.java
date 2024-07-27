@@ -12,7 +12,7 @@ import clothingstore.model.SupplierDTO;
 
 public class SupplierDAO extends DatabaseService {
 
-    
+    @Deprecated
     public List<SupplierDTO> getData() throws SQLException {
         List<SupplierDTO> suppliers = new ArrayList<>();
         Connection conn = null;
@@ -45,7 +45,8 @@ public class SupplierDAO extends DatabaseService {
         }
         return suppliers;
     }
-    
+
+    @Deprecated
     public SupplierDTO getSupplierById(int id) throws SQLException {
         SupplierDTO supplier = null;
         Connection conn = null;
