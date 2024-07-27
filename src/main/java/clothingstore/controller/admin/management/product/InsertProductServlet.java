@@ -50,7 +50,7 @@ public class InsertProductServlet extends HttpServlet {
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = sDao.getData();
-                List<TypeDTO> listTypes = tDao.getAllType();
+                List<TypeDTO> listTypes = tDao.getAllTypes();
 
                 request.setAttribute("LIST_SUPPLIERS", listSuppliers);
                 request.setAttribute("LIST_TYPES", listTypes);

@@ -64,7 +64,7 @@ public class EditProductServlet extends HttpServlet {
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = sDao.getData();
-                List<TypeDTO> listTypes = tDao.getAllType();
+                List<TypeDTO> listTypes = tDao.getAllTypes();
                 ProductDTO product = pDao.getProductByID(Integer.parseInt(pid_raw));
 
                 request.setAttribute("LIST_SUPPLIERS", listSuppliers);

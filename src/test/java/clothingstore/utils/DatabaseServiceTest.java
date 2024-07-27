@@ -1,21 +1,21 @@
 package clothingstore.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.SQLException;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class DatabaseServiceTest {
 
-    private final DatabaseService db = new DatabaseService();
-    private Connection connection;
+    private static final DatabaseService db = new DatabaseService();
+    private static Connection connection;
 
-    @Before
-    public void setUp() {
+    @BeforeAll
+    public static void setUp() {
         try {
             connection  = db.getConnection();
         } catch (Exception e) {
@@ -23,8 +23,8 @@ public class DatabaseServiceTest {
         }
     }
 
-    @After
-    public void tearDown() {
+    @AfterAll
+    public static void tearDown() {
         try {
             if (connection != null) {
                 connection.close();

@@ -1,20 +1,20 @@
 package clothingstore.service;
 
 import clothingstore.model.TypeDTO;
+import clothingstore.repository.MyEntityManager;
 import clothingstore.repository.TypeRepository;
-import java.lang.reflect.Type;
 import java.util.List;
 
 public class TypeService {
 
-    private final TypeRepository typeRepository = new TypeRepository();
+    private final TypeRepository typeRepository = new TypeRepository(MyEntityManager.getEntityManagerFactory());
 
     public TypeDTO getTypeById(int id) {
         return typeRepository.getTypeById(id);
     }
 
-    public List<TypeDTO> getAllType(){
-        return typeRepository.getAllType();
+    public List<TypeDTO> getAllTypes(){
+        return typeRepository.getAllTypes();
     }
 
     public void saveType(TypeDTO type) {
@@ -26,7 +26,7 @@ public class TypeService {
 //        TypeDTO type = service.getTypeById(1);
 //        System.out.println(type);
 
-        List<TypeDTO> list = service.getAllType();
+        List<TypeDTO> list = service.getAllTypes();
 
         for (TypeDTO typeDTO : list) {
             System.out.println(typeDTO);
