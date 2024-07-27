@@ -1,6 +1,7 @@
 package clothingstore.controller.admin.management.supplier;
 
 import clothingstore.dao.SupplierDAO;
+import clothingstore.service.SupplierService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -28,8 +29,8 @@ public class ManageSupplierServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            SupplierDAO sDao = new SupplierDAO();
-            List<SupplierDTO> list = sDao.getData();
+            SupplierService supplierService = new SupplierService();
+            List<SupplierDTO> list = supplierService.getData();
 
             request.setAttribute("LISTSUPPLIERS", list);
             request.setAttribute("action", "MNGSUPPLIER");
