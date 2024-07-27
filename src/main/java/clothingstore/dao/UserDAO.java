@@ -269,6 +269,7 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
+    // public static final String CHECK_USERNAME_DUPLICATE = "SELECT * FROM Users WHERE userName = ? or email = ? and [status] = 1";
     public boolean checkUserNameDuplicate(String username) throws SQLException {
         boolean ok = false;
         Connection conn = null;
@@ -301,6 +302,7 @@ public class UserDAO extends DatabaseService {
         return ok;
     }
 
+    @Deprecated
     public void registerUser(UserDTO user) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -335,7 +337,8 @@ public class UserDAO extends DatabaseService {
             }
         }
     }
-    
+
+    @Deprecated
     public void deleteUser(String uid) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
