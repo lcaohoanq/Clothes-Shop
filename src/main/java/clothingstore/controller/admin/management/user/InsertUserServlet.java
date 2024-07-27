@@ -1,6 +1,7 @@
 package clothingstore.controller.admin.management.user;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class InsertUserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_USER_CONTROLLER;
         try {
-            UserDAO dao = new UserDAO();
+            UserService userService = new UserService();
             String avatar = request.getParameter("avatar");
             String fullName = request.getParameter("fullname");
             String username = request.getParameter("username");
@@ -45,7 +46,7 @@ public class InsertUserServlet extends HttpServlet {
             String firstName = fullName;
             String lastName = "";
             int roleId = 2;
-            if (dao.checkUserNameDuplicate(username)) {
+            if (userService.checkUserNameDuplicate(username)) {
                 url = INSERT_USER_PAGE;
                 request.setAttribute("error", "Tên tài khoản đã tồn tại!");
             } else {
@@ -61,7 +62,7 @@ public class InsertUserServlet extends HttpServlet {
                     roleId = 1;
                 }
                 UserDTO user = new UserDTO(0, firstName, lastName, email, avatar, username, password, address, phone, roleId, true);
-                dao.registerUser(user);
+                userService.saveUser(user);
                 request.setAttribute("mess", "Insert successfully!");
             }
         } catch (Exception ex) {

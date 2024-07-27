@@ -1,6 +1,7 @@
 package clothingstore.controller.web.profile;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,16 +34,16 @@ public class EditProfileServlet extends HttpServlet {
             String phone = request.getParameter("phone");
             String avatar = request.getParameter("avatar");
             String role_raw = request.getParameter("role");
-            UserDAO uDao = new UserDAO();
+            UserService userService = new UserService();
 
             int roleId = (role_raw.equals("Admin") ? 1 : 2);
             HttpSession session = request.getSession();
             UserDTO user = (UserDTO) session.getAttribute("account");
 
-            uDao.updateUser(firstName, lastName, email, address, phone, user.getUserName(), avatar, roleId);
+            userService.updateUser(new UserDTO(firstName, lastName, email, address, phone, user.getUserName(), avatar, roleId));
             
             // refresh lại session user vì mới update
-            user = uDao.checkLogin(user.getUserName(), user.getPassword());
+            user = userService.checkLogin(user.getUserName(), user.getPassword());
             session.setAttribute("account", user);
             
             request.setAttribute("STATUS", "Update successfully!!!");
