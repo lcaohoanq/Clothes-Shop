@@ -344,3 +344,355 @@
 2024-07-27 08:59:42 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-07-27 08:59:42 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1412682c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2024-07-27 08:59:42 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d1bf7bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:28:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:28:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:28:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:28:34 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:28:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:28:34 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:28:34 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:28:34 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:28:34 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:28:34 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:28:35 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:28:35 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1ffd0114] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:28:54 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:28:54 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:28:54 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:28:55 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:28:55 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:28:55 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:28:55 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:28:55 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:28:55 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:28:55 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:28:56 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:28:56 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4052913c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:33:31 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:33:31 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:33:31 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:33:31 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:33:31 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:33:31 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:33:31 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:33:31 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:33:31 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:33:31 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:33:32 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:33:32 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:33:32 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:33:32 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:34:01 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:34:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:34:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:34:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:34:02 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:34:02 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:34:02 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:34:02 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:34:02 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:34:02 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:34:02 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:34:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:34:03 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:34:03 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:34:46 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:34:46 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:34:46 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:34:46 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:34:46 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:34:46 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:34:46 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:34:46 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:34:46 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:34:46 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:34:46 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:34:47 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:34:47 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:34:47 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:36:19 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:36:19 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:36:19 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:36:19 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:36:19 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:36:19 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:36:19 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:36:19 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:36:19 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:36:20 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:36:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:36:20 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@16bbaab3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:37:35 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:37:35 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:37:35 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:37:35 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:37:36 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:37:36 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:37:36 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:37:36 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:37:36 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:37:36 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:37:36 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:37:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:37:37 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:37:37 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:41:34 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:41:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:41:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:41:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:41:34 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:41:34 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:41:35 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:41:35 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:41:35 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:44:16 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:44:16 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:44:16 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:44:16 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:44:17 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:44:17 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:44:17 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:44:17 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:44:17 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:44:17 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:44:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:44:18 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@16bbaab3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:45:19 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:45:19 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:45:19 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:45:19 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:45:19 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:45:19 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:45:19 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:45:19 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:45:19 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:45:19 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:45:19 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:45:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:45:20 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@51d8f2f2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:45:20 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@43e3a390] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:46:26 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:46:26 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:46:26 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:46:26 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:46:26 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:46:26 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:46:26 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:46:26 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:46:26 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:46:26 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:46:27 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:46:27 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:46:27 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72fb989b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:46:27 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@50dc49e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:50:01 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:50:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:50:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:50:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:50:01 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:50:01 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:50:01 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:50:01 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:50:01 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:50:01 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:50:01 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:50:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:50:02 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72fb989b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:50:02 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@50dc49e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:51:35 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:51:35 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:51:35 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:51:35 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:51:35 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:51:35 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:51:35 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:51:35 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:51:35 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:51:35 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:51:35 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:51:36 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:51:36 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72fb989b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:51:36 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@50dc49e1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:53:18 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:53:18 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:53:18 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:53:18 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:53:18 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:53:18 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:53:18 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:53:18 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:53:18 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:53:18 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:53:19 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:53:19 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@fe42a09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:54:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:54:33 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:54:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:54:33 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:54:33 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+2024-07-27 09:54:33 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop]
+2024-07-27 09:54:33 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:54:33 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:54:33 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:54:34 WARN  org.hibernate.orm.deprecation - HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:54:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:54:34 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@fe42a09] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:56:52 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:56:52 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:56:52 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:56:52 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:56:52 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:56:52 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:56:52 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:56:52 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:56:52 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:56:52 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:56:52 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:56:53 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:56:53 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4ff66917] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:56:53 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a85b4e6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:57:28 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 09:57:28 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 09:57:28 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 09:57:28 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 09:57:28 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 09:57:28 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 09:57:28 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 09:57:28 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 09:57:28 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 09:57:28 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 09:57:29 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 09:57:29 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 09:57:29 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4f235e8e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 09:57:29 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@650a1aff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:04:34 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:04:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:04:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:04:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:04:34 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:04:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:04:34 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:04:34 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:04:34 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:04:34 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:04:34 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:04:35 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:04:35 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:04:35 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:16:11 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:16:11 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:16:11 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:16:11 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:16:12 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:16:12 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:16:12 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:16:12 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:16:12 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:16:12 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:16:12 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:16:13 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:16:13 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:16:13 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:19:40 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:19:40 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:19:40 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:19:40 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:19:40 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:19:40 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:19:40 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:19:40 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:19:40 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:19:40 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:19:41 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:19:41 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:19:41 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:19:41 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:07 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:23:07 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:23:08 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:23:08 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:23:08 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:23:08 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:23:08 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:23:08 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:23:08 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:23:08 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:23:08 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:23:09 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:23:09 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:09 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:36 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:23:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:23:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:23:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:23:36 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:23:36 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:23:36 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:23:36 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:23:36 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:23:36 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:23:37 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:23:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:23:37 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d4a05f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:37 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7f642bf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:44 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:23:44 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:23:44 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:23:44 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:23:44 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:23:44 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:23:44 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:23:44 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:23:44 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:23:44 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:23:44 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:23:45 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:23:45 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17134190] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:23:45 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@11c7a0b4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:24:53 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:24:53 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:24:53 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:24:53 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:24:53 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:24:53 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:24:53 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:24:53 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:24:53 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:24:53 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:24:53 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:24:54 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:24:54 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2b9e69fb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:24:54 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@28367da7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:25:04 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:25:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:25:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:25:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:25:04 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:25:04 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:25:04 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:25:04 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:25:04 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:25:04 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:25:05 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:25:05 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:25:05 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:25:05 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:25:46 WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [ClothesShop]; persistence-unit names must be unique
+2024-07-27 10:25:46 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: ClothesShop]
+2024-07-27 10:25:46 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27 10:25:46 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-27 10:25:46 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-07-27 10:25:46 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.h2.Driver
+2024-07-27 10:25:46 INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1]
+2024-07-27 10:25:46 INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+2024-07-27 10:25:46 INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-07-27 10:25:46 INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2024-07-27 10:25:46 WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-27 10:25:47 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27 10:25:47 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@586843bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-27 10:25:47 INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49ced9c7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
