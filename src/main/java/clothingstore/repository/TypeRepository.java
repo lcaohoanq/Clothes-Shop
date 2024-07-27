@@ -5,10 +5,12 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import java.util.List;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class TypeRepository {
 
-    private final EntityManagerFactory emf = MyEntityManager.getEntityManagerFactory();
+    private EntityManagerFactory emf;
 
     public TypeDTO getTypeById(int id) {
         EntityManager em = emf.createEntityManager();
@@ -19,7 +21,7 @@ public class TypeRepository {
         }
     }
 
-    public List<TypeDTO> getAllType() {
+    public List<TypeDTO> getAllTypes() {
         EntityManager em = emf.createEntityManager();
         try{
             return em.createQuery("SELECT t FROM TypeDTO t", TypeDTO.class).getResultList();

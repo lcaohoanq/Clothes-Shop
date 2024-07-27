@@ -85,7 +85,7 @@ public class MainController extends HttpServlet {
             List<SupplierDTO> listSuppliers = sDao.getData();
             List<ProductDTO> listProductsNew = pDao.getProductNew();
             List<ProductDTO> listProductsBestSeller = pDao.getProductsBestSeller();
-            List<TypeDTO> listTypes = tDao.getAllType();
+            List<TypeDTO> listTypes = tDao.getAllTypes();
 
             request.setAttribute("LIST_PRODUCTS", listProducts);
             request.setAttribute("LIST_TYPES", listTypes);

@@ -38,7 +38,7 @@ public class ManageCategoryServlet extends HttpServlet {
             CategoryDAO cDao = new CategoryDAO();
             TypeService tDao = new TypeService();
 
-            List<TypeDTO> listTypes = tDao.getAllType();
+            List<TypeDTO> listTypes = tDao.getAllTypes();
 
             String action = request.getParameter("action");
             if (INSERT.equals(action)) {
