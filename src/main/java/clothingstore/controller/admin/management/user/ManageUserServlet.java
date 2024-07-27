@@ -2,6 +2,7 @@ package clothingstore.controller.admin.management.user;
 
 import clothingstore.dao.UserDAO;
 import clothingstore.model.UserDTO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -22,16 +23,16 @@ public class ManageUserServlet extends HttpServlet {
         String url = MANAGE_USER_PAGE;
         try {
             String action = request.getParameter("action");
-            UserDAO dao = new UserDAO();
+            UserService userService = new UserService();
             if (action == null) {
-                List<UserDTO> list = dao.getData();
+                List<UserDTO> list = userService.getData();
                 request.setAttribute("LISTUSERS", list);
                 request.setAttribute("CURRENTSERVLET", "User");
                 url = MANAGE_USER_PAGE;
             } else if (action.equals("Insert")) {
                 url = INSERT_USER_PAGE;
             } else if (action.equals("Update")) {
-                List<UserDTO> list = dao.getData();
+                List<UserDTO> list = userService.getData();
                 request.setAttribute("CURRENTSERVLET", "User");
                 request.setAttribute("LISTUSERS", list);
                 url = MANAGE_USER_PAGE;

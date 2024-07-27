@@ -1,6 +1,6 @@
 package clothingstore.controller.admin.management.user;
 
-import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -36,13 +36,13 @@ public class EditUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserDAO dao = new UserDAO();
+        UserService userService = new UserService();
         try {
             String action = request.getParameter("action");
             String url = EDIT_PAGE;
             if (action == null) {
                 String username = request.getParameter("username");
-                UserDTO user = dao.getUserByName(username);
+                UserDTO user = userService.getUserByUsername(username);
 
                 request.setAttribute("username", user.getUserName());
                 request.setAttribute("firstname", user.getFirstName());
@@ -67,11 +67,11 @@ public class EditUserServlet extends HttpServlet {
                 if (avatar != null && !avatar.equals("")) {
                     avatar = "view/assets/home/img/users/" + avatar;
                 } else {
-                    avatar = dao.getUserByName(username).getAvatar();
+                    avatar = userService.getUserByUsername(username).getAvatar();
                 }
                 
                 int roleid = (permission.equals("True") ? 1 : 2);
-                dao.updateUser(firstname, lastname, email, address, phone, username, avatar, roleid);
+                userService.updateUser(new UserDTO(firstname, lastname, email, address, phone, username, avatar, roleid));
 
                 request.setAttribute("mess", "Edit successfully!");
                 request.getRequestDispatcher(url).forward(request, response);

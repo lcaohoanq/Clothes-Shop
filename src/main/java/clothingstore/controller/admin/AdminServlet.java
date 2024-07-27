@@ -4,6 +4,7 @@ import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -51,7 +52,7 @@ public class AdminServlet extends HttpServlet {
         ProductDAO pDao = new ProductDAO();
         OrderItemDAO oIDao = new OrderItemDAO();
         OrderDAO oDao = new OrderDAO();
-        UserDAO uDao = new UserDAO();
+        UserService userService = new UserService();
 
         String url = ADMIN;
         try {
@@ -59,7 +60,7 @@ public class AdminServlet extends HttpServlet {
             double totalSaleTD = oDao.getTotalSaleToday();
             int totalProducts = pDao.getTotalProducts();
             int numberProductsLowQuantity = pDao.getProductsLowQuantiry();
-            int totalUsers = uDao.getTotalUsers();
+            int totalUsers = userService.getTotalUsers();
             int totalOrders = oDao.getTotalOrders();
             List<OrderDTO> lastRecentOrders = oDao.getRecentOrders();
 

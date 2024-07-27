@@ -1,6 +1,7 @@
 package clothingstore.controller.admin.management.user;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -45,8 +46,8 @@ public class DeleteUserServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             String uid = request.getParameter("uid");
-            UserDAO dao = new UserDAO();
-            dao.deleteUser(uid);
+            UserService userService = new UserService();
+            userService.deleteUser(Integer.parseInt(uid));
             request.setAttribute("mess", "Delete successfully!");
         } catch (Exception ex) {
             log("DeleteProductServlet error:" + ex.getMessage());

@@ -1,6 +1,7 @@
 package clothingstore.controller.web.login;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;
@@ -27,7 +28,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         String status = request.getParameter("status");
         String password = request.getParameter("txtPassword");
         String confirm = request.getParameter("txtConfirm");
-        UserDAO ud = new UserDAO();
+        UserService userService = new UserService();
         Email handleEmail = new Email();
         String message = "";
         String check = null;
@@ -39,7 +40,7 @@ public class ForgotPasswordServlet extends HttpServlet {
                 request.setAttribute("STATUS", status);
             }
             if (emailInput != null) {
-                user = ud.getUserByEmail(emailInput);
+                user = userService.getUserByEmail(emailInput);
                 if (user != null) {
                     Random random = new Random();
                     message = "EXIST - valid email, check your email to have resetcode";
@@ -74,8 +75,8 @@ public class ForgotPasswordServlet extends HttpServlet {
             if (password != null && confirm != null) {
                 if (password.equalsIgnoreCase(confirm)) {
                     String email = (String) session.getAttribute("email");
-                    user = ud.getUserByEmail(email);
-                    if (ud.updatePasswordUser(user, password)) {
+                    user = userService.getUserByEmail(email);
+                    if (userService.updatePasswordUser(user, password)) {
                         message = "New password has been updated";
                         check = "true";
                         status = "success";

@@ -7,8 +7,6 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.NoResultException;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 
 @AllArgsConstructor

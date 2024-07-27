@@ -2,6 +2,7 @@ package clothingstore.controller.web.login;
 
 import clothingstore.model.UserGoogleDTO;
 import clothingstore.constant.GoogleAuthentication;
+import clothingstore.service.UserService;
 import clothingstore.utils.PBKDF2;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -109,8 +110,8 @@ public class LoginServlet extends HttpServlet {
                 String accessToken = getToken(code);
                 UserGoogleDTO userGG = getUserInfo(accessToken);
                 if (userGG != null) {
-                    UserDAO dao = new UserDAO();
-                    UserDTO account = dao.getUserByEmail(userGG.getEmail());
+                    UserService userService = new UserService();
+                    UserDTO account = userService.getUserByEmail(userGG.getEmail());
                     if (account != null) {
                         HttpSession session = request.getSession();
                         session.setAttribute("account", account);
@@ -157,10 +158,10 @@ public class LoginServlet extends HttpServlet {
             String username = request.getParameter("txtUsername");
             String password = request.getParameter("txtPassword");
             String remember = request.getParameter("remember");
-            UserDAO udao = new UserDAO();
-            String hashedPassword = new UserDAO().getPassword(username);
+            UserService userService = new UserService();
+            String hashedPassword = new UserService().getUserByUsername(username).getPassword();
             if (password.equals(hashedPassword) || new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
-                UserDTO user = udao.checkLogin(username, hashedPassword);
+                UserDTO user = userService.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();
                 session.setAttribute("account", user);
                 Cookie u = new Cookie("cUName", username);

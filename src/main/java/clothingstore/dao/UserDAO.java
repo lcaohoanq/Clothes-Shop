@@ -12,8 +12,7 @@ import clothingstore.model.UserDTO;
 
 public class UserDAO extends DatabaseService {
 
-
-
+    @Deprecated
     public List<UserDTO> getData() throws SQLException {
         List<UserDTO> users = new ArrayList<>();
         Connection conn = null;
@@ -98,6 +97,7 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
+    @Deprecated
     public int getTotalUsers() throws SQLException {
         int result = 0;
         Connection conn = null;
@@ -128,6 +128,7 @@ public class UserDAO extends DatabaseService {
         return result;
     }
 
+    @Deprecated
     public void updateUser(String firstName, String lastName, String email, String address, String phone, String userName, String avatar, int roleId) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -162,6 +163,7 @@ public class UserDAO extends DatabaseService {
         }
     }
 
+    @Deprecated
     public boolean updatePasswordUser(UserDTO user, String pass) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -187,6 +189,7 @@ public class UserDAO extends DatabaseService {
         return false;
     }
 
+    @Deprecated
     public UserDTO getUserByName(String userName) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -228,6 +231,7 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
+    @Deprecated
     public UserDTO getUserByEmail(String email) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -269,7 +273,7 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
-    // public static final String CHECK_USERNAME_DUPLICATE = "SELECT * FROM Users WHERE userName = ? or email = ? and [status] = 1";
+    @Deprecated
     public boolean checkUserNameDuplicate(String username) throws SQLException {
         boolean ok = false;
         Connection conn = null;
@@ -363,37 +367,6 @@ public class UserDAO extends DatabaseService {
                 conn.close();
             }
         }
-    }
-
-    public String getPassword(String userId) throws SQLException {
-        String password = "";
-        Connection conn = null;
-        PreparedStatement ptm = null;
-        ResultSet rs = null;
-        try {
-            conn = getConnection();
-            if (conn != null) {
-                ptm = conn.prepareStatement(DatabaseQueries.GET_PASSWORD);
-                ptm.setString(1, userId);
-                rs = ptm.executeQuery();
-                if (rs.next()) {
-                    password = rs.getString("password");
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (ptm != null) {
-                ptm.close();
-            }
-            if (conn != null) {
-                conn.close();
-            }
-        }
-        return password;
     }
 
     public static void main(String[] args) throws SQLException {

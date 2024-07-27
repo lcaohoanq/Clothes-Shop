@@ -1,6 +1,7 @@
 package clothingstore.controller.web.login;
 
 import clothingstore.dao.UserDAO;
+import clothingstore.service.UserService;
 import clothingstore.utils.PBKDF2;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -76,11 +77,11 @@ public class RegisterServlet extends HttpServlet {
             String avatar = request.getParameter("avatar");
             String action = request.getParameter("action");
             String message;
-            UserDAO ud = new UserDAO();
+            UserService userService = new UserService();
             if (action != null && action.equals("CheckDuplicate")) {
                 PrintWriter out = response.getWriter();
                 String username = request.getParameter("username");
-                boolean isDuplicate = ud.checkUserNameDuplicate(uName);
+                boolean isDuplicate = userService.checkUserNameDuplicate(uName);
                 if (isDuplicate) {
                     request.setAttribute("DUPLICATE", 1);
                     out.println("<h6 style='color: red'>Username already exist!</h6>");
@@ -88,14 +89,14 @@ public class RegisterServlet extends HttpServlet {
                 request.setAttribute("DUPLICATE", 0);
                 return;
             }
-            boolean isDup = ud.checkUserNameDuplicate(uName);
+            boolean isDup = userService.checkUserNameDuplicate(uName);
             if (isDup) {
                 message = "Username already exist!";
                 request.setAttribute("ERROR", message);
                 request.getRequestDispatcher("view/jsp/home/login.jsp").forward(request, response);
             } else {
                 UserDTO user = new UserDTO(0, fName, lName, email, (avatar == null ? "assets/img/users/user.jpg" : avatar), uName, new PBKDF2().hash(uPass.toCharArray()), "", "", 2, true);
-                ud.registerUser(user);
+                userService.saveUser(user);
                 message = "Register successfully. Please Login!";
 
                 request.setAttribute("SUCCESS", message);
