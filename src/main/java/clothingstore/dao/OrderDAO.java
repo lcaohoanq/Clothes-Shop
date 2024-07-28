@@ -1,9 +1,9 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
+import clothingstore.impl.PaymentServiceImpl;
+import clothingstore.impl.UserServiceImpl;
 import clothingstore.service.DatabaseService;
-import clothingstore.service.PaymentService;
-import clothingstore.service.UserService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -17,8 +17,8 @@ import clothingstore.model.UserDTO;
 
 public class OrderDAO extends DatabaseService {
 
-    private final UserService userService = new UserService();
-    private final PaymentService pDao = new PaymentService();
+    private final UserServiceImpl userService = new UserServiceImpl();
+    private final PaymentServiceImpl pDao = new PaymentServiceImpl();
 
     public double getTotalSale() throws SQLException {
         double result = 0;

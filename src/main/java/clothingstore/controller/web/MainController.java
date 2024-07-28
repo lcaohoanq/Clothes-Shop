@@ -1,5 +1,6 @@
 package clothingstore.controller.web;
 
+import clothingstore.impl.SupplierServiceImpl;
 import clothingstore.impl.TypeServiceImpl;
 import clothingstore.service.SupplierService;
 import clothingstore.service.TypeService;
@@ -78,7 +79,7 @@ public class MainController extends HttpServlet {
         try {
             ProductDAO pDao = new ProductDAO();
             CategoryDAO cDao = new CategoryDAO();
-            SupplierService supplierService = new SupplierService();
+            SupplierServiceImpl supplierService = new SupplierServiceImpl();
             TypeService tDao = new TypeServiceImpl();
             CategoryDAO caDao = new CategoryDAO();
 

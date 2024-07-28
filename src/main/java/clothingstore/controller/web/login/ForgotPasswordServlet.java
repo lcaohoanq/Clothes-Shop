@@ -1,7 +1,6 @@
 package clothingstore.controller.web.login;
 
-import clothingstore.dao.UserDAO;
-import clothingstore.service.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;
@@ -28,7 +27,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         String status = request.getParameter("status");
         String password = request.getParameter("txtPassword");
         String confirm = request.getParameter("txtConfirm");
-        UserService userService = new UserService();
+        UserServiceImpl userService = new UserServiceImpl();
         Email handleEmail = new Email();
         String message = "";
         String check = null;

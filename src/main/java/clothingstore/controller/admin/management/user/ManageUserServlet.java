@@ -1,8 +1,7 @@
 package clothingstore.controller.admin.management.user;
 
-import clothingstore.dao.UserDAO;
+import clothingstore.impl.UserServiceImpl;
 import clothingstore.model.UserDTO;
-import clothingstore.service.UserService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -23,7 +22,7 @@ public class ManageUserServlet extends HttpServlet {
         String url = MANAGE_USER_PAGE;
         try {
             String action = request.getParameter("action");
-            UserService userService = new UserService();
+            UserServiceImpl userService = new UserServiceImpl();
             if (action == null) {
                 List<UserDTO> list = userService.getData();
                 request.setAttribute("LISTUSERS", list);

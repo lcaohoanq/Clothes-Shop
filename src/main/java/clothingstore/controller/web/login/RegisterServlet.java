@@ -1,7 +1,6 @@
 package clothingstore.controller.web.login;
 
-import clothingstore.dao.UserDAO;
-import clothingstore.service.UserService;
+import clothingstore.impl.UserServiceImpl;
 import clothingstore.utils.PBKDF2;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -77,7 +76,7 @@ public class RegisterServlet extends HttpServlet {
             String avatar = request.getParameter("avatar");
             String action = request.getParameter("action");
             String message;
-            UserService userService = new UserService();
+            UserServiceImpl userService = new UserServiceImpl();
             if (action != null && action.equals("CheckDuplicate")) {
                 PrintWriter out = response.getWriter();
                 String username = request.getParameter("username");

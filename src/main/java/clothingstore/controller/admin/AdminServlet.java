@@ -3,8 +3,7 @@ package clothingstore.controller.admin;
 import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
 import clothingstore.dao.ProductDAO;
-import clothingstore.dao.UserDAO;
-import clothingstore.service.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -52,7 +51,7 @@ public class AdminServlet extends HttpServlet {
         ProductDAO pDao = new ProductDAO();
         OrderItemDAO oIDao = new OrderItemDAO();
         OrderDAO oDao = new OrderDAO();
-        UserService userService = new UserService();
+        UserServiceImpl userService = new UserServiceImpl();
 
         String url = ADMIN;
         try {

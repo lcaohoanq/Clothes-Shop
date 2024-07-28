@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class TypeRepository {
 
-    private EntityManagerFactory emf;
+    private EntityManagerFactory emf ;
 
     public TypeDTO getTypeById(int id) {
         EntityManager em = emf.createEntityManager();

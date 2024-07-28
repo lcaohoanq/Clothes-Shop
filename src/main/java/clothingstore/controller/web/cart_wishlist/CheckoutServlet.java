@@ -1,6 +1,6 @@
 package clothingstore.controller.web.cart_wishlist;
 
-import clothingstore.service.PaymentService;
+import clothingstore.impl.PaymentServiceImpl;
 import clothingstore.utils.CartUtil;
 import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
@@ -31,7 +31,7 @@ public class CheckoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = CHECKOUT_PAGE;
-        PaymentService pmDAO = new PaymentService();
+        PaymentServiceImpl pmDAO = new PaymentServiceImpl();
         ProductDAO pDAO = new ProductDAO();
         OrderDAO oDAO = new OrderDAO();
         OrderItemDAO oiDAO = new OrderItemDAO();

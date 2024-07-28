@@ -1,9 +1,7 @@
 package clothingstore.controller.admin.management.user;
 
-import clothingstore.dao.UserDAO;
-import clothingstore.service.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +30,7 @@ public class InsertUserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_USER_CONTROLLER;
         try {
-            UserService userService = new UserService();
+            UserServiceImpl userService = new UserServiceImpl();
             String avatar = request.getParameter("avatar");
             String fullName = request.getParameter("fullname");
             String username = request.getParameter("username");
