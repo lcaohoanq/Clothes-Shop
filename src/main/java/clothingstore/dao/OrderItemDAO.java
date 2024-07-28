@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.service.DatabaseService;
+import clothingstore.utils.DatabaseUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +13,7 @@ import clothingstore.model.OrderDTO;
 import clothingstore.model.OrderItemDTO;
 import clothingstore.model.ProductDTO;
 
-public class OrderItemDAO extends DatabaseService {
+public class OrderItemDAO extends DatabaseUtil {
 
     private final ProductDAO pDao = new ProductDAO();
 

@@ -3,6 +3,7 @@ package clothingstore.repository;
 import clothingstore.model.SupplierDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import java.util.List;
 import lombok.AllArgsConstructor;
 
@@ -11,31 +12,37 @@ public class SupplierRepository {
 
     private EntityManagerFactory emf;
 
-    public List<SupplierDTO> getData(){
+    public List<SupplierDTO> getData() {
         EntityManager em = emf.createEntityManager();
-        try{
+        try {
             return em.createQuery("SELECT s FROM SupplierDTO s", SupplierDTO.class).getResultList();
-        }finally {
+        } finally {
             em.close();
         }
     }
 
-    public SupplierDTO getSupplierById(int id){
+    public SupplierDTO getSupplierById(int id) {
         EntityManager em = emf.createEntityManager();
-        try{
+        try {
             return em.find(SupplierDTO.class, id);
-        }finally {
+        } finally {
             em.close();
         }
     }
 
-    public void saveSupplier(SupplierDTO supplier){
+    public void saveSupplier(SupplierDTO supplier) {
         EntityManager em = emf.createEntityManager();
-        try{
-            em.getTransaction().begin();
+        EntityTransaction transaction = em.getTransaction();
+        try {
+            transaction.begin();
             em.persist(supplier);
-            em.getTransaction().commit();
-        }finally {
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw e;
+        } finally {
             em.close();
         }
     }

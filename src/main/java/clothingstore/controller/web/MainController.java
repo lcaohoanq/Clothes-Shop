@@ -2,13 +2,11 @@ package clothingstore.controller.web;
 
 import clothingstore.impl.SupplierServiceImpl;
 import clothingstore.impl.TypeServiceImpl;
-import clothingstore.service.SupplierService;
 import clothingstore.service.TypeService;
-import clothingstore.utils.WishlistUtil;
-import clothingstore.utils.CartUtil;
+import clothingstore.module.wishlist.WishlistUtil;
+import clothingstore.module.cart.CartUtil;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
-import clothingstore.dao.SupplierDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;

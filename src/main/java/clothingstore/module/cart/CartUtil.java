@@ -1,4 +1,4 @@
-package clothingstore.utils;
+package clothingstore.module.cart;
 
 import clothingstore.dao.ProductDAO;
 import java.io.UnsupportedEncodingException;

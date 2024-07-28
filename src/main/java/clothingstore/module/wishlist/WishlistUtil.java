@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clothingstore.utils;
+package clothingstore.module.wishlist;
 
 import clothingstore.dao.ProductDAO;
 import java.util.ArrayList;

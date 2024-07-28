@@ -1,7 +1,7 @@
 package clothingstore.controller.web.cart_wishlist;
 
-import clothingstore.utils.WishlistUtil;
-import clothingstore.utils.CartUtil;
+import clothingstore.module.wishlist.WishlistUtil;
+import clothingstore.module.cart.CartUtil;
 import clothingstore.dao.ProductDAO;
 import java.io.IOException;
 import java.util.ArrayList;

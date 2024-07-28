@@ -28,4 +28,8 @@ public class PaymentDTO {
     @Column(name = "payment_method")
     private String paymentMethod;
 
+    public PaymentDTO(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
 }

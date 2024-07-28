@@ -32,4 +32,9 @@ public class SupplierDTO {
 
     @Column(name = "supplierimage")
     private String image;
+
+    public SupplierDTO(String name, String image) {
+        this.name = name;
+        this.image = image;
+    }
 }

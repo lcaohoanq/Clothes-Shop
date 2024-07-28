@@ -23,4 +23,16 @@ public class LogUtil {
             }
         }
     }
+    public static void ensureLogsFolderExists(String projectRootPath) {
+        File logsFolder = new File(projectRootPath, "logs");
+
+        if (!logsFolder.exists()) {
+            boolean wasCreated = logsFolder.mkdir();
+            if (wasCreated) {
+                log.info("Folder logs was created successfully.");
+            } else {
+                log.error("Failed to create folder logs.");
+            }
+        }
+    }
 }

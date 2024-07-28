@@ -1,13 +1,14 @@
 package clothingstore.impl;
 
 import clothingstore.model.PaymentDTO;
+import clothingstore.repository.MyEntityManager;
 import clothingstore.repository.PaymentRepository;
 import clothingstore.service.PaymentService;
 import java.util.List;
 
 public class PaymentServiceImpl implements PaymentService {
 
-    private final PaymentRepository paymentRepository = new PaymentRepository();
+    private final PaymentRepository paymentRepository = new PaymentRepository(MyEntityManager.getEntityManagerFactory());
 
     @Override
     public PaymentDTO getPaymentById(int id) {
@@ -17,6 +18,11 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public List<PaymentDTO> getPaymentData() {
         return paymentRepository.getPaymentData();
+    }
+
+    @Override
+    public void save(PaymentDTO payment) {
+        paymentRepository.save(payment);
     }
 
     public static void main(String[] args) {

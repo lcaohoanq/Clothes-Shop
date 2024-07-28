@@ -1,7 +1,7 @@
 package clothingstore.controller.web.cart_wishlist;
 
 import clothingstore.impl.PaymentServiceImpl;
-import clothingstore.utils.CartUtil;
+import clothingstore.module.cart.CartUtil;
 import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
 import clothingstore.dao.ProductDAO;

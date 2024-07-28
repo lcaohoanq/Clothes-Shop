@@ -2,16 +2,15 @@ package clothingstore.utils;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class DatabaseServiceTest {
+public class DatabaseUtilTest {
 
-    private static final DatabaseService db = new DatabaseService();
+    private static final DatabaseUtil db = new DatabaseUtil();
     private static Connection connection;
 
     @BeforeAll
