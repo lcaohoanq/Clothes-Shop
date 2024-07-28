@@ -1,9 +1,9 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
+import clothingstore.impl.SupplierServiceImpl;
 import clothingstore.impl.TypeServiceImpl;
 import clothingstore.service.DatabaseService;
-import clothingstore.service.SupplierService;
 import clothingstore.service.TypeService;
 import java.sql.Connection;
 import java.sql.Date;
@@ -35,7 +35,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
@@ -85,7 +85,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 if (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = supplierService.getSupplierById(rs.getInt("supplierid"));
@@ -124,7 +124,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = supplierService.getSupplierById(rs.getInt("supplierid"));
@@ -175,7 +175,7 @@ public class ProductDAO extends DatabaseService {
 //                rs = ptm.executeQuery();
 //                while (rs.next()) {
 //                    CategoryDAO cDao = new CategoryDAO();
-//                    SupplierService supplierService = new SupplierService();
+//                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
 //                    TypeService tDao = new TypeServiceImpl();
 //                    String productname = rs.getString("productname");
 //                    SupplierDTO supplier = supplierService.getSupplierById(rs.getInt("supplierid"));
@@ -215,7 +215,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     SupplierDTO supplier = supplierService.getSupplierById(supplierid);
@@ -384,7 +384,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
@@ -433,7 +433,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
@@ -483,7 +483,7 @@ public class ProductDAO extends DatabaseService {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     CategoryDAO cDao = new CategoryDAO();
-                    SupplierService supplierService = new SupplierService();
+                    SupplierServiceImpl supplierService = new SupplierServiceImpl();
                     TypeService tDao = new TypeServiceImpl();
                     String productname = rs.getString("productname");
                     int id = rs.getInt("id");
@@ -758,7 +758,7 @@ public class ProductDAO extends DatabaseService {
 //            rs = st.executeQuery();
 //            while (rs.next()) {
 //                CategoryDAO cDao = new CategoryDAO();
-//                SupplierService supplierService = new SupplierService();
+//                SupplierServiceImpl supplierService = new SupplierServiceImpl();
 //                TypeService tDao = new TypeServiceImpl();
 //                String productname = rs.getString("productname");
 //                int id = rs.getInt("id");

@@ -1,7 +1,7 @@
 package clothingstore.controller.web.login;
 
-import clothingstore.services.UserService;
-import clothingstore.dto.UserGoogleDTO;
+import clothingstore.impl.UserServiceImpl;
+import clothingstore.model.UserGoogleDTO;
 import clothingstore.constant.GoogleAuthentication;
 import clothingstore.utils.PBKDF2;
 import com.google.gson.Gson;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Form;
 
@@ -108,7 +108,7 @@ public class LoginServlet extends HttpServlet {
                 String accessToken = getToken(code);
                 UserGoogleDTO userGG = getUserInfo(accessToken);
                 if (userGG != null) {
-                    UserService userService = new UserService();
+                    UserServiceImpl userService = new UserServiceImpl();
                     UserDTO account = userService.getUserByEmail(userGG.getEmail());
                     if (account != null) {
                         HttpSession session = request.getSession();
@@ -156,8 +156,8 @@ public class LoginServlet extends HttpServlet {
             String username = request.getParameter("txtUsername");
             String password = request.getParameter("txtPassword");
             String remember = request.getParameter("remember");
-            UserService userService = new UserService();
-            String hashedPassword = new UserService().getUserByUsername(username).getPassword();
+            UserServiceImpl userService = new UserServiceImpl();
+            String hashedPassword = new UserServiceImpl().getUserByUsername(username).getPassword();
             if (password.equals(hashedPassword) || new PBKDF2().authenticate(password.toCharArray(), hashedPassword)) {
                 UserDTO user = userService.checkLogin(username, hashedPassword);
                 HttpSession session = request.getSession();

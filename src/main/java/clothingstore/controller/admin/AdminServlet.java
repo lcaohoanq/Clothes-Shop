@@ -1,10 +1,9 @@
 package clothingstore.controller.admin;
 
-import clothingstore.constant.DatabaseQueries;
 import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
 import clothingstore.dao.ProductDAO;
-import clothingstore.services.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -12,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.dto.OrderDTO;
-import clothingstore.dto.OrderItemDTO;
+import clothingstore.model.OrderDTO;
+import clothingstore.model.OrderItemDTO;
 
 public class AdminServlet extends HttpServlet {
 
@@ -52,7 +51,7 @@ public class AdminServlet extends HttpServlet {
         ProductDAO pDao = new ProductDAO();
         OrderItemDAO oIDao = new OrderItemDAO();
         OrderDAO oDao = new OrderDAO();
-        UserService userService = new UserService();
+        UserServiceImpl userService = new UserServiceImpl();
 
         String url = ADMIN;
         try {
@@ -62,7 +61,7 @@ public class AdminServlet extends HttpServlet {
             int numberProductsLowQuantity = pDao.getProductsLowQuantiry();
             int totalUsers = userService.getTotalUsers();
             int totalOrders = oDao.getTotalOrders();
-            List<OrderDTO> lastRecentOrders = oDao.getOrders(DatabaseQueries.GET_RECENT_ORDERS);
+            List<OrderDTO> lastRecentOrders = oDao.getRecentOrders();
 
             request.setAttribute("TOTALSALE", totalSale);
             request.setAttribute("TOTALSALETODAY", totalSaleTD);

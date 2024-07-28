@@ -1,6 +1,6 @@
 package clothingstore.controller.admin.management.user;
 
-import clothingstore.services.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import java.util.Arrays;
 import javax.servlet.ServletException;
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 
 @WebServlet(name = "InsertUserServlet", urlPatterns = {"/InsertUserServlet"})
 public class InsertUserServlet extends HttpServlet {
@@ -30,7 +30,7 @@ public class InsertUserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_USER_CONTROLLER;
         try {
-            UserService userService = new UserService();
+            UserServiceImpl userService = new UserServiceImpl();
             String avatar = request.getParameter("avatar");
             String fullName = request.getParameter("fullname");
             String username = request.getParameter("username");

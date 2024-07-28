@@ -1,9 +1,9 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.services.UserService;
-import clothingstore.services.PaymentService;
-import clothingstore.utils.DatabaseUtil;
+import clothingstore.impl.PaymentServiceImpl;
+import clothingstore.impl.UserServiceImpl;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,14 +11,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.OrderDTO;
-import clothingstore.dto.PaymentDTO;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.OrderDTO;
+import clothingstore.model.PaymentDTO;
+import clothingstore.model.UserDTO;
 
-public class OrderDAO extends DatabaseUtil {
+public class OrderDAO extends DatabaseService {
 
-    private final UserService userService = new UserService();
-    private final PaymentService pDao = new PaymentService();
+    private final UserServiceImpl userService = new UserServiceImpl();
+    private final PaymentServiceImpl pDao = new PaymentServiceImpl();
 
     public double getTotalSale() throws SQLException {
         double result = 0;
@@ -142,7 +142,7 @@ public class OrderDAO extends DatabaseUtil {
         return result;
     }
 
-    public List<OrderDTO> getOrders(String orderType) throws SQLException {
+    public List<OrderDTO> getRecentOrders() throws SQLException {
         List<OrderDTO> orders = new ArrayList<>();
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -150,7 +150,7 @@ public class OrderDAO extends DatabaseUtil {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(orderType);
+                ptm = conn.prepareStatement(DatabaseQueries.GET_RECENT_ORDERS);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int orderId = rs.getInt("order_id");
@@ -161,8 +161,7 @@ public class OrderDAO extends DatabaseUtil {
                     String userName = rs.getString("username");
                     UserDTO user = userService.getUserByUsername(userName);
                     boolean status = rs.getBoolean("status");
-                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user,
-                        status);
+                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                     orders.add(order);
                 }
             }
@@ -182,7 +181,7 @@ public class OrderDAO extends DatabaseUtil {
         return orders;
     }
 
-    public OrderDTO getTheLatestOrder() throws SQLException {
+        public OrderDTO getTheLatestOrder() throws SQLException {
         OrderDTO order = null;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -219,7 +218,6 @@ public class OrderDAO extends DatabaseUtil {
         }
         return order;
     }
-
     public List<OrderDTO> getOrdersByUsername(String userName) throws SQLException {
         List<OrderDTO> orders = new ArrayList<>();
         Connection conn = null;
@@ -239,8 +237,7 @@ public class OrderDAO extends DatabaseUtil {
                     PaymentDTO payment = pDao.getPaymentById(paymentId);
                     boolean status = rs.getBoolean("status");
                     UserDTO user = userService.getUserByUsername(userName);
-                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user,
-                        status);
+                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user, status);
                     orders.add(order);
                 }
             }
@@ -348,8 +345,7 @@ public class OrderDAO extends DatabaseUtil {
                     String userName = rs.getString("username");
                     UserDTO user = userService.getUserByUsername(userName);
                     boolean status = rs.getBoolean("status");
-                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment, user,
-                        status);
+                    OrderDTO order = new OrderDTO(orderId, orderDate, totalPrice, payment , user, status);
                     orders.add(order);
                 }
             }
@@ -394,9 +390,8 @@ public class OrderDAO extends DatabaseUtil {
             }
         }
     }
-
-    public boolean CreateNewOrder(String date, double total, PaymentDTO payment, UserDTO user)
-        throws SQLException {
+    
+    public boolean CreateNewOrder(String date,double total, PaymentDTO payment, UserDTO user) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
         ResultSet rs = null;
@@ -427,6 +422,8 @@ public class OrderDAO extends DatabaseUtil {
         }
         return false;
     }
+
+
 
 //    public static void main(String[] args) throws SQLException {
 //        OrderDAO dao = new OrderDAO();

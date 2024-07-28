@@ -1,27 +1,13 @@
-package clothingstore.services;
+package clothingstore.service;
 
-import clothingstore.dto.SupplierDTO;
-import clothingstore.repositories.BaseEntityManager;
-import clothingstore.repositories.SupplierRepository;
+import clothingstore.model.SupplierDTO;
+import clothingstore.utils.TestOnly;
 import java.util.List;
 
-public class SupplierService implements ISupplier {
-
-    private final SupplierRepository supplierRepository = new SupplierRepository(BaseEntityManager.getEntityManagerFactory());
-
-    @Override
-    public List<SupplierDTO> getData() {
-        return supplierRepository.getData();
-    }
-
-    @Override
-    public SupplierDTO getSupplierById(int id) {
-        return supplierRepository.getSupplierById(id);
-    }
-
-    @Override
-    public void saveSupplier(SupplierDTO supplier) {
-        supplierRepository.saveSupplier(supplier);
-    }
+public interface SupplierService {
+    List<SupplierDTO> getData();
+    SupplierDTO getSupplierById(int id);
+    @TestOnly
+    void saveSupplier(SupplierDTO supplier);
 
 }

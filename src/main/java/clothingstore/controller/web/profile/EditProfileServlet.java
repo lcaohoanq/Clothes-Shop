@@ -1,13 +1,13 @@
 package clothingstore.controller.web.profile;
 
-import clothingstore.services.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 
 public class EditProfileServlet extends HttpServlet {
 
@@ -33,7 +33,7 @@ public class EditProfileServlet extends HttpServlet {
             String phone = request.getParameter("phone");
             String avatar = request.getParameter("avatar");
             String role_raw = request.getParameter("role");
-            UserService userService = new UserService();
+            UserServiceImpl userService = new UserServiceImpl();
 
             int roleId = (role_raw.equals("Admin") ? 1 : 2);
             HttpSession session = request.getSession();

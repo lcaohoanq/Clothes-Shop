@@ -1,6 +1,6 @@
 package clothingstore.controller.web.login;
 
-import clothingstore.services.UserService;
+import clothingstore.impl.UserServiceImpl;
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import clothingstore.module.email.Email;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 
 @WebServlet(name = "ForgotPasswordServlet", urlPatterns = {"/ForgotPasswordServlet"})
 public class ForgotPasswordServlet extends HttpServlet {
@@ -27,7 +27,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         String status = request.getParameter("status");
         String password = request.getParameter("txtPassword");
         String confirm = request.getParameter("txtConfirm");
-        UserService userService = new UserService();
+        UserServiceImpl userService = new UserServiceImpl();
         Email handleEmail = new Email();
         String message = "";
         String check = null;
