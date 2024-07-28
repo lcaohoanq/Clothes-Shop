@@ -2,13 +2,14 @@ package clothingstore.controller.admin.management.product;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
-import clothingstore.services.SupplierService;
-import clothingstore.services.TypeService;
-import clothingstore.dto.CategoryDTO;
-import clothingstore.dto.ProductDTO;
-import clothingstore.dto.SupplierDTO;
-import clothingstore.dto.TypeDTO;
-import clothingstore.services.IType;
+import clothingstore.dao.SupplierDAO;
+import clothingstore.impl.TypeServiceImpl;
+import clothingstore.model.CategoryDTO;
+import clothingstore.model.ProductDTO;
+import clothingstore.model.SupplierDTO;
+import clothingstore.model.TypeDTO;
+import clothingstore.service.SupplierService;
+import clothingstore.service.TypeService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -61,7 +62,7 @@ public class EditProductServlet extends HttpServlet {
                 ProductDAO pDao = new ProductDAO();
                 CategoryDAO cDao = new CategoryDAO();
                 SupplierService supplierService = new SupplierService();
-                IType tDao = new TypeService();
+                TypeService tDao = new TypeServiceImpl();
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = supplierService.getData();

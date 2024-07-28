@@ -1,12 +1,13 @@
 package clothingstore.controller.web;
 
-import clothingstore.services.SupplierService;
-import clothingstore.services.TypeService;
-import clothingstore.services.IType;
-import clothingstore.module.wishlist.WishlistUtil;
-import clothingstore.module.cart.CartUtil;
+import clothingstore.impl.TypeServiceImpl;
+import clothingstore.service.SupplierService;
+import clothingstore.service.TypeService;
+import clothingstore.utils.WishlistUtil;
+import clothingstore.utils.CartUtil;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
+import clothingstore.dao.SupplierDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -15,11 +16,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.dto.CartItem;
-import clothingstore.dto.CategoryDTO;
-import clothingstore.dto.ProductDTO;
-import clothingstore.dto.SupplierDTO;
-import clothingstore.dto.TypeDTO;
+import clothingstore.model.CartItem;
+import clothingstore.model.CategoryDTO;
+import clothingstore.model.ProductDTO;
+import clothingstore.model.SupplierDTO;
+import clothingstore.model.TypeDTO;
 
 public class MainController extends HttpServlet {
 
@@ -78,7 +79,7 @@ public class MainController extends HttpServlet {
             ProductDAO pDao = new ProductDAO();
             CategoryDAO cDao = new CategoryDAO();
             SupplierService supplierService = new SupplierService();
-            IType tDao = new TypeService();
+            TypeService tDao = new TypeServiceImpl();
             CategoryDAO caDao = new CategoryDAO();
 
             List<ProductDTO> listProducts = pDao.getData();

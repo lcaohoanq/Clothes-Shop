@@ -1,19 +1,19 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.services.TypeService;
-import clothingstore.utils.DatabaseUtil;
-import clothingstore.services.IType;
+import clothingstore.impl.TypeServiceImpl;
+import clothingstore.service.DatabaseService;
+import clothingstore.service.TypeService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.CategoryDTO;
-import clothingstore.dto.TypeDTO;
+import clothingstore.model.CategoryDTO;
+import clothingstore.model.TypeDTO;
 
-public class CategoryDAO extends DatabaseUtil {
+public class CategoryDAO extends DatabaseService {
 
     public List<CategoryDTO> getData() throws SQLException {
         List<CategoryDTO> categories = new ArrayList<>();
@@ -26,7 +26,43 @@ public class CategoryDAO extends DatabaseUtil {
                 ptm = conn.prepareStatement(DatabaseQueries.GETDATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    IType dao = new TypeService();
+                    TypeService dao = new TypeServiceImpl();
+                    TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
+                    int categoryId = rs.getInt("categoryid");
+                    String categoryName = rs.getString("categoryname");
+                    int typeid = rs.getInt("type_id");
+                    categories.add(new CategoryDTO(categoryId, categoryName, type));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return categories;
+    }
+
+    public List<CategoryDTO> getCategoriesByTypeId(int typpid) throws SQLException {
+        List<CategoryDTO> categories = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(DatabaseQueries.GET_CATEGORY_BY_TYPEID);
+                ptm.setInt(1, typpid);
+                rs = ptm.executeQuery();
+                while (rs.next()) {
+                    TypeService dao = new TypeServiceImpl();
                     TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
@@ -62,7 +98,7 @@ public class CategoryDAO extends DatabaseUtil {
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    IType dao = new TypeService();
+                    TypeService dao = new TypeServiceImpl();
                     TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
@@ -84,6 +120,38 @@ public class CategoryDAO extends DatabaseUtil {
             }
         }
         return category;
+    }
+
+    public int getQuantityByName(String name) throws SQLException {
+        int quantity = 0;
+        CategoryDTO category = null;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(DatabaseQueries.GET_QUANTITY_BY_NAME);
+                ptm.setString(1, name);
+                rs = ptm.executeQuery();
+                if (rs.next()) {
+                    quantity = rs.getInt("Total");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return quantity;
     }
 
     public boolean insertCategory(String categoryName, String typeId) {
