@@ -1,6 +1,7 @@
 package clothingstore.controller.admin.management.category;
 
 import clothingstore.dao.CategoryDAO;
+import clothingstore.impl.TypeServiceImpl;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.TypeDTO;
 import clothingstore.service.TypeService;
@@ -36,7 +37,7 @@ public class ManageCategoryServlet extends HttpServlet {
         String url = MANAGE_CATEGORY_PAGE;
         try {
             CategoryDAO cDao = new CategoryDAO();
-            TypeService tDao = new TypeService();
+            TypeService tDao = new TypeServiceImpl();
 
             List<TypeDTO> listTypes = tDao.getAllTypes();
 

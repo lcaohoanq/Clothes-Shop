@@ -1,6 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
+import clothingstore.impl.TypeServiceImpl;
 import clothingstore.service.DatabaseService;
 import clothingstore.service.TypeService;
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class CategoryDAO extends DatabaseService {
                 ptm = conn.prepareStatement(DatabaseQueries.GETDATA);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeService dao = new TypeService();
+                    TypeService dao = new TypeServiceImpl();
                     TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
@@ -61,7 +62,7 @@ public class CategoryDAO extends DatabaseService {
                 ptm.setInt(1, typpid);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeService dao = new TypeService();
+                    TypeService dao = new TypeServiceImpl();
                     TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");
@@ -97,7 +98,7 @@ public class CategoryDAO extends DatabaseService {
                 ptm.setInt(1, id);
                 rs = ptm.executeQuery();
                 while (rs.next()) {
-                    TypeService dao = new TypeService();
+                    TypeService dao = new TypeServiceImpl();
                     TypeDTO type = dao.getTypeById(rs.getInt("type_id"));
                     int categoryId = rs.getInt("categoryid");
                     String categoryName = rs.getString("categoryname");

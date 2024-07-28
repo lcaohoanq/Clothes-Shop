@@ -3,6 +3,7 @@ package clothingstore.controller.admin.management.product;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import clothingstore.dao.SupplierDAO;
+import clothingstore.impl.TypeServiceImpl;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
@@ -61,7 +62,7 @@ public class EditProductServlet extends HttpServlet {
                 ProductDAO pDao = new ProductDAO();
                 CategoryDAO cDao = new CategoryDAO();
                 SupplierService supplierService = new SupplierService();
-                TypeService tDao = new TypeService();
+                TypeService tDao = new TypeServiceImpl();
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = supplierService.getData();
