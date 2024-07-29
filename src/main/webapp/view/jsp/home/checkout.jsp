@@ -94,7 +94,7 @@
                                                     <label>Address  <span>*</span></label>
                                                     <input placeholder="House number and street name" type="text" value="${sessionScope.account != null ? sessionScope.account.address: ''}" required>
                                                 </div>
-                                                <div class="col-lg-6 mb-30">p
+                                                <div class="col-lg-6 mb-30">
                                                     <label>Phone<span>*</span></label>
                                                     <input type="number" value="${sessionScope.account != null ? sessionScope.account.phone: ''}" required type="number">
 
