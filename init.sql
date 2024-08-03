@@ -1,6 +1,10 @@
 ﻿CREATE DATABASE ClothesShop
 
+GO
+
 USE ClothesShop
+
+GO
 
 CREATE TABLE Users (
   id INT NOT NULL IDENTITY(1,1),
