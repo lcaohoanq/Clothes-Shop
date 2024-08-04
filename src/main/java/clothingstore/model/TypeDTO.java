@@ -1,16 +1,16 @@
 package clothingstore.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.util.List;
 import java.util.Set;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,9 +18,9 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(exclude = "category")
 @Entity
 @Table(name = "Types")
 public class TypeDTO {
@@ -33,12 +33,11 @@ public class TypeDTO {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<CategoryDTO> category;
 
     public TypeDTO(int id, String name){
         this.id = id;
         this.name = name;
     }
-
 }
