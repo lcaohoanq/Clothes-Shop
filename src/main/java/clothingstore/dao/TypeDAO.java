@@ -1,17 +1,17 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseUtil;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.TypeDTO;
+import clothingstore.model.TypeDTO;
 
 @Deprecated
-public class TypeDAO extends DatabaseUtil {
+public class TypeDAO extends DatabaseService {
 
     public TypeDTO getTypeById(int id) throws SQLException {
         TypeDTO type = null;

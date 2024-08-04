@@ -1,17 +1,16 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseUtil;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.PaymentDTO;
-
+import clothingstore.model.PaymentDTO;
 @Deprecated
-public class PaymentDAO extends DatabaseUtil {
+public class PaymentDAO extends DatabaseService {
 
     public PaymentDTO getPaymentById(int id) throws SQLException {
         PaymentDTO result = null;

@@ -1,17 +1,17 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.utils.DatabaseUtil;
+import clothingstore.service.DatabaseService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 
 @Deprecated
-public class UserDAO extends DatabaseUtil {
+public class UserDAO extends DatabaseService {
 
     public List<UserDTO> getData() throws SQLException {
         List<UserDTO> users = new ArrayList<>();
