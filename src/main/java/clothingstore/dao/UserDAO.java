@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.UserDTO;
 
+@Deprecated
 public class UserDAO extends DatabaseService {
 
-    @Deprecated
     public List<UserDTO> getData() throws SQLException {
         List<UserDTO> users = new ArrayList<>();
         Connection conn = null;
@@ -97,7 +97,6 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
-    @Deprecated
     public int getTotalUsers() throws SQLException {
         int result = 0;
         Connection conn = null;
@@ -128,7 +127,6 @@ public class UserDAO extends DatabaseService {
         return result;
     }
 
-    @Deprecated
     public void updateUser(String firstName, String lastName, String email, String address, String phone, String userName, String avatar, int roleId) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -163,7 +161,6 @@ public class UserDAO extends DatabaseService {
         }
     }
 
-    @Deprecated
     public boolean updatePasswordUser(UserDTO user, String pass) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -189,7 +186,6 @@ public class UserDAO extends DatabaseService {
         return false;
     }
 
-    @Deprecated
     public UserDTO getUserByName(String userName) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -231,7 +227,6 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
-    @Deprecated
     public UserDTO getUserByEmail(String email) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
@@ -273,7 +268,6 @@ public class UserDAO extends DatabaseService {
         return user;
     }
 
-    @Deprecated
     public boolean checkUserNameDuplicate(String username) throws SQLException {
         boolean ok = false;
         Connection conn = null;
@@ -306,7 +300,6 @@ public class UserDAO extends DatabaseService {
         return ok;
     }
 
-    @Deprecated
     public void registerUser(UserDTO user) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -342,7 +335,6 @@ public class UserDAO extends DatabaseService {
         }
     }
 
-    @Deprecated
     public void deleteUser(String uid) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;

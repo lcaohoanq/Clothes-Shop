@@ -9,10 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import clothingstore.model.PaymentDTO;
-
+@Deprecated
 public class PaymentDAO extends DatabaseService {
 
-    @Deprecated
     public PaymentDTO getPaymentById(int id) throws SQLException {
         PaymentDTO result = null;
         Connection conn = null;
@@ -45,7 +44,6 @@ public class PaymentDAO extends DatabaseService {
         return result;
     }
 
-    @Deprecated
     public List<PaymentDTO> getPaymentData() throws SQLException {
         List<PaymentDTO> result = new ArrayList<>();
         Connection conn = null;
