@@ -25,12 +25,11 @@ class CategoryRepositoryTest {
     @Test
     @Transactional
     @Order(1)
-    @Disabled
-    void insertCategory() {
+    void saveUser() {
         CategoryDTO category = new CategoryDTO();
         category.setName("Test Category");
 
-        assertTrue(categoryRepository.insertCategory(category));
+        categoryRepository.saveCategory(category);
 
         CategoryDTO retrievedCategory = categoryRepository.getCategoryById(category.getId());
         assertNotNull(retrievedCategory);
@@ -39,7 +38,6 @@ class CategoryRepositoryTest {
 
     @Test
     @Order(2)
-    @Disabled
     void getData() {
         List<CategoryDTO> categories = categoryRepository.getData();
         assertEquals(1, categories.size());

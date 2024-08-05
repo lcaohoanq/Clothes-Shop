@@ -1,7 +1,10 @@
 package clothingstore.repository;
 
 import clothingstore.model.CategoryDTO;
+import clothingstore.model.UserDTO;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -14,6 +17,23 @@ public class CategoryRepository {
    public List<CategoryDTO> getData(){
          return emf.createEntityManager().createQuery("SELECT c FROM CategoryDTO c").getResultList();
    }
+
+    public void saveCategory(CategoryDTO category) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction transaction = em.getTransaction();
+        try {
+            transaction.begin();
+            em.persist(category);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
 
    public CategoryDTO getCategoryById(int id){
        return emf.createEntityManager().find(CategoryDTO.class, id);
