@@ -2,6 +2,7 @@ package clothingstore.controller.admin.management.product;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
+import clothingstore.service.CategoryService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -26,10 +27,10 @@ public class ManageProductServlet extends HttpServlet {
         try {
             String action = request.getParameter("action");
             ProductDAO pDao = new ProductDAO();
-            CategoryDAO cDao = new CategoryDAO();
+            CategoryService categoryService = new CategoryService();
 
             List<ProductDTO> listProducts = pDao.getData();
-            List<CategoryDTO> listCategories = cDao.getData();
+            List<CategoryDTO> listCategories = categoryService.getData();
             if (action == null) {
                 request.setAttribute("LIST_PRODUCTS", listProducts);
                 request.setAttribute("LIST_CATEGORIES", listCategories);

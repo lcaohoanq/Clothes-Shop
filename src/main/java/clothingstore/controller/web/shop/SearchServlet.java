@@ -2,6 +2,7 @@ package clothingstore.controller.web.shop;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
+import clothingstore.service.CategoryService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -29,8 +30,8 @@ public class SearchServlet extends HttpServlet {
             String scope = request.getParameter("scope");
             ProductDAO pDao = new ProductDAO();
             List<ProductDTO> listProducts = pDao.getProductBySearch(txtSearch);
-            CategoryDAO cDao = new CategoryDAO();
-            List<CategoryDTO> listCategories = cDao.getData();
+            CategoryService categoryService = new CategoryService();
+            List<CategoryDTO> listCategories = categoryService.getData();
 
             if (("shop-list.jsp").equals(scope)) {
                 url = SEARCH_IN_SHOPLIST;

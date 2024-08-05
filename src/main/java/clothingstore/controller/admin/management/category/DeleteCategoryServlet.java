@@ -1,6 +1,7 @@
 package clothingstore.controller.admin.management.category;
 
 import clothingstore.dao.CategoryDAO;
+import clothingstore.service.CategoryService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,8 +19,8 @@ public class DeleteCategoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             String cid = request.getParameter("cid");
-            CategoryDAO dao = new CategoryDAO();
-            dao.deleteCategory(cid);
+            CategoryService categoryService = new CategoryService();
+            categoryService.deleteCategory(categoryService.getCategoryById(Integer.parseInt(cid)));
             request.setAttribute("mess", "Delete successfully!");
         } catch (Exception ex) {
             log("DeleteCategoryServlet error:" + ex.getMessage());

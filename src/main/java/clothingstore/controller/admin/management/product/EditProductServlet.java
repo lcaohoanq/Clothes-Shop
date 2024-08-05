@@ -7,6 +7,7 @@ import clothingstore.model.CategoryDTO;
 import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
+import clothingstore.service.CategoryService;
 import clothingstore.service.SupplierService;
 import clothingstore.service.TypeService;
 import java.io.IOException;
@@ -59,11 +60,11 @@ public class EditProductServlet extends HttpServlet {
                 String pid_raw = request.getParameter("product_id");
 
                 ProductDAO pDao = new ProductDAO();
-                CategoryDAO cDao = new CategoryDAO();
+                CategoryService categoryService = new CategoryService();
                 SupplierService supplierService = new SupplierService();
                 TypeService tDao = new TypeService();
 
-                List<CategoryDTO> listCategories = cDao.getData();
+                List<CategoryDTO> listCategories = categoryService.getData();
                 List<SupplierDTO> listSuppliers = supplierService.getData();
                 List<TypeDTO> listTypes = tDao.getAllTypes();
                 ProductDTO product = pDao.getProductByID(Integer.parseInt(pid_raw));

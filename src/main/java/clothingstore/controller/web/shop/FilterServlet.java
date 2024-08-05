@@ -2,6 +2,7 @@ package clothingstore.controller.web.shop;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
+import clothingstore.service.CategoryService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +26,8 @@ public class FilterServlet extends HttpServlet {
         String url = SHOP_LIST;
         try {
             ProductDAO pDao = new ProductDAO();
-            CategoryDAO cDao = new CategoryDAO();
-            List<CategoryDTO> listCategories = cDao.getData();
+            CategoryService categoryService = new CategoryService();
+            List<CategoryDTO> listCategories = categoryService.getData();
             List<ProductDTO> listProducts = pDao.getData();
             String group = request.getParameter("sort_group");
             String action = request.getParameter("btnAction");

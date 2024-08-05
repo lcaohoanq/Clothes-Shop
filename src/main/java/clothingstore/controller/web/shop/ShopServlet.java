@@ -2,6 +2,7 @@ package clothingstore.controller.web.shop;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
+import clothingstore.service.CategoryService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +24,10 @@ public class ShopServlet extends HttpServlet {
         String url = SHOP;
         try {
             ProductDAO pDao = new ProductDAO();
-            CategoryDAO cDao = new CategoryDAO();
+            CategoryService categoryService = new CategoryService();
             List<ProductDTO> listProducts = new ArrayList<>();
             
-            List<CategoryDTO> listCategories = cDao.getData();
+            List<CategoryDTO> listCategories = categoryService.getData();
             if (request.getAttribute("LISTPRODUCTS") == null) {
                 listProducts = pDao.getData();
             } else {

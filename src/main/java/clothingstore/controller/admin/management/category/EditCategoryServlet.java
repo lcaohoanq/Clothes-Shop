@@ -1,6 +1,10 @@
 package clothingstore.controller.admin.management.category;
 
 import clothingstore.dao.CategoryDAO;
+import clothingstore.model.CategoryDTO;
+import clothingstore.model.TypeDTO;
+import clothingstore.service.CategoryService;
+import clothingstore.service.TypeService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,12 +22,21 @@ public class EditCategoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_CATEGORY_CONTROLLER;
         try {
-            CategoryDAO dao = new CategoryDAO();
             String cId = request.getParameter("category_id");
             String cName = request.getParameter("category_name");
             String tId = request.getParameter("type_id");
 
-            dao.editCategory(cName, tId, cId);
+            CategoryService categoryService = new CategoryService();
+
+            TypeDTO type = new TypeDTO();
+            type.setId(Integer.parseInt(tId));
+
+            CategoryDTO category = new CategoryDTO();
+            category.setName(cName);
+            category.setId(Integer.parseInt(cId));
+            category.setType(type);
+
+            categoryService.editCategory(category);
             request.setAttribute("mess", "Edit successfully!");
         } catch (Exception ex) {
             log("EditCategoryServlet error:" + ex.getMessage());

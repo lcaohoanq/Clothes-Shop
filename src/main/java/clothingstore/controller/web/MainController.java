@@ -1,5 +1,6 @@
 package clothingstore.controller.web;
 
+import clothingstore.service.CategoryService;
 import clothingstore.service.SupplierService;
 import clothingstore.service.TypeService;
 import clothingstore.utils.WishlistUtil;
@@ -76,13 +77,12 @@ public class MainController extends HttpServlet {
     protected void getDataHomeLSP(HttpServletRequest request, HttpServletResponse response) {
         try {
             ProductDAO pDao = new ProductDAO();
-            CategoryDAO cDao = new CategoryDAO();
             SupplierService supplierService = new SupplierService();
             TypeService tDao = new TypeService();
-            CategoryDAO caDao = new CategoryDAO();
+            CategoryService categoryService = new CategoryService();
 
             List<ProductDTO> listProducts = pDao.getData();
-            List<CategoryDTO> listCategories = cDao.getData();
+            List<CategoryDTO> listCategories = categoryService.getData();
             List<SupplierDTO> listSuppliers = supplierService.getData();
             List<ProductDTO> listProductsNew = pDao.getProductNew();
             List<ProductDTO> listProductsBestSeller = pDao.getProductsBestSeller();

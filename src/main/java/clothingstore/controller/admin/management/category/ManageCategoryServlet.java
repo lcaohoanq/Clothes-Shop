@@ -3,6 +3,7 @@ package clothingstore.controller.admin.management.category;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.TypeDTO;
+import clothingstore.service.CategoryService;
 import clothingstore.service.TypeService;
 import java.io.IOException;
 import java.util.List;
@@ -35,7 +36,7 @@ public class ManageCategoryServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_CATEGORY_PAGE;
         try {
-            CategoryDAO cDao = new CategoryDAO();
+            CategoryService categoryService = new CategoryService();
             TypeService tDao = new TypeService();
 
             List<TypeDTO> listTypes = tDao.getAllTypes();
@@ -44,7 +45,7 @@ public class ManageCategoryServlet extends HttpServlet {
             if (INSERT.equals(action)) {
                 url = INSERT_CATEGORY_PAGE;
             }
-            List<CategoryDTO> list = cDao.getData();
+            List<CategoryDTO> list = categoryService.getData();
             request.setAttribute("LIST_CATEGORIES", list);
             request.setAttribute("LIST_TYPES", listTypes);
             request.setAttribute("CURRENTSERVLET", "Category");

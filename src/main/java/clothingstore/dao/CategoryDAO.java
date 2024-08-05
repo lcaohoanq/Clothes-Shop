@@ -12,6 +12,7 @@ import java.util.List;
 import clothingstore.model.CategoryDTO;
 import clothingstore.model.TypeDTO;
 
+@Deprecated
 public class CategoryDAO extends DatabaseService {
 
     public List<CategoryDTO> getData() throws SQLException {
@@ -248,16 +249,5 @@ public class CategoryDAO extends DatabaseService {
 //        System.out.println(quantity);
 //
 //    }
-
-    public static void main(String[] args) {
-        CategoryDAO dao = new CategoryDAO();
-        try {            List<CategoryDTO> list = dao.getData();
-            for (CategoryDTO c : list) {
-                System.out.println(c);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

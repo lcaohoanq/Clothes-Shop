@@ -1,6 +1,9 @@
 package clothingstore.controller.admin.management.category;
 
 import clothingstore.dao.CategoryDAO;
+import clothingstore.model.CategoryDTO;
+import clothingstore.service.CategoryService;
+import clothingstore.service.TypeService;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,11 +29,15 @@ public class InsertCategoryServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = MANAGE_CATEGORY_CONTROLLER;
-        CategoryDAO cDao = new CategoryDAO();
+        CategoryService categoryService = new CategoryService();
+        TypeService typeService = new TypeService();
         String cateName = request.getParameter("newcate");
         String typeId = request.getParameter("type_id");
+        CategoryDTO category = new CategoryDTO();
+        category.setName(cateName);
+        category.setType(typeService.getTypeById(Integer.parseInt(typeId)));//
         if (cateName != null) {
-            cDao.insertCategory(cateName, typeId);
+            categoryService.insertCategory(category);
         }
         request.getRequestDispatcher(url).forward(request, response);
     }
