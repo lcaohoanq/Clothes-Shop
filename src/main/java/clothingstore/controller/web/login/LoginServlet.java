@@ -104,14 +104,13 @@ public class LoginServlet extends HttpServlet {
                         }
                     }
                 }
-                url = LOGIN;
+                request.getRequestDispatcher(LOGIN).forward(request, response);
             } else {
                 String code = request.getParameter("code");
                 String accessToken = getToken(code);
                 UserGoogleDTO userGG = getUserInfo(accessToken);
                 if (userGG != null) {
-                    UserService userService = new UserService();
-                    UserDTO account = userService.getUserByEmail(userGG.getEmail());
+                    UserDTO account = new UserService().getUserByEmail(userGG.getEmail());
                     if (account != null) {
                         HttpSession session = request.getSession();
                         session.setAttribute("account", account);
@@ -127,14 +126,13 @@ public class LoginServlet extends HttpServlet {
                         request.setAttribute("firstNameGoogleAccount", userGG.getGiven_name());
                         request.setAttribute("lastNameGoogleAccount", userGG.getFamily_name());
                         request.setAttribute("avatar", userGG.getPicture());
-                        url = REGISTER_CONTROLLER;
+                        request.getRequestDispatcher(REGISTER_CONTROLLER).forward(request, response);
+                        System.out.println("Failed to login with Google");
                     }
                 }
             }
         } catch (Exception ex) {
             log("LoginServlet error:" + ex.getMessage());
-        } finally {
-            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 
