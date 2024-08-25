@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
-  <persistence-unit name="ClothesShop" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="ClothesShopPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <class>clothingstore.model.CartItem</class>
-    <class>clothingstore.model.CategoryDTO</class>
-    <class>clothingstore.model.OrderDTO</class>
-    <class>clothingstore.model.OrderItemDTO</class>
-    <class>clothingstore.model.PaymentDTO</class>
-    <class>clothingstore.model.ProductDTO</class>
-    <class>clothingstore.model.SupplierDTO</class>
-    <class>clothingstore.model.TypeDTO</class>
-    <class>clothingstore.model.UserDTO</class>
-    <class>clothingstore.model.UserGoogleDTO</class>
-    <class>clothingstore.model.WalletDTO</class>
+    <class>clothingstore.dto.CartItem</class>
+    <class>clothingstore.dto.CategoryDTO</class>
+    <class>clothingstore.dto.OrderDTO</class>
+    <class>clothingstore.dto.OrderItemDTO</class>
+    <class>clothingstore.dto.PaymentDTO</class>
+    <class>clothingstore.dto.ProductDTO</class>
+    <class>clothingstore.dto.SupplierDTO</class>
+    <class>clothingstore.dto.TypeDTO</class>
+    <class>clothingstore.dto.UserDTO</class>
+    <class>clothingstore.dto.UserGoogleDTO</class>
+    <class>clothingstore.dto.WalletDTO</class>
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;DatabaseName=ClothesShop"/>

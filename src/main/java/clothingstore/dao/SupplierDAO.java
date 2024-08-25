@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.model.SupplierDTO;
+import clothingstore.dto.SupplierDTO;
 
 @Deprecated
 public class SupplierDAO extends DatabaseUtil {

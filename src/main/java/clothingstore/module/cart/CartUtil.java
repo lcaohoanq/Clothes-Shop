@@ -8,8 +8,8 @@ import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.CartItem;
-import clothingstore.model.ProductDTO;
+import clothingstore.dto.CartItem;
+import clothingstore.dto.ProductDTO;
 
 public class CartUtil {
 

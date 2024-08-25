@@ -1,8 +1,8 @@
 package clothingstore.controller.web;
 
-import clothingstore.impl.SupplierServiceImpl;
-import clothingstore.impl.TypeServiceImpl;
-import clothingstore.service.TypeService;
+import clothingstore.services.SupplierService;
+import clothingstore.services.TypeService;
+import clothingstore.services.IType;
 import clothingstore.module.wishlist.WishlistUtil;
 import clothingstore.module.cart.CartUtil;
 import clothingstore.dao.CategoryDAO;
@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.model.CartItem;
-import clothingstore.model.CategoryDTO;
-import clothingstore.model.ProductDTO;
-import clothingstore.model.SupplierDTO;
-import clothingstore.model.TypeDTO;
+import clothingstore.dto.CartItem;
+import clothingstore.dto.CategoryDTO;
+import clothingstore.dto.ProductDTO;
+import clothingstore.dto.SupplierDTO;
+import clothingstore.dto.TypeDTO;
 
 public class MainController extends HttpServlet {
 
@@ -77,8 +77,8 @@ public class MainController extends HttpServlet {
         try {
             ProductDAO pDao = new ProductDAO();
             CategoryDAO cDao = new CategoryDAO();
-            SupplierServiceImpl supplierService = new SupplierServiceImpl();
-            TypeService tDao = new TypeServiceImpl();
+            SupplierService supplierService = new SupplierService();
+            IType tDao = new TypeService();
             CategoryDAO caDao = new CategoryDAO();
 
             List<ProductDTO> listProducts = pDao.getData();

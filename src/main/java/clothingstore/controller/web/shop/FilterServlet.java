@@ -3,15 +3,14 @@ package clothingstore.controller.web.shop;
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.CategoryDTO;
-import clothingstore.model.ProductDTO;
+import clothingstore.dto.CategoryDTO;
+import clothingstore.dto.ProductDTO;
 
 @WebServlet(name = "FilterServlet", urlPatterns = {"/FilterServlet"})
 public class FilterServlet extends HttpServlet {

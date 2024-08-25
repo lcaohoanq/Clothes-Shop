@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.model.UserDTO;
+import clothingstore.dto.UserDTO;
 public class AdminFilter implements Filter {
 
     private static final boolean debug = true;

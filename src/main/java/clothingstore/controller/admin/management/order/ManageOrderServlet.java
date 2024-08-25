@@ -9,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.OrderDTO;
-import clothingstore.model.OrderItemDTO;
+import clothingstore.dto.OrderDTO;
+import clothingstore.dto.OrderItemDTO;
 
 @WebServlet(name = "ManageOrderServlet", urlPatterns = {"/ManageOrderServlet"})
 public class ManageOrderServlet extends HttpServlet {

@@ -1,6 +1,6 @@
 package clothingstore.controller.web.cart_wishlist;
 
-import clothingstore.impl.PaymentServiceImpl;
+import clothingstore.services.PaymentService;
 import clothingstore.module.cart.CartUtil;
 import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.model.CartItem;
+import clothingstore.dto.CartItem;
 import clothingstore.module.email.Email;
-import clothingstore.model.OrderDTO;
-import clothingstore.model.PaymentDTO;
-import clothingstore.model.UserDTO;
+import clothingstore.dto.OrderDTO;
+import clothingstore.dto.PaymentDTO;
+import clothingstore.dto.UserDTO;
 
 @WebServlet(name = "CheckoutServlet", urlPatterns = {"/CheckoutServlet"})
 public class CheckoutServlet extends HttpServlet {
@@ -31,7 +31,7 @@ public class CheckoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = CHECKOUT_PAGE;
-        PaymentServiceImpl pmDAO = new PaymentServiceImpl();
+        PaymentService pmDAO = new PaymentService();
         ProductDAO pDAO = new ProductDAO();
         OrderDAO oDAO = new OrderDAO();
         OrderItemDAO oiDAO = new OrderItemDAO();

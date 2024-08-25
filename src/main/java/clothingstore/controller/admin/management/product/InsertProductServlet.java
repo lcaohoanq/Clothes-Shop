@@ -2,11 +2,9 @@ package clothingstore.controller.admin.management.product;
 
 import clothingstore.dao.CategoryDAO;
 import clothingstore.dao.ProductDAO;
-import clothingstore.dao.SupplierDAO;
-import clothingstore.impl.SupplierServiceImpl;
-import clothingstore.impl.TypeServiceImpl;
-import clothingstore.service.SupplierService;
-import clothingstore.service.TypeService;
+import clothingstore.services.SupplierService;
+import clothingstore.services.TypeService;
+import clothingstore.services.IType;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -14,9 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.CategoryDTO;
-import clothingstore.model.SupplierDTO;
-import clothingstore.model.TypeDTO;
+import clothingstore.dto.CategoryDTO;
+import clothingstore.dto.SupplierDTO;
+import clothingstore.dto.TypeDTO;
 
 @WebServlet(name = "InsertProductServlet", urlPatterns = {"/InsertProductServlet"})
 public class InsertProductServlet extends HttpServlet {
@@ -48,8 +46,8 @@ public class InsertProductServlet extends HttpServlet {
             ProductDAO pDao = new ProductDAO();
             if (action != null) {
                 CategoryDAO cDao = new CategoryDAO();
-                SupplierServiceImpl supplierService = new SupplierServiceImpl();
-                TypeService tDao = new TypeServiceImpl();
+                SupplierService supplierService = new SupplierService();
+                IType tDao = new TypeService();
 
                 List<CategoryDTO> listCategories = cDao.getData();
                 List<SupplierDTO> listSuppliers = supplierService.getData();

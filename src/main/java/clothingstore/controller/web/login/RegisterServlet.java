@@ -1,6 +1,6 @@
 package clothingstore.controller.web.login;
 
-import clothingstore.impl.UserServiceImpl;
+import clothingstore.services.UserService;
 import clothingstore.utils.PBKDF2;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.UserDTO;
+import clothingstore.dto.UserDTO;
 
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
 public class RegisterServlet extends HttpServlet {
@@ -76,7 +76,7 @@ public class RegisterServlet extends HttpServlet {
             String avatar = request.getParameter("avatar");
             String action = request.getParameter("action");
             String message;
-            UserServiceImpl userService = new UserServiceImpl();
+            UserService userService = new UserService();
             if (action != null && action.equals("CheckDuplicate")) {
                 PrintWriter out = response.getWriter();
                 String username = request.getParameter("username");

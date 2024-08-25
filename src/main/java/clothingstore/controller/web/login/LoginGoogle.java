@@ -4,9 +4,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import clothingstore.constant.GoogleAuthentication;
-import clothingstore.model.UserGoogleDTO;
-import java.io.IOException;
-import org.apache.http.client.ClientProtocolException;
+import clothingstore.dto.UserGoogleDTO;
 import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;
 

@@ -9,8 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.CategoryDTO;
-import clothingstore.model.ProductDTO;
+import clothingstore.dto.CategoryDTO;
+import clothingstore.dto.ProductDTO;
 
 public class ShopServlet extends HttpServlet {
 

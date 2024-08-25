@@ -1,7 +1,6 @@
 package clothingstore.controller.web.profile;
 
 import clothingstore.dao.OrderDAO;
-import clothingstore.model.OrderItemDTO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -9,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.model.OrderDTO;
-import clothingstore.model.UserDTO;
+import clothingstore.dto.OrderDTO;
+import clothingstore.dto.UserDTO;
 
 public class ProfileServlet extends HttpServlet {
 

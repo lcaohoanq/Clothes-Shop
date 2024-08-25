@@ -1,8 +1,6 @@
 package clothingstore.controller.admin.management.supplier;
 
-import clothingstore.dao.SupplierDAO;
-import clothingstore.impl.SupplierServiceImpl;
-import clothingstore.service.SupplierService;
+import clothingstore.services.SupplierService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -10,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import clothingstore.model.SupplierDTO;
+import clothingstore.dto.SupplierDTO;
 
 @WebServlet(name = "ManageSupplierServlet", urlPatterns = {"/ManageSupplierServlet"})
 public class ManageSupplierServlet extends HttpServlet {
@@ -30,7 +28,7 @@ public class ManageSupplierServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            SupplierServiceImpl supplierService = new SupplierServiceImpl();
+            SupplierService supplierService = new SupplierService();
             List<SupplierDTO> list = supplierService.getData();
 
             request.setAttribute("LISTSUPPLIERS", list);

@@ -1,11 +1,7 @@
 package clothingstore.controller.web.profile;
 
-import clothingstore.dao.OrderDAO;
 import clothingstore.dao.OrderItemDAO;
-import clothingstore.dao.UserDAO;
-import clothingstore.model.OrderDTO;
-import clothingstore.model.OrderItemDTO;
-import clothingstore.model.UserDTO;
+import clothingstore.dto.OrderItemDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -15,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "OrderedDetailsServlet", urlPatterns = {"/OrderedDetailsServlet"})
 public class OrderedDetailsServlet extends HttpServlet {
