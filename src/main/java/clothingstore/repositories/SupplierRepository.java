@@ -1,6 +1,6 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
-import clothingstore.dto.SupplierDTO;
+import clothingstore.model.SupplierDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -48,7 +48,7 @@ public class SupplierRepository {
     }
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = BaseEntityManager.getEntityManagerFactory();
+        EntityManagerFactory emf = MyEntityManager.getEntityManagerFactory();
         SupplierRepository supplierRepository = new SupplierRepository(emf);
         List<SupplierDTO> supplierList = supplierRepository.getData();
         System.out.println(supplierList.size());

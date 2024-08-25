@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.dto.CartItem;
-import clothingstore.dto.ProductDTO;
+import clothingstore.model.CartItem;
+import clothingstore.model.ProductDTO;
 
 @WebServlet(name = "CartServlet", urlPatterns = {"/CartServlet"})
 public class CartServlet extends HttpServlet {

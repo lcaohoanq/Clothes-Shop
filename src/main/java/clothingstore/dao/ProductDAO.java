@@ -3,7 +3,7 @@ package clothingstore.dao;
 import clothingstore.constant.DatabaseQueries;
 import clothingstore.impl.SupplierServiceImpl;
 import clothingstore.impl.TypeServiceImpl;
-import clothingstore.service.DatabaseService;
+import clothingstore.utils.DatabaseUtil;
 import clothingstore.service.TypeService;
 import java.sql.Connection;
 import java.sql.Date;
@@ -19,7 +19,7 @@ import clothingstore.model.ProductDTO;
 import clothingstore.model.SupplierDTO;
 import clothingstore.model.TypeDTO;
 
-public class ProductDAO extends DatabaseService {
+public class ProductDAO extends DatabaseUtil {
 
 
 

@@ -1,7 +1,7 @@
 package clothingstore.dao;
 
 import clothingstore.constant.DatabaseQueries;
-import clothingstore.service.DatabaseService;
+import clothingstore.utils.DatabaseUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.util.List;
 import clothingstore.model.SupplierDTO;
 
 @Deprecated
-public class SupplierDAO extends DatabaseService {
+public class SupplierDAO extends DatabaseUtil {
 
     public List<SupplierDTO> getData() throws SQLException {
         List<SupplierDTO> suppliers = new ArrayList<>();

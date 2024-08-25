@@ -3,7 +3,7 @@ package clothingstore.dao;
 import clothingstore.constant.DatabaseQueries;
 import clothingstore.impl.PaymentServiceImpl;
 import clothingstore.impl.UserServiceImpl;
-import clothingstore.service.DatabaseService;
+import clothingstore.utils.DatabaseUtil;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ import clothingstore.model.OrderDTO;
 import clothingstore.model.PaymentDTO;
 import clothingstore.model.UserDTO;
 
-public class OrderDAO extends DatabaseService {
+public class OrderDAO extends DatabaseUtil {
 
     private final UserServiceImpl userService = new UserServiceImpl();
     private final PaymentServiceImpl pDao = new PaymentServiceImpl();

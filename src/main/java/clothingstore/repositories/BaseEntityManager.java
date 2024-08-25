@@ -1,12 +1,12 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class BaseEntityManager {
+public class MyEntityManager {
 
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory(
-        "ClothesShopPU");
+        "ClothesShop");
 
     public static EntityManagerFactory getEntityManagerFactory() {
         if (emf.isOpen()) {

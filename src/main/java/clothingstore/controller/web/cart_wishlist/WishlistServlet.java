@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import clothingstore.dto.ProductDTO;
+import clothingstore.model.ProductDTO;
 
 @WebServlet(name = "WishlistServlet", urlPatterns = {"/WishlistServlet"})
 public class WishlistServlet extends HttpServlet {

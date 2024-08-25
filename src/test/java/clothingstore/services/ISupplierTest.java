@@ -1,10 +1,10 @@
-package clothingstore.services;
+package clothingstore.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import clothingstore.dto.SupplierDTO;
-import clothingstore.repositories.BaseEntityManager;
-import clothingstore.repositories.SupplierRepository;
+import clothingstore.model.SupplierDTO;
+import clothingstore.repository.MyEntityManager;
+import clothingstore.repository.SupplierRepository;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -12,14 +12,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-class ISupplierTest {
+class SupplierServiceTest {
 
     private EntityManagerFactory emf;
     private SupplierRepository supplierRepository;
 
     @BeforeEach
     void setUp() {
-        emf = BaseEntityManager.getEntityManagerFactory();
+        emf = MyEntityManager.getEntityManagerFactory();
         supplierRepository = new SupplierRepository(emf);
     }
 

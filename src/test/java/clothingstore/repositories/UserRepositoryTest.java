@@ -1,8 +1,8 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -17,7 +17,7 @@ class UserRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        emf = BaseEntityManager.getEntityManagerFactory();
+        emf = MyEntityManager.getEntityManagerFactory();
         userRepository = new UserRepository(emf);
     }
 

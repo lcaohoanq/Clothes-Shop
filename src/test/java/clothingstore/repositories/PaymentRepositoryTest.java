@@ -1,8 +1,8 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import clothingstore.dto.PaymentDTO;
+import clothingstore.model.PaymentDTO;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
@@ -14,7 +14,7 @@ class PaymentRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        paymentRepository = new PaymentRepository(BaseEntityManager.getEntityManagerFactory());
+        paymentRepository = new PaymentRepository(MyEntityManager.getEntityManagerFactory());
     }
 
     @Test

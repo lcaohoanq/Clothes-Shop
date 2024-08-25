@@ -1,6 +1,6 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
-import clothingstore.dto.UserDTO;
+import clothingstore.model.UserDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

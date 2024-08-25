@@ -1,8 +1,10 @@
-package clothingstore.repositories;
+package clothingstore.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import clothingstore.dto.SupplierDTO;
+import clothingstore.model.SupplierDTO;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
@@ -14,7 +16,7 @@ class SupplierRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        supplierRepository = new SupplierRepository(BaseEntityManager.getEntityManagerFactory());
+        supplierRepository = new SupplierRepository(MyEntityManager.getEntityManagerFactory());
     }
 
     @Test

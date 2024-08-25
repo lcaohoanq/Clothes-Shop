@@ -8,14 +8,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import clothingstore.dto.CartItem;
-import clothingstore.dto.OrderDTO;
-import clothingstore.dto.OrderItemDTO;
-import clothingstore.dto.ProductDTO;
+import clothingstore.model.CartItem;
+import clothingstore.model.OrderDTO;
+import clothingstore.model.OrderItemDTO;
+import clothingstore.model.ProductDTO;
 
 public class OrderItemDAO extends DatabaseUtil {
 
     private final ProductDAO pDao = new ProductDAO();
+
+
 
     public List<OrderItemDTO> getOrderItemByOrderId(int id) {
         List<OrderItemDTO> list = new ArrayList<>();
@@ -34,7 +36,7 @@ public class OrderItemDAO extends DatabaseUtil {
                     int productID = rs.getInt("product_id");
                     ProductDTO product = pDao.getProductByID(productID);
                     int orderID = rs.getInt("order_id");
-                    OrderItemDTO order = new OrderItemDTO(orderID, quantity, price, product);
+                    OrderItemDTO order = new OrderItemDTO(orderID,quantity, price, product);
                     list.add(order);
                 }
             }
@@ -44,7 +46,7 @@ public class OrderItemDAO extends DatabaseUtil {
 
         return list;
     }
-
+    
     public boolean createNewOrderDetail(CartItem item, OrderDTO order) throws SQLException {
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -52,10 +54,10 @@ public class OrderItemDAO extends DatabaseUtil {
             conn = getConnection();
             if (conn != null) {
                 ptm = conn.prepareStatement(DatabaseQueries.CREATE_NEW_ORDER_ITEM);
-                ptm.setInt(1, item.getQuantity());
-                ptm.setDouble(2, item.getProduct().getSalePrice());
+                ptm.setInt(1,item.getQuantity());
+                ptm.setDouble(2,item.getProduct().getSalePrice());
                 ptm.setInt(3, item.getProduct().getId());
-                ptm.setInt(4, order.getOrderID());
+                ptm.setInt(4,order.getOrderID());
                 ptm.executeUpdate();
                 return true;
             }
@@ -73,7 +75,7 @@ public class OrderItemDAO extends DatabaseUtil {
         return false;
     }
 
-    public List<OrderItemDTO> getOrderedItemByOrderID(String orderID) throws SQLException {
+    public List<OrderItemDTO> getOrderedItemByOrderID (String orderID) throws SQLException {
         List<OrderItemDTO> list = new ArrayList<>();
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -81,8 +83,7 @@ public class OrderItemDAO extends DatabaseUtil {
         try {
             conn = getConnection();
             if (conn != null) {
-                ptm = conn.prepareStatement(
-                    "SELECT * FROM OrderItem WHERE order_id = '" + orderID + "'");
+                ptm = conn.prepareStatement("SELECT * FROM OrderItem WHERE order_id = '" + orderID + "'");
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     int orderItemID = rs.getInt("order_item_id");

@@ -65,4 +65,12 @@ public class UserServiceImpl implements UserService {
         return userRepository.getData();
     }
 
+    public static void main(String[] args) {
+        UserService userService = new UserServiceImpl();
+        List<UserDTO> list = userService.getData();
+        for (UserDTO userDTO : list) {
+            System.out.println(userDTO);
+        }
+    }
+
 }
