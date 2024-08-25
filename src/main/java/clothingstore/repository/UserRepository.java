@@ -5,14 +5,15 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.NoResultException;
+import jakarta.persistence.Persistence;
 import java.util.List;
 import lombok.AllArgsConstructor;
-
 
 @AllArgsConstructor
 public class UserRepository {
 
-    private final EntityManagerFactory emf;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(
+        "ClothesShop");
 
     public void saveUser(UserDTO user) {
         EntityManager em = emf.createEntityManager();
@@ -178,11 +179,20 @@ public class UserRepository {
     }
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = MyEntityManager.getEntityManagerFactory();
-        UserRepository userRepository = new UserRepository(emf);
+//        EntityManagerFactory emf = MyEntityManager.getEntityManagerFactory();
+        try {
+            UserRepository userRepository = new UserRepository(
+                Persistence.createEntityManagerFactory(
+                    "ClothesShop"));
+
+            if (userRepository == null) {
+                throw new Exception("UserRepository is null");
+            } else {
+
 //        UserDTO user = new UserDTO();
-        UserDTO user = new UserDTO("hoang", "luu", "tester@gmail.com", "avatar.jpg", "heheheheh",
-            "123456", "Hoa Phong, Hoa Vang, Da Nang", "0123456789", 2, true);
+                UserDTO user = new UserDTO("hoang", "luu", "tester@gmail.com", "avatar.jpg",
+                    "heheheheh",
+                    "123456", "Hoa Phong, Hoa Vang, Da Nang", "0123456789", 2, true);
 //        userRepository.saveUser(user);
 //        userRepository.saveUser(user);
 //        userRepository.deleteUser(user);
@@ -190,10 +200,15 @@ public class UserRepository {
 //        userRepository.getTotalUsers();
 //        userRepository.checkLogin("username", "password");
 //        userRepository.getUserById(1);
-        System.out.println(userRepository.getUserByUsername("admin"));
-        for (UserDTO u : userRepository.getData()) {
-            System.out.println(u);
+                System.out.println(userRepository.getUserByUsername("admin"));
+                for (UserDTO u : userRepository.getData()) {
+                    System.out.println(u);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+
 
     }
 

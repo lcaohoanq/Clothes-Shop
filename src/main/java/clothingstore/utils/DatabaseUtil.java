@@ -1,15 +1,18 @@
 package clothingstore.utils;
 
+import clothingstore.dto.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DatabaseUtil {
     public Connection getConnection() throws Exception {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String url = EnvUtil.get("DB_URL");
-        String user = EnvUtil.get("DB_USER");
-        String password = EnvUtil.get("DB_PASSWORD");
-        return DriverManager.getConnection(url, user, password);
+        DatabaseConnection  databaseConnection = new DatabaseConnection(EnvUtil.get("DB_URL"), EnvUtil.get("DB_USER"), EnvUtil.get("DB_PASSWORD"));
+        System.out.println("Database connection: " + databaseConnection);
+        return DriverManager.getConnection(
+            databaseConnection.getUrl(),
+            databaseConnection.getUser(),
+            databaseConnection.getPassword());
     }
 
     //Test connection
