@@ -12,8 +12,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserRepository {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(
-        "ClothesShop");
+    private final EntityManagerFactory emf;
 
     public void saveUser(UserDTO user) {
         EntityManager em = emf.createEntityManager();

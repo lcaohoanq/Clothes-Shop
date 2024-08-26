@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
     private final String REGISTER_CONTROLLER = "RegisterServlet";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String code = request.getParameter("code");
         String error = request.getParameter("error");
@@ -48,11 +48,11 @@ public class LoginServlet extends HttpServlet {
     public static String getToken(String code) throws IOException {
         // call api to get token
         String response = Request.Post(GoogleAuthentication.GOOGLE_LINK_GET_TOKEN)
-                .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
-                        .add("client_secret", GoogleAuthentication.GOOGLE_CLIENT_SECRET)
-                        .add("redirect_uri", GoogleAuthentication.GOOGLE_REDIRECT_URI).add("code", code)
-                        .add("grant_type", GoogleAuthentication.GOOGLE_GRANT_TYPE).build())
-                .execute().returnContent().asString();
+            .bodyForm(Form.form().add("client_id", GoogleAuthentication.GOOGLE_CLIENT_ID)
+                .add("client_secret", GoogleAuthentication.GOOGLE_CLIENT_SECRET)
+                .add("redirect_uri", GoogleAuthentication.GOOGLE_REDIRECT_URI).add("code", code)
+                .add("grant_type", GoogleAuthentication.GOOGLE_GRANT_TYPE).build())
+            .execute().returnContent().asString();
 
         JsonObject jobj = new Gson().fromJson(response, JsonObject.class);
         String accessToken = jobj.get("access_token").toString().replaceAll("\"", "");
@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     public static UserGoogleDTO getUserInfo(final String accessToken)
-            throws IOException {
+        throws IOException {
         String link = GoogleAuthentication.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
 
@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         String url = WELCOME;
         try {
             request.setAttribute("CURRENTSERVLET", "Login");
@@ -146,7 +146,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String url = WELCOME;
